@@ -351,9 +351,12 @@
         }
         .pages-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-top: 52px;
+        }
+        @media (max-width: 900px) {
+            .pages-grid { grid-template-columns: repeat(2, 1fr); }
         }
         .page-card {
             display: flex; flex-direction: column;
@@ -546,6 +549,13 @@
                     <div class="page-card-name">Our Future</div>
                     <p class="page-card-desc">Dreams, goals, and the road ahead — what the Worobi family is building together for generations to come.</p>
                     <span class="page-card-link">See What's Ahead <span>→</span></span>
+                </a>
+
+                <a class="page-card" href="https://worobi.com/recipes">
+                    <div class="page-card-icon">🍽️</div>
+                    <div class="page-card-name">Family Recipes</div>
+                    <p class="page-card-desc">Our most treasured family recipes — passed down, perfected, and made with love. Password protected, family only.</p>
+                    <span class="page-card-link">View Recipes <span>→</span></span>
                 </a>
 
             </div>

@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Recipes — The Worobi Family</title>
+    <meta name="description" content="The Worobi Family Recipe Book — our most treasured family recipes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:        #0a0a0a;
+            --surface:   #111111;
+            --surface-2: #1a1a1a;
+            --text:      #f0f0f0;
+            --text-mid:  #aaaaaa;
+            --text-muted:#555555;
+            --border:    rgba(255,255,255,0.07);
+            --border-md: rgba(255,255,255,0.13);
+            --accent:    #c9843a;
+            --accent-rgb:201,132,58;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+        /* ── PASSWORD GATE ── */
+        #gate {
+            position: fixed; inset: 0; z-index: 9999;
+            background: var(--bg);
+            display: flex; align-items: center; justify-content: center;
+            padding: 24px;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #gate.unlocked {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .gate-box {
+            width: 100%; max-width: 420px;
+            text-align: center;
+        }
+
+        .gate-icon {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .gate-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem; font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .gate-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .gate-input-wrap {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .gate-input {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border-md);
+            border-radius: 12px;
+            padding: 15px 50px 15px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+            letter-spacing: 0.1em;
+        }
+        .gate-input::placeholder { color: var(--text-muted); letter-spacing: 0.05em; }
+        .gate-input:focus { border-color: var(--accent); }
+
+        .gate-toggle {
+            position: absolute; right: 16px; top: 50%;
+            transform: translateY(-50%);
+            background: none; border: none; cursor: pointer;
+            color: var(--text-muted); font-size: 1.1rem;
+            padding: 4px; transition: color 0.2s;
+        }
+        .gate-toggle:hover { color: var(--text-mid); }
+
+        .gate-btn {
+            width: 100%;
+            background: var(--accent); color: #fff;
+            border: none; border-radius: 12px;
+            padding: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .gate-btn:hover { background: #b5722e; transform: translateY(-1px); }
+
+        .gate-error {
+            font-size: 0.8rem;
+            color: #ef4444;
+            margin-top: 12px;
+            min-height: 18px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .gate-error.visible { opacity: 1; }
+
+        .gate-hint {
+            font-size: 0.72rem; color: var(--text-muted);
+            margin-top: 28px;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            height: 64px; padding: 0 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(10,10,10,0.88); backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: 0.02em; }
+        .nav-back { font-size: 0.75rem; font-weight: 500; color: var(--text-muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
+        .nav-back:hover { color: var(--text); }
+
+        /* ── PAGE CONTENT ── */
+        #content { opacity: 0; transition: opacity 0.5s ease 0.2s; }
+        #content.visible { opacity: 1; }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 50vh;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 120px 24px 80px;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,132,58,0.07) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900; font-style: italic;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .hero-rule { width: 40px; height: 1px; background: rgba(201,132,58,0.4); margin: 0 auto 20px; }
+
+        .hero p {
+            font-size: 0.95rem; color: var(--text-muted);
+            max-width: 440px; line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ── CATEGORY FILTER ── */
+        .filter-bar {
+            display: flex; align-items: center; justify-content: center;
+            flex-wrap: wrap; gap: 10px;
+            padding: 0 24px 64px;
+        }
+
+        .filter-btn {
+            background: var(--surface); border: 1px solid var(--border-md);
+            border-radius: 100px; padding: 8px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem; font-weight: 600;
+            color: var(--text-muted); cursor: pointer;
+            transition: all 0.2s; letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent); border-color: var(--accent);
+            color: #fff;
+        }
+
+        /* ── RECIPES GRID ── */
+        .recipes-section {
+            max-width: 1080px; margin: 0 auto;
+            padding: 0 24px 100px;
+        }
+
+        .category-block { margin-bottom: 72px; }
+
+        .category-header {
+            display: flex; align-items: center; gap: 16px;
+            margin-bottom: 32px;
+        }
+        .category-header::after {
+            content: ''; flex: 1;
+            height: 1px; background: var(--border);
+        }
+        .category-label {
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--text-muted); white-space: nowrap;
+            padding: 4px 14px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* ── RECIPE CARD ── */
+        .recipe-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.25s, border-color 0.25s, background 0.25s;
+            text-decoration: none; color: inherit;
+        }
+        .recipe-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(201,132,58,0.3);
+            background: var(--surface-2);
+        }
+
+        .recipe-thumb {
+            height: 180px;
+            background: var(--surface-2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .recipe-thumb::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
+        }
+
+        .recipe-body { padding: 20px 22px 22px; }
+
+        .recipe-meta {
+            display: flex; align-items: center; gap: 10px;
+            margin-bottom: 10px; flex-wrap: wrap;
+        }
+        .recipe-tag {
+            font-size: 0.62rem; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(201,132,58,0.1);
+            padding: 3px 10px; border-radius: 100px;
+        }
+        .recipe-time {
+            font-size: 0.72rem; color: var(--text-muted);
+            display: flex; align-items: center; gap: 4px;
+        }
+
+        .recipe-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem; font-weight: 700;
+            color: var(--text); margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .recipe-desc {
+            font-size: 0.82rem; color: var(--text-muted);
+            line-height: 1.65; margin-bottom: 14px;
+        }
+
+        .recipe-by {
+            font-size: 0.7rem; color: var(--text-muted);
+            font-style: italic;
+        }
+        .recipe-by strong { color: var(--text-mid); font-style: normal; }
+
+        /* ── MODAL ── */
+        .modal-overlay {
+            position: fixed; inset: 0; z-index: 500;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            display: flex; align-items: center; justify-content: center;
+            padding: 24px;
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .modal-overlay.open { opacity: 1; visibility: visible; }
+
+        .modal {
+            background: var(--surface);
+            border: 1px solid var(--border-md);
+            border-radius: 24px;
+            width: 100%; max-width: 640px;
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+        .modal-overlay.open .modal { transform: translateY(0); }
+
+        .modal-close {
+            position: absolute; top: 20px; right: 20px;
+            background: var(--surface-2); border: 1px solid var(--border);
+            border-radius: 50%; width: 36px; height: 36px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 1.1rem; color: var(--text-muted);
+            transition: all 0.2s;
+        }
+        .modal-close:hover { color: var(--text); border-color: var(--border-md); }
+
+        .modal-emoji { font-size: 3rem; margin-bottom: 16px; display: block; }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; font-weight: 700;
+            color: var(--text); margin-bottom: 6px;
+        }
+
+        .modal-byline {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-style: italic; margin-bottom: 6px;
+        }
+
+        .modal-stats {
+            display: flex; gap: 20px; flex-wrap: wrap;
+            margin: 20px 0; padding: 16px 20px;
+            background: var(--surface-2); border-radius: 12px;
+        }
+        .modal-stat { text-align: center; }
+        .modal-stat-val { font-size: 1rem; font-weight: 700; color: var(--text); display: block; }
+        .modal-stat-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+        .modal-section-title {
+            font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.15em;
+            color: var(--accent); margin: 24px 0 12px;
+        }
+
+        .modal ul { padding-left: 20px; }
+        .modal ul li { font-size: 0.88rem; color: var(--text-mid); line-height: 1.8; }
+
+        .modal ol { padding-left: 20px; }
+        .modal ol li { font-size: 0.88rem; color: var(--text-mid); line-height: 1.9; margin-bottom: 6px; }
+
+        .modal-note {
+            font-size: 0.8rem; color: var(--text-muted);
+            font-style: italic; padding: 14px 16px;
+            background: rgba(201,132,58,0.07);
+            border-left: 2px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            margin-top: 24px; line-height: 1.6;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 24px; text-align: center;
+            color: var(--text-muted); font-size: 0.78rem;
+        }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--text); }
+
+        @media (max-width: 640px) {
+            nav { padding: 0 20px; }
+            .modal { padding: 28px 22px; }
+            .recipe-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── PASSWORD GATE ── -->
+<div id="gate">
+    <div class="gate-box">
+        <span class="gate-icon">🍽️</span>
+        <h1 class="gate-title">Family Recipes</h1>
+        <p class="gate-sub">This page is just for family.<br>Enter the password to continue.</p>
+        <div class="gate-input-wrap">
+            <input
+                type="password"
+                id="gate-pw"
+                class="gate-input"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                autofocus
+            >
+            <button class="gate-toggle" id="gate-toggle" title="Show/hide password">👁</button>
+        </div>
+        <button class="gate-btn" id="gate-submit">Enter →</button>
+        <p class="gate-error" id="gate-error">Incorrect password. Try again.</p>
+        <p class="gate-hint">Hint: Ask Mom or Dad 😊</p>
+    </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+    <a class="nav-logo" href="https://worobi.com">The Worobi Family</a>
+    <a class="nav-back" href="https://worobi.com">← Back Home</a>
+</nav>
+
+<!-- ── PAGE CONTENT ── -->
+<div id="content">
+
+    <!-- HERO -->
+    <section class="hero">
+        <p class="hero-eyebrow">The Worobi Family</p>
+        <h1>Recipe Book</h1>
+        <div class="hero-rule"></div>
+        <p>Our most treasured family recipes — passed down, perfected, and made with love. Keep these close to your heart (and your kitchen).</p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Recipes</button>
+        <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+        <button class="filter-btn" data-filter="dinner">Dinner</button>
+        <button class="filter-btn" data-filter="sides">Sides</button>
+        <button class="filter-btn" data-filter="desserts">Desserts</button>
+        <button class="filter-btn" data-filter="drinks">Drinks</button>
+    </div>
+
+    <!-- RECIPES -->
+    <div class="recipes-section">
+
+        <!-- BREAKFAST -->
+        <div class="category-block" data-category="breakfast">
+            <div class="category-header">
+                <span class="category-label">Breakfast</span>
+            </div>
+            <div class="recipe-grid">
+
+                <div class="recipe-card" onclick="openRecipe('pancakes')">
+                    <div class="recipe-thumb">🥞</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Breakfast</span>
+                            <span class="recipe-time">⏱ 30 min</span>
+                        </div>
+                        <div class="recipe-name">Grandma's Fluffy Pancakes</div>
+                        <p class="recipe-desc">Light, airy stacks with a golden edge. The secret is letting the batter rest before cooking.</p>
+                        <p class="recipe-by">Shared by <strong>Monica</strong></p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" onclick="openRecipe('eggs')">
+                    <div class="recipe-thumb">🍳</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Breakfast</span>
+                            <span class="recipe-time">⏱ 15 min</span>
+                        </div>
+                        <div class="recipe-name">Saturday Morning Scramble</div>
+                        <p class="recipe-desc">Creamy, slow-cooked scrambled eggs with herbs and butter. A weekend staple in our house.</p>
+                        <p class="recipe-by">Shared by <strong>Brandon</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DINNER -->
+        <div class="category-block" data-category="dinner">
+            <div class="category-header">
+                <span class="category-label">Dinner</span>
+            </div>
+            <div class="recipe-grid">
+
+                <div class="recipe-card" onclick="openRecipe('chili')">
+                    <div class="recipe-thumb">🍲</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Dinner</span>
+                            <span class="recipe-time">⏱ 2 hrs</span>
+                        </div>
+                        <div class="recipe-name">Family Chili</div>
+                        <p class="recipe-desc">A slow-simmered, deeply spiced chili that gets better the longer it cooks. Made for big gatherings.</p>
+                        <p class="recipe-by">Shared by <strong>Brandon</strong></p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" onclick="openRecipe('pasta')">
+                    <div class="recipe-thumb">🍝</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Dinner</span>
+                            <span class="recipe-time">⏱ 45 min</span>
+                        </div>
+                        <div class="recipe-name">Sunday Pasta Sauce</div>
+                        <p class="recipe-desc">Rich, slow-cooked tomato sauce with Italian sausage and fresh basil. Sundays are made for this.</p>
+                        <p class="recipe-by">Shared by <strong>Monica</strong></p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" onclick="openRecipe('chicken')">
+                    <div class="recipe-thumb">🍗</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Dinner</span>
+                            <span class="recipe-time">⏱ 1 hr</span>
+                        </div>
+                        <div class="recipe-name">Lemon Herb Roast Chicken</div>
+                        <p class="recipe-desc">Crispy-skinned, juicy roast chicken with garlic, lemon, and fresh thyme. Simple and perfect.</p>
+                        <p class="recipe-by">Shared by <strong>Nevaeh</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SIDES -->
+        <div class="category-block" data-category="sides">
+            <div class="category-header">
+                <span class="category-label">Sides</span>
+            </div>
+            <div class="recipe-grid">
+
+                <div class="recipe-card" onclick="openRecipe('mac')">
+                    <div class="recipe-thumb">🧀</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Sides</span>
+                            <span class="recipe-time">⏱ 40 min</span>
+                        </div>
+                        <div class="recipe-name">Baked Mac & Cheese</div>
+                        <p class="recipe-desc">Three-cheese béchamel baked until golden and bubbly. The kids demand this at every holiday.</p>
+                        <p class="recipe-by">Shared by <strong>Monica</strong></p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" onclick="openRecipe('cornbread')">
+                    <div class="recipe-thumb">🌽</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Sides</span>
+                            <span class="recipe-time">⏱ 35 min</span>
+                        </div>
+                        <div class="recipe-name">Cast Iron Cornbread</div>
+                        <p class="recipe-desc">Slightly sweet, super moist cornbread baked in a cast iron skillet. Goes with everything.</p>
+                        <p class="recipe-by">Shared by <strong>Brandon</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="category-block" data-category="desserts">
+            <div class="category-header">
+                <span class="category-label">Desserts</span>
+            </div>
+            <div class="recipe-grid">
+
+                <div class="recipe-card" onclick="openRecipe('cookies')">
+                    <div class="recipe-thumb">🍪</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Desserts</span>
+                            <span class="recipe-time">⏱ 25 min</span>
+                        </div>
+                        <div class="recipe-name">Chocolate Chip Cookies</div>
+                        <p class="recipe-desc">Brown butter, extra chocolate chips, a pinch of sea salt on top. The only cookie recipe you'll ever need.</p>
+                        <p class="recipe-by">Shared by <strong>Nevaeh</strong></p>
+                    </div>
+                </div>
+
+                <div class="recipe-card" onclick="openRecipe('cake')">
+                    <div class="recipe-thumb">🎂</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Desserts</span>
+                            <span class="recipe-time">⏱ 1.5 hrs</span>
+                        </div>
+                        <div class="recipe-name">Birthday Pound Cake</div>
+                        <p class="recipe-desc">A dense, buttery pound cake with vanilla glaze. The cake that shows up at every Worobi birthday.</p>
+                        <p class="recipe-by">Shared by <strong>Monica</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="category-block" data-category="drinks">
+            <div class="category-header">
+                <span class="category-label">Drinks</span>
+            </div>
+            <div class="recipe-grid">
+
+                <div class="recipe-card" onclick="openRecipe('lemonade')">
+                    <div class="recipe-thumb">🍋</div>
+                    <div class="recipe-body">
+                        <div class="recipe-meta">
+                            <span class="recipe-tag">Drinks</span>
+                            <span class="recipe-time">⏱ 10 min</span>
+                        </div>
+                        <div class="recipe-name">Summer Lemonade</div>
+                        <p class="recipe-desc">Fresh-squeezed lemonade with a lavender simple syrup. The drink of every Worobi summer.</p>
+                        <p class="recipe-by">Shared by <strong>Nevaeh</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div><!-- /recipes-section -->
+
+</div><!-- /content -->
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal" id="modal-box">
+        <button class="modal-close" onclick="closeRecipe()">✕</button>
+        <div id="modal-content"></div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 The Worobi Family · <a href="https://worobi.com">worobi.com</a></p>
+</footer>
+
+<script>
+    // ── PASSWORD ─────────────────────────────────────────────
+    // Change the password below to whatever your family wants to use
+    const FAMILY_PASSWORD = 'worobi2026';
+
+    const gate       = document.getElementById('gate');
+    const content    = document.getElementById('content');
+    const pwInput    = document.getElementById('gate-pw');
+    const submitBtn  = document.getElementById('gate-submit');
+    const errorMsg   = document.getElementById('gate-error');
+    const toggleBtn  = document.getElementById('gate-toggle');
+
+    function unlock() {
+        const entered = pwInput.value.trim();
+        if (entered === FAMILY_PASSWORD) {
+            sessionStorage.setItem('worobi_recipes_auth', '1');
+            gate.classList.add('unlocked');
+            content.classList.add('visible');
+        } else {
+            errorMsg.classList.add('visible');
+            pwInput.value = '';
+            pwInput.focus();
+            setTimeout(() => errorMsg.classList.remove('visible'), 3000);
+        }
+    }
+
+    submitBtn.addEventListener('click', unlock);
+    pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') unlock(); });
+
+    toggleBtn.addEventListener('click', () => {
+        const isText = pwInput.type === 'text';
+        pwInput.type = isText ? 'password' : 'text';
+        toggleBtn.textContent = isText ? '👁' : '🙈';
+    });
+
+    // Auto-unlock if already authenticated this session
+    if (sessionStorage.getItem('worobi_recipes_auth') === '1') {
+        gate.style.transition = 'none';
+        gate.classList.add('unlocked');
+        content.style.transition = 'none';
+        content.classList.add('visible');
+    }
+
+    // ── FILTER ───────────────────────────────────────────────
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.category-block').forEach(block => {
+                if (filter === 'all' || block.dataset.category === filter) {
+                    block.style.display = '';
+                } else {
+                    block.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // ── RECIPE DATA ───────────────────────────────────────────
+    const recipes = {
+        pancakes: {
+            emoji: '🥞', title: "Grandma's Fluffy Pancakes", by: 'Monica',
+            prep: '10 min', cook: '20 min', servings: '8–10 pancakes',
+            ingredients: [
+                '2 cups all-purpose flour',
+                '2 tbsp sugar',
+                '1 tsp baking powder',
+                '½ tsp baking soda',
+                '½ tsp salt',
+                '2 cups buttermilk (or milk + 1 tbsp vinegar)',
+                '2 large eggs',
+                '3 tbsp melted butter',
+                '1 tsp vanilla extract',
+            ],
+            steps: [
+                'Whisk together flour, sugar, baking powder, baking soda, and salt in a large bowl.',
+                'In a separate bowl, whisk buttermilk, eggs, melted butter, and vanilla.',
+                'Pour wet ingredients into dry and stir gently — lumps are okay. Do not overmix.',
+                'Let the batter rest for 5–10 minutes. This is the secret to fluffy pancakes.',
+                'Heat a non-stick skillet or griddle over medium heat. Lightly butter.',
+                'Pour ¼ cup batter per pancake. Cook until bubbles form and edges look set, about 2–3 min.',
+                'Flip and cook 1–2 minutes more until golden. Serve immediately.',
+            ],
+            note: "Monica's tip: The resting time matters! And don't press down on the pancakes after flipping — let them puff up naturally."
+        },
+        eggs: {
+            emoji: '🍳', title: 'Saturday Morning Scramble', by: 'Brandon',
+            prep: '5 min', cook: '10 min', servings: '2–3 people',
+            ingredients: [
+                '6 large eggs',
+                '3 tbsp butter (unsalted)',
+                '2 tbsp heavy cream or whole milk',
+                '½ tsp salt, ¼ tsp black pepper',
+                'Fresh chives or parsley, chopped',
+                'Optional: shredded gruyère or sharp cheddar',
+            ],
+            steps: [
+                'Crack eggs into a bowl, add cream, salt, and pepper. Whisk until fully combined.',
+                'Melt butter in a cold non-stick pan over medium-low heat.',
+                'Pour in egg mixture. Let sit 20 seconds, then begin gently folding with a spatula.',
+                'Keep folding slowly, pulling eggs from the edges. Remove from heat while still slightly underdone.',
+                'The residual heat will finish cooking them — they should be creamy, not rubbery.',
+                'Top with fresh chives and serve immediately.',
+            ],
+            note: "Brandon's tip: Low and slow is everything. The moment they look done in the pan, they're already overcooked."
+        },
+        chili: {
+            emoji: '🍲', title: 'Family Chili', by: 'Brandon',
+            prep: '20 min', cook: '1 hr 40 min', servings: '8–10 people',
+            ingredients: [
+                '2 lbs ground beef (80/20)',
+                '1 lb hot Italian sausage',
+                '2 cans (14 oz) fire-roasted tomatoes',
+                '1 can (14 oz) kidney beans, drained',
+                '1 can (14 oz) black beans, drained',
+                '1 large onion, diced',
+                '1 green bell pepper, diced',
+                '4 cloves garlic, minced',
+                '3 tbsp chili powder',
+                '1 tbsp cumin, 1 tsp smoked paprika',
+                '1 tsp oregano, ½ tsp cayenne',
+                'Salt and pepper to taste',
+                '1 cup beef broth',
+            ],
+            steps: [
+                'Brown ground beef and sausage in a large pot over medium-high heat. Drain excess fat.',
+                'Add onion and bell pepper. Cook until softened, about 5 minutes.',
+                'Add garlic and all spices. Stir and cook 1 minute until fragrant.',
+                'Pour in tomatoes and beef broth. Stir well, scraping up any browned bits.',
+                'Add beans. Bring to a boil, then reduce heat to low.',
+                'Simmer uncovered for at least 1 hour, stirring occasionally. Longer is better.',
+                'Taste and adjust seasoning. Serve with cornbread, shredded cheddar, and sour cream.',
+            ],
+            note: "Brandon's tip: This chili is always better the next day. Make it the night before a gathering if you can."
+        },
+        pasta: {
+            emoji: '🍝', title: 'Sunday Pasta Sauce', by: 'Monica',
+            prep: '15 min', cook: '2 hrs', servings: '6–8 people',
+            ingredients: [
+                '1 lb sweet Italian sausage, casings removed',
+                '2 cans (28 oz each) whole San Marzano tomatoes',
+                '1 medium onion, finely diced',
+                '6 cloves garlic, minced',
+                '¼ cup olive oil',
+                '1 tsp sugar',
+                'Large handful fresh basil',
+                'Salt and red pepper flakes to taste',
+                '1 lb rigatoni or spaghetti',
+            ],
+            steps: [
+                'Heat olive oil in a large heavy pot over medium heat. Brown sausage, breaking it up.',
+                'Remove sausage and set aside. In same pot, cook onion until soft, about 8 minutes.',
+                'Add garlic and red pepper flakes, cook 1 minute.',
+                'Crush tomatoes by hand as you add them to the pot. Add their juices too.',
+                'Add sausage back in. Add sugar, salt, and half the basil.',
+                'Bring to a simmer, then cook on low for 1.5–2 hours, stirring occasionally.',
+                'Tear in remaining fresh basil at the end. Serve over pasta with parmesan.',
+            ],
+            note: "Monica's tip: San Marzano tomatoes are not optional — they make all the difference. Don't skimp here."
+        },
+        chicken: {
+            emoji: '🍗', title: 'Lemon Herb Roast Chicken', by: 'Nevaeh',
+            prep: '15 min', cook: '1 hr 15 min', servings: '4 people',
+            ingredients: [
+                '1 whole chicken (4–5 lbs)',
+                '1 lemon, halved',
+                '1 head garlic, halved crosswise',
+                '4 tbsp butter, softened',
+                'Fresh thyme and rosemary',
+                '1 tbsp olive oil',
+                'Salt and black pepper (generously)',
+            ],
+            steps: [
+                'Preheat oven to 425°F (220°C). Pat chicken completely dry with paper towels.',
+                'Mix softened butter with 1 tsp thyme leaves, ½ tsp rosemary, salt, and pepper.',
+                'Carefully loosen skin over breast and thighs. Rub butter mixture directly on the meat under the skin.',
+                'Rub outside with olive oil. Season generously with salt and pepper all over.',
+                'Stuff cavity with lemon halves, garlic, and remaining herb sprigs.',
+                'Roast in a cast iron skillet or roasting pan for 60–75 minutes until juices run clear.',
+                'Rest for 10 minutes before carving. Use pan juices as a simple sauce.',
+            ],
+            note: "Nevaeh's tip: Drying the chicken thoroughly before roasting is what gives you that crispy skin. Don't skip it."
+        },
+        mac: {
+            emoji: '🧀', title: 'Baked Mac & Cheese', by: 'Monica',
+            prep: '20 min', cook: '20 min', servings: '8 people',
+            ingredients: [
+                '1 lb cavatappi or elbow macaroni',
+                '4 tbsp butter',
+                '¼ cup all-purpose flour',
+                '3 cups whole milk, warmed',
+                '1 cup sharp cheddar, shredded',
+                '1 cup gruyère, shredded',
+                '½ cup parmesan, grated',
+                '½ tsp dry mustard, pinch of nutmeg',
+                'Salt, white pepper',
+                '½ cup breadcrumbs + 2 tbsp butter for topping',
+            ],
+            steps: [
+                'Cook pasta 2 minutes less than package directions. Drain and set aside.',
+                'Melt butter in a large pot over medium heat. Whisk in flour and cook 2 minutes.',
+                'Gradually whisk in warm milk until smooth. Cook until thickened, about 5 minutes.',
+                'Remove from heat. Stir in cheeses, mustard, nutmeg, salt, and pepper until melted.',
+                'Fold in pasta. Pour into a buttered 9x13 baking dish.',
+                'Top with buttered breadcrumbs. Bake at 375°F for 20 minutes until golden and bubbling.',
+                'Let rest 5 minutes before serving.',
+            ],
+            note: "Monica's tip: Shred your own cheese — pre-shredded has anti-caking agents that make the sauce grainy."
+        },
+        cornbread: {
+            emoji: '🌽', title: 'Cast Iron Cornbread', by: 'Brandon',
+            prep: '10 min', cook: '25 min', servings: '8 slices',
+            ingredients: [
+                '1 cup yellow cornmeal',
+                '1 cup all-purpose flour',
+                '⅓ cup sugar',
+                '1 tbsp baking powder',
+                '½ tsp salt',
+                '1 cup buttermilk',
+                '2 eggs',
+                '½ cup (1 stick) butter, melted',
+            ],
+            steps: [
+                'Preheat oven to 400°F. Place a 10-inch cast iron skillet in the oven while it preheats.',
+                'Whisk together cornmeal, flour, sugar, baking powder, and salt.',
+                'In another bowl, whisk buttermilk, eggs, and melted butter.',
+                'Combine wet and dry ingredients. Stir until just combined.',
+                'Carefully remove hot skillet from oven. Add 1 tbsp butter — it should sizzle immediately.',
+                'Pour batter into the hot skillet. Bake 20–25 minutes until golden and a toothpick comes out clean.',
+                'Let cool 5 minutes in skillet before slicing.',
+            ],
+            note: "Brandon's tip: Preheating the cast iron is what creates that gorgeous, crispy bottom crust."
+        },
+        cookies: {
+            emoji: '🍪', title: 'Chocolate Chip Cookies', by: 'Nevaeh',
+            prep: '15 min', cook: '12 min', servings: '24 cookies',
+            ingredients: [
+                '2¼ cups all-purpose flour',
+                '1 tsp baking soda',
+                '1 tsp salt',
+                '2 sticks (1 cup) butter',
+                '¾ cup granulated sugar',
+                '¾ cup packed brown sugar',
+                '2 large eggs',
+                '2 tsp vanilla extract',
+                '2 cups chocolate chips (semi-sweet)',
+                'Flaky sea salt for topping',
+            ],
+            steps: [
+                'Brown the butter: melt in a saucepan over medium heat, stirring, until golden and nutty-smelling. Let cool 10 minutes.',
+                'Whisk browned butter with both sugars until combined. Add eggs and vanilla, whisk vigorously 1 minute.',
+                'Stir in flour, baking soda, and salt until just combined.',
+                'Fold in chocolate chips. Chill dough 30 minutes for best results.',
+                'Preheat oven to 375°F. Scoop dough into balls on parchment-lined baking sheets.',
+                'Sprinkle each cookie with a pinch of flaky sea salt.',
+                'Bake 10–12 minutes until edges are set but centers look slightly underdone.',
+                'Cool on pan 5 minutes — they firm up as they cool.',
+            ],
+            note: "Nevaeh's tip: Brown butter + chilled dough + flaky salt = the holy trinity. Do not skip any of these."
+        },
+        cake: {
+            emoji: '🎂', title: 'Birthday Pound Cake', by: 'Monica',
+            prep: '20 min', cook: '70 min', servings: '10–12 slices',
+            ingredients: [
+                '3 cups all-purpose flour',
+                '½ tsp baking soda',
+                '½ tsp salt',
+                '3 sticks (1½ cups) butter, room temperature',
+                '3 cups sugar',
+                '6 large eggs, room temperature',
+                '1 cup sour cream',
+                '2 tsp vanilla extract',
+                'Glaze: 1 cup powdered sugar + 2–3 tbsp milk + ½ tsp vanilla',
+            ],
+            steps: [
+                'Preheat oven to 325°F. Butter and flour a large bundt or tube pan.',
+                'Whisk together flour, baking soda, and salt. Set aside.',
+                'Beat butter and sugar with a mixer on medium-high until very pale and fluffy, about 5 minutes.',
+                'Add eggs one at a time, beating well after each addition.',
+                'Alternate adding flour mixture and sour cream in 3 additions each, beginning and ending with flour.',
+                'Stir in vanilla. Pour into prepared pan.',
+                'Bake 65–75 minutes until a toothpick inserted near center comes out clean.',
+                'Cool in pan 15 minutes, then invert onto a rack. Drizzle with glaze once cooled.',
+            ],
+            note: "Monica's tip: Room temperature ingredients are not optional here — cold butter or eggs will ruin the texture."
+        },
+        lemonade: {
+            emoji: '🍋', title: 'Summer Lemonade', by: 'Nevaeh',
+            prep: '10 min', cook: '5 min', servings: '8 glasses',
+            ingredients: [
+                '1½ cups fresh lemon juice (about 8–10 lemons)',
+                '1 cup sugar + ½ cup water (for simple syrup)',
+                '6 cups cold water',
+                'Optional lavender syrup: 1 cup water + 1 cup sugar + 2 tbsp dried lavender',
+                'Ice and lemon slices to serve',
+                'Fresh mint for garnish',
+            ],
+            steps: [
+                'Make simple syrup: bring water and sugar to a simmer, stir until dissolved, cool completely.',
+                'Optional lavender: same as above, steep lavender in the hot syrup for 10 min, then strain.',
+                'Juice lemons. Remove any seeds.',
+                'Combine lemon juice, simple syrup, and cold water in a large pitcher.',
+                'Taste and adjust — more syrup for sweeter, more lemon juice for tarter.',
+                'Serve over ice with lemon slices and fresh mint.',
+            ],
+            note: "Nevaeh's tip: The lavender syrup sounds fancy but it takes 5 extra minutes and completely elevates it."
+        },
+    };
+
+    // ── MODAL LOGIC ───────────────────────────────────────────
+    function openRecipe(id) {
+        const r = recipes[id];
+        if (!r) return;
+        document.getElementById('modal-content').innerHTML = `
+            <span class="modal-emoji">${r.emoji}</span>
+            <div class="modal-title">${r.title}</div>
+            <div class="modal-byline">Shared by ${r.by}</div>
+            <div class="modal-stats">
+                <div class="modal-stat"><span class="modal-stat-val">${r.prep}</span><span class="modal-stat-label">Prep</span></div>
+                <div class="modal-stat"><span class="modal-stat-val">${r.cook}</span><span class="modal-stat-label">Cook</span></div>
+                <div class="modal-stat"><span class="modal-stat-val">${r.servings}</span><span class="modal-stat-label">Serves</span></div>
+            </div>
+            <div class="modal-section-title">Ingredients</div>
+            <ul>${r.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+            <div class="modal-section-title">Instructions</div>
+            <ol>${r.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+            ${r.note ? `<div class="modal-note">💡 ${r.note}</div>` : ''}
+        `;
+        document.getElementById('modal-overlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeRecipe() {
+        document.getElementById('modal-overlay').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function closeModal(e) {
+        if (e.target === document.getElementById('modal-overlay')) closeRecipe();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRecipe(); });
+</script>
+
+</body>
+</html>
