@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Future — The Worobi Family</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:         #f0f4ff;
+            --surface:    #ffffff;
+            --surface-2:  #e8eeff;
+            --accent:     #3b5bdb;
+            --accent-2:   #7048e8;
+            --accent-light:#eef2ff;
+            --text:       #1a1f3c;
+            --text-mid:   #364168;
+            --text-muted: #6874a8;
+            --border:     #d4dcf5;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            height: 64px; padding: 0 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(240,244,255,0.92); backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-back {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.83rem; font-weight: 500; color: var(--text-muted);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .nav-back:hover { color: var(--accent); }
+        .nav-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem; font-weight: 400; color: var(--text-muted); font-style: italic;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 128px 24px 80px; text-align: center;
+            background: linear-gradient(135deg, #eef2ff 0%, #f5f0ff 100%);
+            border-bottom: 1px solid var(--border);
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(59,91,219,0.06) 0%, transparent 70%);
+        }
+        .hero-icon { font-size: 3rem; margin-bottom: 24px; animation: rise 3s ease-in-out infinite; }
+        @keyframes rise {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-10px); }
+        }
+        .hero-eyebrow {
+            font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 14px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900; color: var(--text);
+            letter-spacing: -0.01em; line-height: 1.05; margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1rem; color: var(--text-muted);
+            max-width: 500px; margin: 0 auto; line-height: 1.75;
+        }
+
+        /* CONTENT */
+        .content { max-width: 960px; margin: 0 auto; padding: 80px 24px 100px; }
+
+        .section { margin-bottom: 80px; }
+        .section-label {
+            font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.2em;
+            color: var(--accent); margin-bottom: 10px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; font-weight: 700;
+            color: var(--text); margin-bottom: 32px;
+            letter-spacing: -0.01em;
+        }
+
+        /* Vision statement */
+        .vision-card {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            border-radius: 20px; padding: 48px 40px;
+            color: white; position: relative; overflow: hidden;
+        }
+        .vision-card::before {
+            content: '"';
+            position: absolute; top: -10px; left: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: 12rem; font-weight: 900; line-height: 1;
+            color: rgba(255,255,255,0.06);
+            pointer-events: none;
+        }
+        .vision-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-style: italic; line-height: 1.65;
+            position: relative;
+        }
+        .vision-attr {
+            margin-top: 20px;
+            font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.12em;
+            color: rgba(255,255,255,0.65); position: relative;
+        }
+
+        /* Goals grid */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+        }
+        .goal-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px; padding: 26px;
+            display: flex; flex-direction: column; gap: 12px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .goal-card:hover {
+            border-color: rgba(59,91,219,0.3);
+            box-shadow: 0 8px 24px rgba(59,91,219,0.07);
+        }
+        .goal-icon { font-size: 1.8rem; }
+        .goal-category {
+            font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--accent);
+        }
+        .goal-title { font-size: 1rem; font-weight: 700; color: var(--text); }
+        .goal-desc { font-size: 0.845rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
+        .goal-status {
+            align-self: flex-start;
+            font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            padding: 3px 10px; border-radius: 100px;
+        }
+        .goal-status.dream     { background: #f0fdf4; color: #15803d; }
+        .goal-status.planning  { background: var(--accent-light); color: var(--accent); }
+        .goal-status.underway  { background: #fef9c3; color: #a16207; }
+
+        /* Bucket list */
+        .bucket-list {
+            display: flex; flex-direction: column; gap: 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px; overflow: hidden;
+        }
+        .bucket-item {
+            display: flex; align-items: center; gap: 16px;
+            padding: 18px 24px;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+        .bucket-item:last-child { border-bottom: none; }
+        .bucket-item:hover { background: var(--accent-light); }
+        .bucket-check {
+            width: 22px; height: 22px; flex-shrink: 0;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.6rem;
+        }
+        .bucket-check.done { border-color: var(--accent); background: var(--accent); color: white; }
+        .bucket-text { font-size: 0.9rem; color: var(--text-mid); flex: 1; }
+        .bucket-text.done { text-decoration: line-through; color: var(--text-muted); }
+        .bucket-tag {
+            font-size: 0.65rem; font-weight: 600;
+            padding: 2px 9px; border-radius: 100px;
+            background: var(--surface-2); color: var(--text-muted);
+        }
+
+        /* Note box */
+        .add-note {
+            border: 1.5px dashed var(--border);
+            border-radius: 14px; padding: 32px 24px;
+            text-align: center; margin-top: 16px;
+        }
+        .add-note p { font-size: 0.875rem; color: var(--text-muted); font-style: italic; line-height: 1.65; }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 24px; text-align: center;
+            color: var(--text-muted); font-size: 0.8rem;
+            background: var(--surface);
+        }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 640px) {
+            nav { padding: 0 20px; }
+            .vision-card { padding: 32px 24px; }
+            .goals-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-back" href="https://worobi.com">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Worobi.com
+        </a>
+        <span class="nav-title">Our Future</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-icon">✨</div>
+        <p class="hero-eyebrow">The Worobi Family</p>
+        <h1>Our Future</h1>
+        <p>The best chapters are still ahead. Here's what the Worobi family is dreaming of, working toward, and building together.</p>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- Family Vision -->
+        <section class="section">
+            <p class="section-label">Our Vision</p>
+            <div class="vision-card">
+                <p class="vision-text">
+                    Write your family's mission statement or vision here — what you stand for, what you're building together, and what you want your family to be known for. Something the next generation can carry forward.
+                </p>
+                <p class="vision-attr">— The Worobi Family</p>
+            </div>
+        </section>
+
+        <!-- Goals -->
+        <section class="section">
+            <p class="section-label">Goals &amp; Dreams</p>
+            <h2 class="section-title">What We're Working Toward</h2>
+            <div class="goals-grid">
+
+                <div class="goal-card">
+                    <div class="goal-icon">🏡</div>
+                    <div class="goal-category">Home &amp; Life</div>
+                    <div class="goal-title">Family Goal</div>
+                    <p class="goal-desc">Add a family goal here — a home project, a move, a renovation, or a life milestone you're working toward together.</p>
+                    <span class="goal-status planning">Planning</span>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🎓</div>
+                    <div class="goal-category">Education</div>
+                    <div class="goal-title">Education Goal</div>
+                    <p class="goal-desc">A degree to finish, a school to attend, a skill to learn — education goals for any member of the family.</p>
+                    <span class="goal-status dream">Dream</span>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">✈️</div>
+                    <div class="goal-category">Travel</div>
+                    <div class="goal-title">Family Trip</div>
+                    <p class="goal-desc">Where does the Worobi family want to go? A dream destination, a road trip, or something you've always wanted to experience together.</p>
+                    <span class="goal-status planning">Planning</span>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">💼</div>
+                    <div class="goal-category">Career &amp; Business</div>
+                    <div class="goal-title">Career Goal</div>
+                    <p class="goal-desc">A promotion, a business idea, a side project — professional aspirations for the family.</p>
+                    <span class="goal-status underway">Underway</span>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">❤️</div>
+                    <div class="goal-category">Family &amp; Traditions</div>
+                    <div class="goal-title">Family Tradition</div>
+                    <p class="goal-desc">A new tradition to start, a reunion to plan, or a habit to build that keeps the family close.</p>
+                    <span class="goal-status dream">Dream</span>
+                </div>
+
+                <div class="goal-card">
+                    <div class="goal-icon">🌱</div>
+                    <div class="goal-category">Growth &amp; Legacy</div>
+                    <div class="goal-title">Long-Term Vision</div>
+                    <p class="goal-desc">What does the Worobi family want to be known for in 20 years? A legacy goal — something that outlasts the moment.</p>
+                    <span class="goal-status dream">Dream</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Bucket List -->
+        <section class="section">
+            <p class="section-label">Family Bucket List</p>
+            <h2 class="section-title">Things We Want to Do Together</h2>
+            <div class="bucket-list">
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <span class="bucket-text">Visit all 50 states</span>
+                    <span class="bucket-tag">Travel</span>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <span class="bucket-text">Take a family trip abroad</span>
+                    <span class="bucket-tag">Travel</span>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <span class="bucket-text">Start a family garden</span>
+                    <span class="bucket-tag">Home</span>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check done">✓</div>
+                    <span class="bucket-text done">Build the family website</span>
+                    <span class="bucket-tag">Tech</span>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <span class="bucket-text">Hold an annual family reunion</span>
+                    <span class="bucket-tag">Tradition</span>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <span class="bucket-text">Create a family photo book for each year</span>
+                    <span class="bucket-tag">Memories</span>
+                </div>
+                <div class="bucket-item">
+                    <div class="bucket-check"></div>
+                    <span class="bucket-text">Add your own bucket list item here</span>
+                    <span class="bucket-tag">Dream</span>
+                </div>
+            </div>
+            <div class="add-note">
+                <p>To check off a completed item, add <code>class="done"</code> to the <code>bucket-check</code> div and the <code>bucket-text</code> span, and replace the check div content with ✓. Add new items by duplicating a <code>bucket-item</code> row.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Worobi Family &middot; <a href="https://worobi.com">worobi.com</a></p>
+    </footer>
+
+</body>
+</html>

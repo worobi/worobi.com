@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our History — The Worobi Family</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:        #faf8f5;
+            --surface:   #ffffff;
+            --surface-2: #f1ece5;
+            --accent:    #8b5e3c;
+            --accent-dark:#6b4528;
+            --accent-light:#fdf6ee;
+            --text:      #1a1209;
+            --text-mid:  #4a3728;
+            --text-muted:#9a8070;
+            --border:    #e8ddd0;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            height: 64px; padding: 0 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(250,248,245,0.92); backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-back {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.83rem; font-weight: 500; color: var(--text-muted);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .nav-back:hover { color: var(--accent); }
+        .nav-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem; font-weight: 400; color: var(--text-muted); font-style: italic;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 128px 24px 80px;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--accent-light), var(--bg));
+            border-bottom: 1px solid var(--border);
+        }
+        .hero-icon { font-size: 3rem; margin-bottom: 24px; }
+        .hero-eyebrow {
+            font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900; color: var(--text);
+            letter-spacing: -0.01em; line-height: 1.05; margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1rem; color: var(--text-muted);
+            max-width: 500px; margin: 0 auto; line-height: 1.75;
+        }
+
+        /* TIMELINE */
+        .timeline-section {
+            max-width: 820px; margin: 0 auto;
+            padding: 80px 24px 100px;
+        }
+
+        .timeline-section-label {
+            font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.2em;
+            color: var(--accent); margin-bottom: 48px;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .timeline-section-label::after {
+            content: ''; flex: 1; height: 1px; background: var(--border);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 56px;
+        }
+
+        /* Vertical spine */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 16px; top: 0; bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, var(--border), transparent);
+        }
+
+        .timeline-entry {
+            position: relative;
+            padding-bottom: 52px;
+        }
+        .timeline-entry:last-child { padding-bottom: 0; }
+
+        /* Node dot */
+        .timeline-entry::before {
+            content: '';
+            position: absolute;
+            left: -48px; top: 5px;
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--accent-light);
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 0 3px var(--bg);
+        }
+
+        .entry-year {
+            font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 8px;
+        }
+        .entry-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem; font-weight: 700;
+            color: var(--text); margin-bottom: 10px;
+            letter-spacing: -0.01em;
+        }
+        .entry-desc {
+            font-size: 0.9rem; color: var(--text-muted);
+            line-height: 1.75; max-width: 580px;
+        }
+        .entry-photo {
+            margin-top: 20px;
+            width: 100%; max-width: 420px;
+            aspect-ratio: 4/3; border-radius: 12px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 8px;
+        }
+        .entry-photo-icon { font-size: 1.8rem; opacity: 0.3; }
+        .entry-photo-note { font-size: 0.72rem; color: var(--text-muted); font-style: italic; }
+
+        /* Era headings */
+        .era-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem; font-weight: 700;
+            color: var(--text); margin-bottom: 36px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Add entry prompt */
+        .add-milestone {
+            border: 1.5px dashed var(--border);
+            border-radius: 14px; padding: 36px 24px;
+            text-align: center; margin-top: 32px;
+        }
+        .add-milestone p {
+            font-size: 0.875rem; color: var(--text-muted);
+            font-style: italic; line-height: 1.65;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 24px; text-align: center;
+            background: var(--surface-2);
+            color: var(--text-muted); font-size: 0.8rem;
+        }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 640px) {
+            nav { padding: 0 20px; }
+            .timeline { padding-left: 36px; }
+            .timeline-entry::before { left: -28px; }
+            .timeline::before { left: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-back" href="https://worobi.com">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Worobi.com
+        </a>
+        <span class="nav-title">Our History</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-icon">📜</div>
+        <p class="hero-eyebrow">The Worobi Family</p>
+        <h1>Our History</h1>
+        <p>Every family has a story. Here is ours — the places we've been, the moments that defined us, and the roots that ground us.</p>
+    </section>
+
+    <!-- TIMELINE -->
+    <div class="timeline-section">
+        <p class="timeline-section-label">Family Timeline</p>
+
+        <div class="timeline">
+
+            <!-- CHAPTER: Roots -->
+            <div class="timeline-entry">
+                <div class="entry-year">The Beginning</div>
+                <div class="entry-title">Where It All Started</div>
+                <p class="entry-desc">
+                    Add the story of your family origins here — where the Worobi name comes from, where the family first settled, or any heritage you'd like to preserve. This is your family's opening chapter.
+                </p>
+                <div class="entry-photo">
+                    <div class="entry-photo-icon">🖼️</div>
+                    <div class="entry-photo-note">Add a historical family photo</div>
+                </div>
+            </div>
+
+            <!-- Entry 2 -->
+            <div class="timeline-entry">
+                <div class="entry-year">YYYY</div>
+                <div class="entry-title">A Key Milestone</div>
+                <p class="entry-desc">
+                    Describe an important event in your family's history — a move, a marriage, a new chapter. Add as much or as little detail as you like.
+                </p>
+            </div>
+
+            <!-- Entry 3 -->
+            <div class="timeline-entry">
+                <div class="entry-year">YYYY</div>
+                <div class="entry-title">Another Chapter</div>
+                <p class="entry-desc">
+                    Continue the story here. Over time this page can grow into a rich record of the family's journey — for future generations to look back on.
+                </p>
+                <div class="entry-photo">
+                    <div class="entry-photo-icon">🖼️</div>
+                    <div class="entry-photo-note">Add a family photo for this moment</div>
+                </div>
+            </div>
+
+            <!-- Entry 4 — Marriage / founding of current family -->
+            <div class="timeline-entry">
+                <div class="entry-year">YYYY</div>
+                <div class="entry-title">Brandon &amp; Monica — A New Chapter Begins</div>
+                <p class="entry-desc">
+                    The story of how the current Worobi family came together. Add the date, location, and a brief account of this milestone.
+                </p>
+                <div class="entry-photo">
+                    <div class="entry-photo-icon">🖼️</div>
+                    <div class="entry-photo-note">Add a wedding or milestone photo</div>
+                </div>
+            </div>
+
+            <!-- Entry 5 — Growing family -->
+            <div class="timeline-entry">
+                <div class="entry-year">2008 – Present</div>
+                <div class="entry-title">The Family Grows</div>
+                <p class="entry-desc">
+                    From Nevaeh (2008) through Charlotte (2025), the Worobi family grew into eight strong. Each arrival brought new joy, new adventures, and new stories to tell.
+                </p>
+            </div>
+
+            <!-- Entry 6 — Today -->
+            <div class="timeline-entry">
+                <div class="entry-year">Today</div>
+                <div class="entry-title">The Story Continues</div>
+                <p class="entry-desc">
+                    The Worobi family is still writing its story. This page will grow alongside the family — add milestones, achievements, moves, and memories as they happen.
+                </p>
+            </div>
+
+            <div class="add-milestone">
+                <p>To add a new milestone, duplicate one of the <code>timeline-entry</code> blocks above in your code editor and fill in the year, title, and description. Photos are optional.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Worobi Family &middot; <a href="https://worobi.com">worobi.com</a></p>
+    </footer>
+
+</body>
+</html>

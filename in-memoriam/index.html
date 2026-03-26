@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Memoriam — The Worobi Family</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:        #0c0a09;
+            --surface:   #161310;
+            --surface-2: #1e1a17;
+            --gold:      #c9a05a;
+            --gold-light:#f0d9a8;
+            --gold-dim:  rgba(201,160,90,0.15);
+            --text:      #ede8e0;
+            --text-mid:  #a09880;
+            --text-muted:#5a5248;
+            --border:    rgba(201,160,90,0.12);
+            --border-md: rgba(201,160,90,0.22);
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            height: 64px; padding: 0 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(12,10,9,0.9); backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-back {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.83rem; font-weight: 500; color: var(--text-muted);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .nav-back:hover { color: var(--gold); }
+        .nav-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem; font-weight: 400; color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 70vh;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 120px 24px 80px;
+            position: relative; overflow: hidden;
+        }
+
+        /* Warm glow */
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse 50% 50% at 50% 55%, rgba(201,160,90,0.07) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .candle-wrap {
+            position: relative;
+            margin-bottom: 32px;
+        }
+        .candle-emoji { font-size: 3rem; display: block; animation: flicker 2.8s ease-in-out infinite; }
+        @keyframes flicker {
+            0%, 100% { transform: scale(1) translateY(0); filter: brightness(1); }
+            25%       { transform: scale(1.04) translateY(-2px); filter: brightness(1.1); }
+            50%       { transform: scale(0.97) translateY(1px); filter: brightness(0.95); }
+            75%       { transform: scale(1.02) translateY(-1px); filter: brightness(1.05); }
+        }
+
+        .hero-rule {
+            width: 1px; height: 40px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            margin: 0 auto 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700; font-style: italic;
+            color: var(--gold-light);
+            letter-spacing: 0.01em; line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero-sub {
+            font-size: 0.85rem; color: var(--text-muted);
+            letter-spacing: 0.25em; text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .hero-quote {
+            max-width: 520px; margin: 32px auto 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem; font-style: italic;
+            color: var(--text-mid); line-height: 1.75;
+        }
+        .hero-quote cite {
+            display: block; margin-top: 12px;
+            font-size: 0.75rem; font-style: normal;
+            color: var(--text-muted); letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* DIVIDER */
+        .ornament-divider {
+            display: flex; align-items: center; gap: 16px;
+            max-width: 600px; margin: 64px auto;
+            padding: 0 24px;
+        }
+        .ornament-divider::before,
+        .ornament-divider::after {
+            content: ''; flex: 1;
+            height: 1px; background: var(--border);
+        }
+        .ornament-divider-sym {
+            font-size: 1rem; color: var(--gold);
+            opacity: 0.6;
+        }
+
+        /* MEMORIAL ENTRIES */
+        .memorials {
+            max-width: 780px; margin: 0 auto;
+            padding: 0 24px 100px;
+            display: flex; flex-direction: column; gap: 0;
+        }
+
+        .memorial-entry {
+            padding: 56px 0;
+            border-bottom: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .memorial-entry:last-child { border-bottom: none; }
+
+        /* Photo */
+        .memorial-photo {
+            width: 100%; aspect-ratio: 3/4;
+            border-radius: 12px;
+            background: var(--surface);
+            border: 1px solid var(--border-md);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 10px; text-align: center; padding: 16px;
+        }
+        .memorial-photo-icon { font-size: 2.5rem; opacity: 0.3; }
+        .memorial-photo-note {
+            font-size: 0.7rem; color: var(--text-muted);
+            font-style: italic; line-height: 1.4;
+        }
+
+        /* Info */
+        .memorial-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem; font-weight: 700;
+            color: var(--gold-light);
+            letter-spacing: -0.01em; margin-bottom: 6px;
+        }
+        .memorial-dates {
+            font-size: 0.83rem; color: var(--gold);
+            font-weight: 500; letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+        .memorial-relation {
+            font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.15em;
+            color: var(--text-muted); margin-bottom: 24px;
+        }
+        .memorial-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.975rem; font-style: italic;
+            color: var(--text-mid); line-height: 1.85;
+            padding: 20px 0 20px 20px;
+            border-left: 2px solid var(--border-md);
+        }
+        .memorial-closing {
+            margin-top: 20px;
+            font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.15em;
+            color: var(--gold); opacity: 0.7;
+        }
+
+        /* Add entry CTA */
+        .add-entry {
+            border: 1.5px dashed var(--border);
+            border-radius: 16px;
+            padding: 48px 32px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .add-entry-icon { font-size: 2rem; margin-bottom: 16px; opacity: 0.4; }
+        .add-entry p {
+            font-size: 0.875rem; color: var(--text-muted);
+            font-style: italic; line-height: 1.65;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 36px 24px; text-align: center;
+            color: var(--text-muted); font-size: 0.8rem;
+        }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: var(--gold); }
+
+        @media (max-width: 640px) {
+            nav { padding: 0 20px; }
+            .memorial-entry { grid-template-columns: 1fr; gap: 28px; }
+            .memorial-photo { aspect-ratio: 16/9; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-back" href="https://worobi.com">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Worobi.com
+        </a>
+        <span class="nav-title">In Memoriam</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="candle-wrap">
+            <span class="candle-emoji">🕯️</span>
+        </div>
+        <div class="hero-rule"></div>
+        <h1>In Memoriam</h1>
+        <p class="hero-sub">The Worobi Family</p>
+        <blockquote class="hero-quote">
+            "Those we love don't go away — they walk beside us every day. Unseen, unheard, but always near, still loved, still missed, still very dear."
+            <cite>— Author Unknown</cite>
+        </blockquote>
+    </section>
+
+    <div class="ornament-divider"><span class="ornament-divider-sym">✦</span></div>
+
+    <!-- MEMORIAL ENTRIES -->
+    <div class="memorials">
+
+        <!-- Entry 1 — Placeholder -->
+        <div class="memorial-entry">
+            <div class="memorial-photo">
+                <div class="memorial-photo-icon">🖼️</div>
+                <p class="memorial-photo-note">Add a photo<br>of your loved one</p>
+            </div>
+            <div>
+                <div class="memorial-name">Name of Loved One</div>
+                <div class="memorial-dates">Month Day, Year &ndash; Month Day, Year</div>
+                <div class="memorial-relation">Relationship to Family (e.g. Grandmother, Father)</div>
+                <blockquote class="memorial-text">
+                    Write a tribute here — share a memory, a personality trait that defined them,
+                    something they always said, or simply what made them irreplaceable in your life.
+                    This is a space to honor who they were and keep their story alive.
+                </blockquote>
+                <div class="memorial-closing">Forever in our hearts</div>
+            </div>
+        </div>
+
+        <!-- Entry 2 — Placeholder -->
+        <div class="memorial-entry">
+            <div class="memorial-photo">
+                <div class="memorial-photo-icon">🖼️</div>
+                <p class="memorial-photo-note">Add a photo<br>of your loved one</p>
+            </div>
+            <div>
+                <div class="memorial-name">Name of Loved One</div>
+                <div class="memorial-dates">Month Day, Year &ndash; Month Day, Year</div>
+                <div class="memorial-relation">Relationship to Family</div>
+                <blockquote class="memorial-text">
+                    Share a memory or tribute. What do you want the world to know about this person?
+                    What would they want to be remembered for? Write in your own words — there is no wrong way to honor someone you love.
+                </blockquote>
+                <div class="memorial-closing">Forever in our hearts</div>
+            </div>
+        </div>
+
+        <!-- Add more entries prompt -->
+        <div class="add-entry">
+            <div class="add-entry-icon">🕯️</div>
+            <p>To add a loved one to this page, duplicate one of the entry blocks above in your code editor and fill in their name, dates, and tribute.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Worobi Family &middot; <a href="https://worobi.com">worobi.com</a></p>
+    </footer>
+
+</body>
+</html>

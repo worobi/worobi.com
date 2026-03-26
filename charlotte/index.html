@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlotte Worobi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --accent:      #d97706;
+            --accent-dark: #b45309;
+            --accent-light:#fffbeb;
+            --accent-rgb:  217, 119, 6;
+            --bg:    #ffffff;
+            --surface:   #f8fafc;
+            --text:  #0f172a;
+            --text-mid:  #334155;
+            --text-muted:#64748b;
+            --border:#e2e8f0;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: "Inter", sans-serif; background: var(--bg); color: var(--text); }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            height: 64px; padding: 0 40px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-back {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.83rem; font-weight: 500; color: var(--text-muted);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .nav-back:hover { color: var(--accent); }
+        .nav-family {
+            font-size: 0.78rem; font-weight: 600; color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* HERO */
+        .hero {
+            padding-top: 64px;
+            min-height: 60vh;
+            background: linear-gradient(150deg, #d97706 0%, #fcd34d 100%);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 120px 24px 100px;
+            position: relative; overflow: hidden;
+        }
+        .hero-emoji {
+            font-size: 4rem; margin-bottom: 16px;
+            animation: floaty 3.5s ease-in-out infinite;
+        }
+        @keyframes floaty {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50%       { transform: translateY(-14px) rotate(2deg); }
+        }
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 900; color: white;
+            text-shadow: 0 4px 32px rgba(0,0,0,0.18);
+            letter-spacing: -0.02em; line-height: 1; margin-bottom: 10px;
+        }
+        .hero-family {
+            font-size: 0.9rem; color: rgba(255,255,255,0.75);
+            letter-spacing: 0.12em; text-transform: uppercase;
+            font-weight: 500;
+        }
+        /* Wave */
+        .hero-wave { position: absolute; bottom: -2px; left: 0; right: 0; }
+
+        /* COUNTDOWN BANNER */
+        .countdown-banner {
+            background: var(--accent-light);
+            border-bottom: 1px solid rgba(217, 119, 6,0.15);
+            padding: 28px 24px;
+            text-align: center;
+        }
+        .countdown-label {
+            font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.2em;
+            color: var(--accent); margin-bottom: 16px;
+        }
+        .countdown-tiles {
+            display: inline-flex; align-items: center;
+            gap: 12px; flex-wrap: wrap; justify-content: center;
+        }
+        .tile {
+            display: flex; flex-direction: column; align-items: center;
+            background: white; border-radius: 12px;
+            padding: 14px 18px; min-width: 72px;
+            box-shadow: 0 2px 12px rgba(217, 119, 6,0.12);
+        }
+        .tile-num {
+            font-size: 1.75rem; font-weight: 900;
+            color: var(--accent); line-height: 1;
+            letter-spacing: -0.03em;
+        }
+        .tile-label {
+            font-size: 0.6rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--text-muted); margin-top: 4px;
+        }
+        .tile-sep {
+            font-size: 1.4rem; font-weight: 900;
+            color: rgba(217, 119, 6,0.3);
+            align-self: flex-start; margin-top: 10px;
+        }
+        .countdown-note {
+            font-size: 0.78rem; color: var(--text-muted);
+            margin-top: 14px;
+        }
+        .countdown-note strong { color: var(--accent); }
+
+        /* CONTENT */
+        .content { max-width: 800px; margin: 0 auto; padding: 72px 24px 100px; }
+
+        .section { margin-bottom: 64px; }
+        .section-label {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.18em;
+            color: var(--accent); margin-bottom: 20px;
+        }
+        .section-label::before {
+            content: "";
+            display: block; width: 18px; height: 2px;
+            background: var(--accent); border-radius: 2px;
+        }
+
+        /* About grid */
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 200px;
+            gap: 40px; align-items: start;
+        }
+        .bio-box {
+            background: var(--surface); border: 1.5px dashed var(--border);
+            border-radius: 16px; padding: 28px;
+            font-size: 0.9rem; color: var(--text-muted); line-height: 1.85; font-style: italic;
+        }
+        .bio-box strong {
+            display: block; font-style: normal;
+            font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--accent); margin-bottom: 10px;
+        }
+        .photo-box {
+            aspect-ratio: 3/4; border-radius: 16px;
+            background: linear-gradient(150deg, #d97706, #fcd34d);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 10px; font-size: 3rem;
+        }
+        .photo-box span {
+            font-size: 0.75rem; font-weight: 500;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Interest tags */
+        .tags-wrap { display: flex; flex-direction: column; gap: 24px; }
+        .tag-group h4 {
+            font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.12em;
+            color: var(--text-muted); margin-bottom: 12px;
+        }
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 100px; padding: 8px 16px;
+            font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(217, 119, 6,0.2);
+        }
+
+        /* Fun facts */
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 14px;
+        }
+        .fact-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 14px; padding: 20px;
+        }
+        .fact-icon { font-size: 1.6rem; margin-bottom: 8px; }
+        .fact-lbl {
+            font-size: 0.65rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--text-muted); margin-bottom: 4px;
+        }
+        .fact-val { font-size: 0.9rem; font-weight: 600; color: var(--text-mid); }
+
+        /* FOOTER */
+        footer {
+            background: var(--text); color: rgba(255,255,255,0.4);
+            text-align: center; padding: 36px 24px; font-size: 0.8rem;
+        }
+        footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        @media (max-width: 600px) {
+            nav { padding: 0 16px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .photo-box { aspect-ratio: 16/9; }
+            .countdown-tiles { gap: 8px; }
+            .tile { min-width: 60px; padding: 10px 12px; }
+            .tile-num { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-back" href="https://worobi.com">
+            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Worobi.com
+        </a>
+        <span class="nav-family">Worobi Family</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-emoji">🎀</div>
+        <h1>Charlotte</h1>
+        <p class="hero-family">Worobi Family</p>
+        <svg class="hero-wave" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 40 C360 80 1080 0 1440 40 L1440 80 L0 80 Z" fill="white"/>
+        </svg>
+    </section>
+
+    <!-- COUNTDOWN BANNER -->
+    <div class="countdown-banner">
+        <p class="countdown-label">Full bio unlocks at age 16</p>
+        <div class="countdown-tiles">
+            <div class="tile">
+                <span class="tile-num" id="cd-years">–</span>
+                <span class="tile-label">Years</span>
+            </div>
+            <span class="tile-sep">:</span>
+            <div class="tile">
+                <span class="tile-num" id="cd-months">–</span>
+                <span class="tile-label">Months</span>
+            </div>
+            <span class="tile-sep">:</span>
+            <div class="tile">
+                <span class="tile-num" id="cd-days">–</span>
+                <span class="tile-label">Days</span>
+            </div>
+            <span class="tile-sep">:</span>
+            <div class="tile">
+                <span class="tile-num" id="cd-hours">–</span>
+                <span class="tile-label">Hours</span>
+            </div>
+        </div>
+        <p class="countdown-note">16th Birthday: <strong id="cd-date">–</strong></p>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- About -->
+        <section class="section">
+            <p class="section-label">About Charlotte</p>
+            <div class="about-grid">
+                <div class="bio-box">
+                    <strong>✏️ Parents — add a bio here</strong>
+                    Write a short, fun introduction for Charlotte — their personality, what makes them laugh, and what they love most. You can update this whenever you like!
+                </div>
+                <div class="photo-box">
+                    🎀
+                    <span>Add a photo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests -->
+        <section class="section">
+            <p class="section-label">Loves &amp; Interests</p>
+            <div class="tags-wrap">
+                <div class="tag-group">
+                    <h4>Favorite Activities</h4>
+                    <div class="tags">
+                        <span class="tag">⚽ Sports</span>
+                        <span class="tag">🎨 Art</span>
+                        <span class="tag">📚 Reading</span>
+                        <span class="tag">🎮 Games</span>
+                    </div>
+                </div>
+                <div class="tag-group">
+                    <h4>Favorite Things</h4>
+                    <div class="tags">
+                        <span class="tag">🍕 Pizza</span>
+                        <span class="tag">🐶 Animals</span>
+                        <span class="tag">🎵 Music</span>
+                        <span class="tag">🌟 Adventures</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fun Facts -->
+        <section class="section">
+            <p class="section-label">Fun Facts</p>
+            <div class="facts">
+                <div class="fact-card">
+                    <div class="fact-icon">🌈</div>
+                    <div class="fact-lbl">Favorite Color</div>
+                    <div class="fact-val">— Ask me! —</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🦸</div>
+                    <div class="fact-lbl">Dream Superpower</div>
+                    <div class="fact-val">— Ask me! —</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🍦</div>
+                    <div class="fact-lbl">Favorite Treat</div>
+                    <div class="fact-val">— Ask me! —</div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">📖</div>
+                    <div class="fact-lbl">Favorite Story</div>
+                    <div class="fact-val">— Ask me! —</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Worobi Family &middot; <a href="https://worobi.com">worobi.com</a></p>
+    </footer>
+
+    <script>
+        // Countdown to 16th birthday
+        const birthday16 = new Date(2041, 2, 17);
+
+        function pad(n) { return String(n).padStart(2, '0'); }
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = birthday16 - now;
+
+            if (diff <= 0) {
+                document.querySelector('.countdown-banner').style.display = 'none';
+                return;
+            }
+
+            const totalSeconds = Math.floor(diff / 1000);
+            const hours   = Math.floor(totalSeconds / 3600) % 24;
+            const totalDays = Math.floor(diff / 86400000);
+            const years  = Math.floor(totalDays / 365.25);
+            const remainDays = totalDays - Math.floor(years * 365.25);
+            const months = Math.floor(remainDays / 30.4375);
+            const days   = Math.floor(remainDays - months * 30.4375);
+
+            document.getElementById('cd-years').textContent  = years;
+            document.getElementById('cd-months').textContent = pad(months);
+            document.getElementById('cd-days').textContent   = pad(days);
+            document.getElementById('cd-hours').textContent  = pad(hours);
+            document.getElementById('cd-date').textContent   = birthday16.toLocaleDateString('en-US', {
+                month: 'long', day: 'numeric', year: 'numeric'
+            });
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000 * 60); // refresh every minute
+    </script>
+
+</body>
+</html>
