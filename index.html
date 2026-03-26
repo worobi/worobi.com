@@ -219,8 +219,12 @@
             width: 150px;
             flex-shrink: 0;
         }
-        .node-card:hover .node-circle { border-color: var(--border-md); transform: scale(1.05); }
-        .node-card:hover .node-name { color: var(--text); }
+        .node-card:hover .node-circle {
+            border-color: var(--person-color, var(--border-md));
+            color: var(--person-color, var(--text-mid));
+            transform: scale(1.05);
+        }
+        .node-card:hover .node-name { color: var(--person-color, var(--text)); }
 
         .node-circle {
             width: 72px; height: 72px;
@@ -439,7 +443,7 @@
             <div class="gen-divider"><span class="gen-tag">Adults</span></div>
 
             <div class="gen-row parents-row">
-                <a class="node-card adult" href="https://brandon.worobi.com">
+                <a class="node-card adult" href="https://brandon.worobi.com" style="--person-color:#7c3aed">
                     <div class="node-circle">B</div>
                     <div class="node-name">Brandon</div>
                     <div class="node-role">Your title here</div>
@@ -452,7 +456,7 @@
                     <div class="couple-join-line"></div>
                 </div>
 
-                <a class="node-card adult" href="https://monica.worobi.com">
+                <a class="node-card adult" href="https://monica.worobi.com" style="--person-color:#dc2626">
                     <div class="node-circle">M</div>
                     <div class="node-name">Monica</div>
                     <div class="node-role">Your title here</div>
@@ -466,7 +470,7 @@
             <div class="gen-divider"><span class="gen-tag">16 &amp; Over</span></div>
 
             <div class="gen-row">
-                <a class="node-card teen" href="https://nevaeh.worobi.com">
+                <a class="node-card teen" href="https://nevaeh.worobi.com" style="--person-color:#f43f5e">
                     <div class="node-circle">N</div>
                     <div class="node-name">Nevaeh</div>
                     <div class="node-role">Your title here</div>
@@ -480,31 +484,31 @@
             <div class="gen-divider"><span class="gen-tag">Young Ones</span></div>
 
             <div class="gen-row" id="young-ones-row">
-                <a class="node-card minor" href="https://alexander.worobi.com">
+                <a class="node-card minor" href="https://alexander.worobi.com" style="--person-color:#16a34a">
                     <div class="node-circle">A</div>
                     <div class="node-name">Alexander</div>
                     <div class="node-role" id="bio-alexander"></div>
                     <span class="node-link">Visit Page →</span>
                 </a>
-                <a class="node-card minor" href="https://lilian.worobi.com">
+                <a class="node-card minor" href="https://lilian.worobi.com" style="--person-color:#ec4899">
                     <div class="node-circle">L</div>
                     <div class="node-name">Lilian</div>
                     <div class="node-role" id="bio-lilian"></div>
                     <span class="node-link">Visit Page →</span>
                 </a>
-                <a class="node-card minor" href="https://theodore.worobi.com">
+                <a class="node-card minor" href="https://theodore.worobi.com" style="--person-color:#2563eb">
                     <div class="node-circle">T</div>
                     <div class="node-name">Theodore</div>
                     <div class="node-role" id="bio-theodore"></div>
                     <span class="node-link">Visit Page →</span>
                 </a>
-                <a class="node-card minor" href="https://jefferson.worobi.com">
+                <a class="node-card minor" href="https://jefferson.worobi.com" style="--person-color:#f97316">
                     <div class="node-circle">J</div>
                     <div class="node-name">Jefferson</div>
                     <div class="node-role" id="bio-jefferson"></div>
                     <span class="node-link">Visit Page →</span>
                 </a>
-                <a class="node-card minor" href="https://charlotte.worobi.com">
+                <a class="node-card minor" href="https://charlotte.worobi.com" style="--person-color:#d97706">
                     <div class="node-circle">C</div>
                     <div class="node-name">Charlotte</div>
                     <div class="node-role" id="bio-charlotte"></div>
