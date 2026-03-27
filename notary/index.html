@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brandon Worobi — Notary Public | Port Huron, MI</title>
-    <meta name="description" content="Certified Notary Public serving Port Huron, MI and surrounding areas. Mobile notary services, loan signings, and general notarizations. Available 7 days a week.">
+    <title>Worobi Mobile Notary & Document Services | St. Clair County, MI</title>
+    <meta name="description" content="Professional mobile notary serving St. Clair, Sanilac, Macomb, and Lapeer Counties. Power of attorney, estate planning, affidavits, real estate documents, and general notarizations. Evening & weekend appointments available. Ordained Minister since 2013. Call (810) 689-9715.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -241,6 +241,104 @@
             border: 1px solid rgba(201,160,90,0.3);
             padding: 4px 12px; border-radius: 100px;
             display: inline-block;
+        }
+
+        /* ── ALL SERVICES LIST ── */
+        .all-services {
+            margin-top: 56px;
+            border-top: 1px solid var(--border);
+            padding-top: 48px;
+        }
+        .all-services-label {
+            font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.2em;
+            color: var(--text-muted); margin-bottom: 24px;
+            text-align: center;
+        }
+        .all-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+        }
+        .all-service-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 12px 16px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.83rem; font-weight: 500;
+            color: var(--text-mid);
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .all-service-item:hover {
+            border-color: rgba(201,160,90,0.4);
+            color: var(--text);
+        }
+        .all-service-item::before {
+            content: '✓';
+            font-size: 0.65rem; font-weight: 800;
+            color: var(--gold); flex-shrink: 0;
+        }
+
+        /* ── RON CALLOUT ── */
+        .ron-callout {
+            margin-top: 40px;
+            background: var(--navy);
+            border-radius: 20px;
+            padding: 40px 48px;
+            display: flex; align-items: center;
+            gap: 48px; flex-wrap: wrap;
+            border: 1px solid rgba(201,160,90,0.2);
+        }
+        .ron-callout-text { flex: 1; min-width: 240px; }
+        .ron-callout-eyebrow {
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 8px;
+        }
+        .ron-callout-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem; font-weight: 700;
+            color: var(--white); margin-bottom: 10px;
+        }
+        .ron-callout-desc {
+            font-size: 0.875rem; color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+        }
+        .ron-platforms {
+            display: flex; flex-direction: column; gap: 10px;
+            flex-shrink: 0;
+        }
+        .ron-platform {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(201,160,90,0.2);
+            border-radius: 12px;
+            font-size: 0.875rem; font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+            min-width: 220px;
+        }
+        .ron-platform:hover {
+            background: rgba(201,160,90,0.1);
+            border-color: rgba(201,160,90,0.5);
+            color: var(--gold-light);
+        }
+        .ron-platform-badge {
+            font-size: 0.58rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--gold);
+            background: rgba(201,160,90,0.12);
+            border: 1px solid rgba(201,160,90,0.25);
+            padding: 2px 7px; border-radius: 100px;
+            margin-left: auto; flex-shrink: 0;
+        }
+        @media (max-width: 720px) {
+            .ron-callout { padding: 28px 24px; flex-direction: column; gap: 28px; }
+            .ron-platforms { width: 100%; }
+            .ron-platform { min-width: unset; }
         }
 
         /* ── HOW IT WORKS ── */
@@ -541,8 +639,8 @@
     <a class="nav-brand" href="#">
         <div class="nav-seal">BW</div>
         <div class="nav-brand-text">
-            <span class="nav-brand-name">Brandon Worobi</span>
-            <span class="nav-brand-sub">Notary Public</span>
+            <span class="nav-brand-name">Worobi Mobile Notary</span>
+            <span class="nav-brand-sub">& Document Services</span>
         </div>
     </a>
     <div class="nav-links">
@@ -559,25 +657,25 @@
 <section class="hero">
     <div class="hero-grid">
         <div>
-            <p class="hero-eyebrow">Notary Public · Port Huron, MI</p>
-            <h1>Trusted <span>Notary</span><br>Services,<br>On Your Time</h1>
-            <p class="hero-tagline">Professional mobile notary serving Port Huron and surrounding communities. I come to you — home, office, hospital, or anywhere you need me.</p>
+            <p class="hero-eyebrow">Mobile Notary & Document Services · St. Clair County, MI</p>
+            <h1><span>Mobile Notary</span><br>That Comes<br>To You</h1>
+            <p class="hero-tagline">Serving St. Clair, Sanilac, Macomb, and Lapeer Counties. I travel to homes, offices, hospitals, jails, assisted living facilities, and job sites — helping individuals, families, and small businesses get important documents handled without added stress.</p>
             <div class="hero-actions">
                 <a class="btn-gold" href="#contact">📅 Book an Appointment</a>
                 <a class="btn-ghost" href="#services">View Services</a>
             </div>
             <div class="hero-trust">
-                <span class="trust-item">State Commissioned</span>
-                <span class="trust-item">Background Checked</span>
-                <span class="trust-item">NNA Certified</span>
-                <span class="trust-item">E&O Insured</span>
+                <span class="trust-item">I Come To You</span>
+                <span class="trust-item">Evening & Weekend Availability</span>
+                <span class="trust-item">Ordained Minister Since 2013</span>
+                <span class="trust-item">Insured & Bonded</span>
             </div>
         </div>
 
         <div>
             <div class="hero-card">
                 <div class="hero-card-title">📞 Reach Me Directly</div>
-                <a class="hero-card-phone" href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a>
+                <a class="hero-card-phone" href="tel:+18106899715">(810) 689-9715</a>
                 <div class="availability-grid">
                     <div class="avail-row">
                         <span class="avail-day">Monday – Friday</span>
@@ -612,52 +710,92 @@
         <div class="section-header">
             <p class="section-eyebrow">What I Offer</p>
             <h2 class="section-title">Notary Services</h2>
-            <p class="section-sub">From everyday document signings to complex loan closings, I handle it all with professionalism and discretion.</p>
+            <p class="section-sub">I bring the notary to you. From everyday signings to complex loan closings, I handle it all at your location — with professionalism and discretion.</p>
         </div>
         <div class="services-grid">
 
             <div class="service-card">
-                <span class="service-icon">📄</span>
-                <div class="service-name">General Notarizations</div>
-                <p class="service-desc">Acknowledgments, jurats, oaths, affirmations, and copy certifications for any document requiring a notary seal. Quick turnaround for everyday needs.</p>
+                <span class="service-icon">🚗</span>
+                <div class="service-name">Mobile Notary Service</div>
+                <p class="service-desc">I travel to you — homes, offices, hospitals, jails, assisted living facilities, and job sites throughout St. Clair, Sanilac, Macomb, and Lapeer Counties. No driving required on your end.</p>
+                <span class="service-price">Travel fee applies</span>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">✍️</span>
+                <div class="service-name">Power of Attorney Notarization</div>
+                <p class="service-desc">Financial, medical, and durable POA documents notarized at your location. I come to homes, hospitals, and care facilities — wherever you need me most.</p>
+                <span class="service-price">Starting at $10/signature</span>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">📜</span>
+                <div class="service-name">Estate Planning Document Notarization</div>
+                <p class="service-desc">Wills, trusts, advance directives, and healthcare proxies. Sensitive signings handled with care, discretion, and patience — at your pace, at your place.</p>
                 <span class="service-price">Starting at $10/signature</span>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🏠</span>
-                <div class="service-name">Loan Signings</div>
-                <p class="service-desc">Certified Signing Agent for mortgage closings, refinances, and home equity loans. I work with title companies, escrow officers, and lenders statewide.</p>
+                <div class="service-name">Loan Signing Services</div>
+                <p class="service-desc">Mortgage closings, refinances, deed signings, and real estate documents. I work with individuals, title companies, and escrow officers to get closings done right.</p>
                 <span class="service-price">Contact for pricing</span>
             </div>
 
             <div class="service-card">
-                <span class="service-icon">🚗</span>
-                <div class="service-name">Mobile Notary</div>
-                <p class="service-desc">I travel to your home, office, hospital, care facility, or any convenient location. No need to leave where you are — I come to you.</p>
-                <span class="service-price">Travel fee applies</span>
-            </div>
-
-            <div class="service-card">
                 <span class="service-icon">🏥</span>
-                <div class="service-name">Hospital & Care Facility</div>
-                <p class="service-desc">Sensitive, patient-focused notarizations for advanced directives, powers of attorney, wills, and other time-sensitive documents at medical facilities.</p>
+                <div class="service-name">Hospital Notary</div>
+                <p class="service-desc">Patient-focused notarizations for time-sensitive documents at hospitals, assisted living facilities, and care centers. Evening and weekend visits available.</p>
                 <span class="service-price">Priority scheduling</span>
             </div>
 
             <div class="service-card">
-                <span class="service-icon">⚖️</span>
-                <div class="service-name">Legal Documents</div>
-                <p class="service-desc">Affidavits, depositions, sworn statements, contracts, and other legal paperwork requiring notarization. Handled with accuracy and confidentiality.</p>
-                <span class="service-price">Starting at $10/signature</span>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🌐</span>
-                <div class="service-name">Remote Online Notary (RON)</div>
-                <p class="service-desc">Can't meet in person? Remote online notarization lets us complete your signing securely over video — valid in Michigan and most other states.</p>
+                <span class="service-icon">💍</span>
+                <div class="service-name">Wedding Officiant Service</div>
+                <p class="service-desc">Ordained since 2013, I officiate weddings, vow renewals, and civil ceremonies. Local, personal, and professional — your moment deserves someone who cares.</p>
                 <span class="service-price">Contact for availability</span>
             </div>
 
+        </div>
+
+        <!-- Complete Services List — all service names visible for SEO -->
+        <div class="all-services">
+            <p class="all-services-label">Complete List of Services</p>
+            <div class="all-services-grid">
+                <div class="all-service-item">Mobile Notary Service</div>
+                <div class="all-service-item">Power of Attorney Notarization</div>
+                <div class="all-service-item">Estate Planning Document Notarization</div>
+                <div class="all-service-item">Loan Signing Services</div>
+                <div class="all-service-item">Hospital Notary</div>
+                <div class="all-service-item">Wedding Officiant Service</div>
+                <div class="all-service-item">Affidavit &amp; Oath Notarization</div>
+                <div class="all-service-item">Acknowledgment Statement Notarization</div>
+                <div class="all-service-item">Contract Notarization</div>
+                <div class="all-service-item">Deed Notarization</div>
+                <div class="all-service-item">Divorce Document Notarization</div>
+                <div class="all-service-item">General Notary Document Preparation</div>
+                <div class="all-service-item">E-Notary Services (RON)</div>
+            </div>
+        </div>
+
+        <!-- RON Platforms Callout -->
+        <div class="ron-callout">
+            <div class="ron-callout-text">
+                <p class="ron-callout-eyebrow">Remote Online Notary · E-Notary Services</p>
+                <h3 class="ron-callout-title">Can't Meet in Person? Find Me Online.</h3>
+                <p class="ron-callout-desc">I'm available on trusted RON platforms for secure remote notarizations completed over video — no travel required. Valid in Michigan and accepted in most other states. Perfect for out-of-area signers or time-sensitive documents.</p>
+            </div>
+            <div class="ron-platforms">
+                <a class="ron-platform" href="https://www.proof.com" target="_blank" rel="noopener">
+                    🖥️ Proof <span class="ron-platform-badge">formerly Notarize</span>
+                </a>
+                <a class="ron-platform" href="https://www.bluenotary.us" target="_blank" rel="noopener">
+                    🔵 BlueNotary <span class="ron-platform-badge">RON Platform</span>
+                </a>
+                <a class="ron-platform" href="https://www.onenotary.us" target="_blank" rel="noopener">
+                    ✅ OneNotary <span class="ron-platform-badge">RON Platform</span>
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -701,11 +839,11 @@
         <div class="section-header">
             <p class="section-eyebrow">Where I Serve</p>
             <h2 class="section-title">Service Area</h2>
-            <p class="section-sub">Based in Port Huron, MI — serving the Blue Water Area and beyond.</p>
+            <p class="section-sub">Based in Port Huron — serving St. Clair, Sanilac, Macomb, and Lapeer Counties.</p>
         </div>
         <div class="area-grid">
             <div class="area-content">
-                <p class="area-lead">I serve Port Huron and the surrounding communities within a 50-mile radius. Travel fees apply outside the Port Huron city limits. Need service further out? Just ask — I'm flexible.</p>
+                <p class="area-lead">I travel throughout the Blue Water Area and surrounding counties — to homes, offices, hospitals, jails, assisted living facilities, and job sites. Wherever you are, I'll come to you.</p>
                 <ul class="area-list">
                     <li>Port Huron</li>
                     <li>Fort Gratiot</li>
@@ -718,17 +856,18 @@
                     <li>Yale</li>
                     <li>Richmond</li>
                     <li>Capac</li>
+                    <li>Lapeer</li>
+                    <li>Romeo</li>
                     <li>And more...</li>
                 </ul>
             </div>
             <div class="area-map">
-                <div class="map-title">Port Huron, MI</div>
-                <div class="map-sub">Blue Water Area</div>
+                <div class="map-title">St. Clair County, MI</div>
+                <div class="map-sub">+ Sanilac · Macomb · Lapeer</div>
                 <div class="map-radius">
-                    <div class="map-miles">50</div>
-                    <div class="map-label">Mile Radius</div>
+                    <div class="map-miles" style="font-size:1.6rem; line-height:1.2;">4<br>Counties</div>
                 </div>
-                <p class="map-note">Extended travel available upon request.<br>Evening & weekend travel possible.</p>
+                <p class="map-note">Evening & weekend travel available.<br>Extended areas considered — just ask.</p>
             </div>
         </div>
     </div>
@@ -798,22 +937,22 @@
             <div class="cred-item">
                 <span class="cred-icon">🏛️</span>
                 <div class="cred-title">State Commissioned</div>
-                <p class="cred-sub">Commissioned Notary Public by the State of Michigan</p>
-            </div>
-            <div class="cred-item">
-                <span class="cred-icon">🎓</span>
-                <div class="cred-title">NNA Certified</div>
-                <p class="cred-sub">National Notary Association Certified Signing Agent</p>
+                <p class="cred-sub">Commissioned in St. Clair County, Michigan — valid through May 31, 2032</p>
             </div>
             <div class="cred-item">
                 <span class="cred-icon">🛡️</span>
-                <div class="cred-title">Background Checked</div>
-                <p class="cred-sub">Annual background screening for your peace of mind</p>
+                <div class="cred-title">Insured & Bonded</div>
+                <p class="cred-sub">Fully insured and bonded for your protection on every signing</p>
             </div>
             <div class="cred-item">
-                <span class="cred-icon">📋</span>
-                <div class="cred-title">E&O Insured</div>
-                <p class="cred-sub">Errors & Omissions insurance for every signing</p>
+                <span class="cred-icon">✝️</span>
+                <div class="cred-title">Ordained Minister</div>
+                <p class="cred-sub">Ordained since 2013 — available for weddings and civil ceremonies</p>
+            </div>
+            <div class="cred-item">
+                <span class="cred-icon">🤝</span>
+                <div class="cred-title">Local & Reliable</div>
+                <p class="cred-sub">St. Clair County based — professional service for individuals, families, and small businesses</p>
             </div>
         </div>
     </div>
@@ -833,7 +972,7 @@
                     <div class="contact-item-icon">📞</div>
                     <div>
                         <div class="contact-item-label">Phone / Text</div>
-                        <div class="contact-item-val"><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></div>
+                        <div class="contact-item-val"><a href="tel:+18106899715">(810) 689-9715</a></div>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -855,6 +994,17 @@
                     <div>
                         <div class="contact-item-label">Hours</div>
                         <div class="contact-item-val">Mon–Fri 8am–7pm · Sat 9am–5pm<br>Sun & After Hours by Request</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🖥️</div>
+                    <div>
+                        <div class="contact-item-label">Remote Online Notary (RON)</div>
+                        <div class="contact-item-val">
+                            <a href="https://www.proof.com" target="_blank" rel="noopener">Proof (formerly Notarize)</a> ·
+                            <a href="https://www.bluenotary.us" target="_blank" rel="noopener">BlueNotary</a> ·
+                            <a href="https://www.onenotary.us" target="_blank" rel="noopener">OneNotary</a>
+                        </div>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -895,12 +1045,19 @@
                         <label class="form-label">Service Needed</label>
                         <select name="service" class="form-select" required>
                             <option value="" disabled selected>Select a service...</option>
-                            <option>General Notarization</option>
-                            <option>Mobile Notary</option>
-                            <option>Loan Signing</option>
-                            <option>Hospital / Care Facility</option>
-                            <option>Legal Document</option>
-                            <option>Remote Online Notary (RON)</option>
+                            <option>Mobile Notary Service</option>
+                            <option>Power of Attorney Notarization</option>
+                            <option>Estate Planning Document Notarization</option>
+                            <option>Loan Signing Services</option>
+                            <option>Hospital Notary</option>
+                            <option>Wedding Officiant Service</option>
+                            <option>Affidavit &amp; Oath Notarization</option>
+                            <option>Acknowledgment Statement Notarization</option>
+                            <option>Contract Notarization</option>
+                            <option>Deed Notarization</option>
+                            <option>Divorce Document Notarization</option>
+                            <option>General Notary Document Preparation</option>
+                            <option>E-Notary Services</option>
                             <option>Other / Not Sure</option>
                         </select>
                     </div>
@@ -922,11 +1079,11 @@
 </section>
 
 <footer>
-    <div class="footer-brand"><strong>Brandon Worobi</strong> · Notary Public · Port Huron, MI</div>
+    <div class="footer-brand"><strong>Worobi Mobile Notary & Document Services</strong> · St. Clair County, MI · Commission through 5/31/2032</div>
     <div class="footer-links">
+        <a class="footer-link" href="tel:+18106899715">(810) 689-9715</a>
+        <a class="footer-link" href="mailto:notary@worobi.com">Notary@worobi.com</a>
         <a class="footer-link" href="https://worobi.com">Worobi.com</a>
-        <a class="footer-link" href="https://brandon.worobi.com">Brandon's Profile</a>
-        <a class="footer-link" href="mailto:notary@worobi.com">notary@worobi.com</a>
     </div>
 </footer>
 

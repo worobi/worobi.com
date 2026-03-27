@@ -106,7 +106,29 @@
         /* ── CONTENT ── */
         .content { max-width: 1120px; margin: 0 auto; padding: 0 48px 100px; }
 
-        .section { padding: 72px 0; border-top: 1px solid var(--border); }
+        .section { padding: 56px 0; border-top: 1px solid var(--border); }
+
+        /* Two-col split for compact sections */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: start;
+        }
+        .split-col-title {
+            font-size: 0.72rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.15em;
+            color: var(--accent); margin-bottom: 24px;
+            display: flex; align-items: baseline; gap: 10px;
+        }
+        .split-col-title span {
+            font-size: 1.4rem; font-weight: 800;
+            letter-spacing: -0.03em; color: var(--text);
+            text-transform: none;
+        }
+        @media (max-width: 800px) {
+            .split-section { grid-template-columns: 1fr; gap: 40px; }
+        }
         .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 52px; }
         .section-num { font-size: 0.72rem; font-weight: 700; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; }
         .section-title { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.03em; }
@@ -330,10 +352,12 @@
             <h1>Brandon<br>Worobi</h1>
             <p class="hero-title">— "From Chaos to Clarity—One System at a Time." —</p>
             <div class="hero-actions">
-                <a class="btn btn-primary" href="mailto:brandon@worobi.com">✉ brandon@worobi.com</a>
+                <a class="btn btn-primary" href="resume.pdf" download>⬇ Resume</a>
                 <a class="btn btn-outline" href="#">LinkedIn</a>
                 <a class="btn btn-outline" href="#">GitHub</a>
-                <a class="btn btn-outline" href="resume.pdf" download>⬇ Resume</a>
+                <a class="btn btn-outline" href="#">Substack</a>
+            </div>
+            <div class="hero-actions" style="margin-top: 10px;">
                 <a class="btn btn-outline" href="https://notary.worobi.com">📋 Notary Services</a>
             </div>
         </div>
@@ -395,50 +419,61 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
             </div>
         </section>
 
-        <!-- 02 Education -->
+        <!-- 02 Education & Skills -->
         <section class="section">
-            <div class="section-head"><span class="section-num">02</span><h2 class="section-title">Education</h2></div>
-            <div>
-                <div class="timeline-entry">
-                    <span class="entry-date">20XX – 20XX</span>
-                    <div>
-                        <p class="entry-role">Degree or Certification</p>
-                        <p class="entry-org">School or Institution</p>
-                        <p class="entry-desc">Add relevant coursework, honors, activities, or achievements here.</p>
+            <div class="section-head"><span class="section-num">02</span><h2 class="section-title">Education &amp; Skills</h2></div>
+            <div class="split-section">
+
+                <!-- Education column -->
+                <div>
+                    <div class="split-col-title">Education</div>
+                    <div class="timeline-entry" style="border-bottom:none; padding-top:0;">
+                        <span class="entry-date">20XX – 20XX</span>
+                        <div>
+                            <p class="entry-role">Degree or Certification</p>
+                            <p class="entry-org">School or Institution</p>
+                            <p class="entry-desc">Add relevant coursework, honors, or achievements here.</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Skills column -->
+                <div>
+                    <div class="split-col-title">Skills</div>
+                    <div class="skills-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="skill-group">
+                            <h4>Category 1</h4>
+                            <div class="tags">
+                                <span class="tag">Skill A</span><span class="tag">Skill B</span><span class="tag">Skill C</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Category 2</h4>
+                            <div class="tags">
+                                <span class="tag">Skill D</span><span class="tag">Skill E</span><span class="tag">Skill F</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Category 3</h4>
+                            <div class="tags">
+                                <span class="tag">Skill G</span><span class="tag">Skill H</span><span class="tag">Skill I</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Category 4</h4>
+                            <div class="tags">
+                                <span class="tag">Skill J</span><span class="tag">Skill K</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- 03 Skills -->
+        <!-- 03 Portfolio -->
         <section class="section">
-            <div class="section-head"><span class="section-num">03</span><h2 class="section-title">Skills</h2></div>
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <h4>Category 1</h4>
-                    <div class="tags">
-                        <span class="tag">Skill A</span><span class="tag">Skill B</span><span class="tag">Skill C</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h4>Category 2</h4>
-                    <div class="tags">
-                        <span class="tag">Skill D</span><span class="tag">Skill E</span><span class="tag">Skill F</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h4>Category 3</h4>
-                    <div class="tags">
-                        <span class="tag">Skill G</span><span class="tag">Skill H</span><span class="tag">Skill I</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- 04 Portfolio -->
-        <section class="section">
-            <div class="section-head"><span class="section-num">04</span><h2 class="section-title">Portfolio</h2></div>
+            <div class="section-head"><span class="section-num">03</span><h2 class="section-title">Portfolio</h2></div>
 
             <div class="projects-grid">
 
@@ -545,7 +580,7 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
 
         <!-- 05 Blog Posts -->
         <section class="section">
-            <div class="section-head"><span class="section-num">05</span><h2 class="section-title">Blog Posts</h2></div>
+            <div class="section-head"><span class="section-num">04</span><h2 class="section-title">Blog Posts</h2></div>
             <div class="blog-grid">
                 <!--
                     HOW TO ADD A POST:
@@ -588,7 +623,7 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
 
         <!-- 06 Contact -->
         <section class="section">
-            <div class="section-head"><span class="section-num">06</span><h2 class="section-title">Contact</h2></div>
+            <div class="section-head"><span class="section-num">05</span><h2 class="section-title">Contact</h2></div>
             <div class="contact-wrap">
                 <p class="contact-intro">Want to get in touch? Fill out the form and I'll get back to you.</p>
                 <!--
