@@ -240,7 +240,7 @@
         .proj-link.secondary { color: var(--text-muted); }
 
         /* GitHub Stats */
-        .github-stats-wrap { }
+        .github-stats-wrap { margin-top: 8px; }
         .github-stats-label {
             font-size: 0.72rem; font-weight: 700;
             text-transform: uppercase; letter-spacing: 0.12em;
@@ -256,6 +256,8 @@
             border: 1px solid var(--border);
             display: block;
         }
+        .github-stats-full { margin-top: 16px; }
+        .github-stats-full img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; }
         .github-note {
             font-size: 0.72rem; color: var(--text-muted);
             margin-top: 10px; font-style: italic;
@@ -263,6 +265,49 @@
         @media (max-width: 600px) {
             .github-stats-grid { grid-template-columns: 1fr; }
         }
+
+        /* Blog Posts */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .blog-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            display: flex; flex-direction: column; gap: 12px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            text-decoration: none; color: inherit;
+        }
+        .blog-card:hover {
+            border-color: rgba(var(--accent-rgb),0.3);
+            box-shadow: 0 8px 28px rgba(var(--accent-rgb),0.08);
+        }
+        .blog-card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .blog-platform {
+            font-size: 0.62rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 3px 10px; border-radius: 100px;
+            background: var(--accent-light); color: var(--accent);
+        }
+        .blog-date { font-size: 0.72rem; color: var(--text-muted); }
+        .blog-title { font-size: 1.05rem; font-weight: 700; color: var(--text); line-height: 1.35; }
+        .blog-excerpt { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; flex: 1; }
+        .blog-read {
+            font-size: 0.78rem; font-weight: 600;
+            color: var(--accent); display: inline-flex; align-items: center; gap: 4px;
+            transition: opacity 0.2s; align-self: flex-start;
+        }
+        .blog-card:hover .blog-read { opacity: 0.75; }
+        .blog-empty {
+            grid-column: 1 / -1;
+            background: var(--surface); border: 1.5px dashed var(--border);
+            border-radius: 14px; padding: 36px 28px; text-align: center;
+            color: var(--text-muted); font-size: 0.875rem; line-height: 1.7; font-style: italic;
+        }
+        .blog-empty strong { display: block; font-style: normal; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -287,6 +332,7 @@
                 <a class="btn btn-primary" href="mailto:brandon@worobi.com">✉ brandon@worobi.com</a>
                 <a class="btn btn-outline" href="#">LinkedIn</a>
                 <a class="btn btn-outline" href="#">GitHub</a>
+                <a class="btn btn-outline" href="resume.pdf" download>⬇ Resume</a>
             </div>
         </div>
         <div class="photo-wrap">
@@ -347,40 +393,9 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
             </div>
         </section>
 
-        <!-- 02 Experience -->
+        <!-- 02 Education -->
         <section class="section">
-            <div class="section-head"><span class="section-num">02</span><h2 class="section-title">Experience</h2></div>
-            <div>
-                <div class="timeline-entry">
-                    <span class="entry-date">20XX – Present</span>
-                    <div>
-                        <p class="entry-role">Job Title</p>
-                        <p class="entry-org">Company Name</p>
-                        <p class="entry-desc">Describe your role, key responsibilities, and accomplishments. Include metrics where possible — e.g., "Grew X by Y%" or "Led a team of Z people."</p>
-                    </div>
-                </div>
-                <div class="timeline-entry">
-                    <span class="entry-date">20XX – 20XX</span>
-                    <div>
-                        <p class="entry-role">Job Title</p>
-                        <p class="entry-org">Company Name</p>
-                        <p class="entry-desc">Describe your role here. Duplicate this block to add more entries.</p>
-                    </div>
-                </div>
-                <div class="timeline-entry">
-                    <span class="entry-date">20XX – 20XX</span>
-                    <div>
-                        <p class="entry-role">Job Title</p>
-                        <p class="entry-org">Company Name</p>
-                        <p class="entry-desc">Add as many entries as you need.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 03 Education -->
-        <section class="section">
-            <div class="section-head"><span class="section-num">03</span><h2 class="section-title">Education</h2></div>
+            <div class="section-head"><span class="section-num">02</span><h2 class="section-title">Education</h2></div>
             <div>
                 <div class="timeline-entry">
                     <span class="entry-date">20XX – 20XX</span>
@@ -393,9 +408,9 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
             </div>
         </section>
 
-        <!-- 04 Skills -->
+        <!-- 03 Skills -->
         <section class="section">
-            <div class="section-head"><span class="section-num">04</span><h2 class="section-title">Skills</h2></div>
+            <div class="section-head"><span class="section-num">03</span><h2 class="section-title">Skills</h2></div>
             <div class="skills-grid">
                 <div class="skill-group">
                     <h4>Category 1</h4>
@@ -419,9 +434,9 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
         </section>
 
 
-        <!-- 05 Portfolio -->
+        <!-- 04 Portfolio -->
         <section class="section">
-            <div class="section-head"><span class="section-num">05</span><h2 class="section-title">Portfolio</h2></div>
+            <div class="section-head"><span class="section-num">04</span><h2 class="section-title">Portfolio</h2></div>
 
             <div class="projects-grid">
 
@@ -502,20 +517,71 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
             <!-- GitHub Stats -->
             <div class="github-stats-wrap">
                 <p class="github-stats-label">GitHub Activity</p>
+                <!--
+                    UPDATE: Replace YOUR_GITHUB_USERNAME (appears 3 times below) with your
+                    personal GitHub username — NOT the org name. Find yours at github.com
+                -->
                 <div class="github-stats-grid">
-                    <!--
-                        Replace YOUR_GITHUB_USERNAME with your actual GitHub username.
-                        These images are served by github-readme-stats.vercel.app (free, no auth needed).
-                    -->
                     <img
-                        src="https://github-readme-stats.vercel.app/api?username=worobi&show_icons=true&count_private=true&hide_border=true&bg_color=f8fafc&title_color=7c3aed&icon_color=7c3aed&text_color=334155&ring_color=7c3aed"
-                        alt="Brandon's GitHub Stats">
+                        src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&count_private=true&hide_border=true&bg_color=f8fafc&title_color=7c3aed&icon_color=7c3aed&text_color=334155&ring_color=7c3aed&cache_seconds=1800"
+                        alt="Brandon's GitHub Stats"
+                        loading="lazy">
                     <img
-                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=worobi&layout=compact&hide_border=true&bg_color=f8fafc&title_color=7c3aed&text_color=334155&langs_count=6"
-                        alt="Top Languages">
+                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&hide_border=true&bg_color=f8fafc&title_color=7c3aed&text_color=334155&langs_count=6&cache_seconds=1800"
+                        alt="Top Languages"
+                        loading="lazy">
+                </div>
+                <div class="github-stats-full">
+                    <img
+                        src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_GITHUB_USERNAME&hide_border=true&background=f8fafc&ring=7c3aed&fire=7c3aed&currStreakLabel=7c3aed&sideLabels=64748b&dates=64748b&currStreakNum=0f172a&sideNums=0f172a"
+                        alt="GitHub Streak Stats"
+                        loading="lazy">
                 </div>
             </div>
 
+        </section>
+
+        <!-- 05 Blog Posts -->
+        <section class="section">
+            <div class="section-head"><span class="section-num">05</span><h2 class="section-title">Blog Posts</h2></div>
+            <div class="blog-grid">
+                <!--
+                    HOW TO ADD A POST:
+                    Copy one .blog-card block, fill in the details, and set href to the post URL.
+                    Platform examples: Medium · LinkedIn · Substack · Dev.to · Personal Blog
+                -->
+
+                <a class="blog-card" href="#" target="_blank" rel="noopener">
+                    <div class="blog-card-top">
+                        <span class="blog-platform">Medium</span>
+                        <span class="blog-date">Jan 2026</span>
+                    </div>
+                    <div class="blog-title">Post Title Goes Here</div>
+                    <p class="blog-excerpt">A short preview of what this post is about — 1–2 sentences to give the reader a reason to click through.</p>
+                    <span class="blog-read">Read Post ↗</span>
+                </a>
+
+                <a class="blog-card" href="#" target="_blank" rel="noopener">
+                    <div class="blog-card-top">
+                        <span class="blog-platform">LinkedIn</span>
+                        <span class="blog-date">Dec 2025</span>
+                    </div>
+                    <div class="blog-title">Another Post Title Here</div>
+                    <p class="blog-excerpt">Describe this post briefly. What was the key insight or takeaway you shared?</p>
+                    <span class="blog-read">Read Post ↗</span>
+                </a>
+
+                <a class="blog-card" href="#" target="_blank" rel="noopener">
+                    <div class="blog-card-top">
+                        <span class="blog-platform">Substack</span>
+                        <span class="blog-date">Nov 2025</span>
+                    </div>
+                    <div class="blog-title">Third Post Title Here</div>
+                    <p class="blog-excerpt">What is this post about? Keep the excerpt punchy so visitors want to read the full thing.</p>
+                    <span class="blog-read">Read Post ↗</span>
+                </a>
+
+            </div>
         </section>
 
         <!-- 06 Contact -->
