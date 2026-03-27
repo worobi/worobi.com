@@ -30,7 +30,7 @@
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             height: 64px; padding: 0 48px;
             display: flex; align-items: center; justify-content: space-between;
-            background: rgba(10,10,10,0.88); backdrop-filter: blur(16px);
+            background: rgba(10,10,10,0.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
         }
         .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: 0.02em; }
@@ -284,6 +284,16 @@
         }
         .node-card:hover .node-link { color: var(--text-mid); }
 
+        /* Per-person accent colors */
+        .node-card[data-person="brandon"] { --person-color: #7c3aed; }
+        .node-card[data-person="monica"]  { --person-color: #dc2626; }
+        .node-card[data-person="nevaeh"]  { --person-color: #ee778b; }
+        .node-card[data-person="alexander"]{ --person-color: #16a34a; }
+        .node-card[data-person="lilian"]  { --person-color: #ec4899; }
+        .node-card[data-person="theodore"]{ --person-color: #2563eb; }
+        .node-card[data-person="jefferson"]{ --person-color: #f57b24; }
+        .node-card[data-person="charlotte"]{ --person-color: #dcd01d; }
+
         /* Bio-coming badge on minor cards */
         .bio-year {
             font-size: 0.65rem; font-weight: 600;
@@ -464,7 +474,7 @@
             <div class="gen-divider"><span class="gen-tag">Adults</span></div>
 
             <div class="gen-row parents-row">
-                <a class="node-card adult" href="https://brandon.worobi.com" style="--person-color:#7c3aed">
+                <a class="node-card adult" href="https://brandon.worobi.com" data-person="brandon">
                     <div class="node-circle">B</div>
                     <div class="node-name">Brandon</div>
                     <div class="node-role">Your title here</div>
@@ -477,7 +487,7 @@
                     <div class="couple-join-line"></div>
                 </div>
 
-                <a class="node-card adult" href="https://monica.worobi.com" style="--person-color:#dc2626">
+                <a class="node-card adult" href="https://monica.worobi.com" data-person="monica">
                     <div class="node-circle">M</div>
                     <div class="node-name">Monica</div>
                     <div class="node-role">Your title here</div>
@@ -491,7 +501,7 @@
             <div class="gen-divider"><span class="gen-tag">16 &amp; Over</span></div>
 
             <div class="gen-row">
-                <a class="node-card teen" href="https://nevaeh.worobi.com" style="--person-color:#f43f5e">
+                <a class="node-card teen" href="https://nevaeh.worobi.com" data-person="nevaeh">
                     <div class="node-circle">N</div>
                     <div class="node-name">Nevaeh</div>
                     <div class="node-role">Your title here</div>
@@ -505,31 +515,31 @@
             <div class="gen-divider"><span class="gen-tag">Young Ones</span></div>
 
             <div class="gen-row" id="young-ones-row">
-                <a class="node-card minor" href="https://alexander.worobi.com" style="--person-color:#16a34a">
+                <a class="node-card minor" href="https://alexander.worobi.com" data-person="alexander">
                     <div class="node-circle">A</div>
                     <div class="node-name">Alexander</div>
                     <div class="node-role" id="bio-alexander"></div>
                     <span class="node-link">Visit Page →</span>
                 </a>
-                <a class="node-card minor" href="https://lilian.worobi.com" style="--person-color:#ec4899">
+                <a class="node-card minor" href="https://lilian.worobi.com" data-person="lilian">
                     <div class="node-circle">L</div>
                     <div class="node-name">Lilian</div>
                     <div class="node-role" id="bio-lilian"></div>
                     <span class="node-link">Visit Page →</span>
                 </a>
-                <a class="node-card minor" href="https://theodore.worobi.com" style="--person-color:#2563eb">
+                <a class="node-card minor" href="https://theodore.worobi.com" data-person="theodore">
                     <div class="node-circle">T</div>
                     <div class="node-name">Theodore</div>
                     <div class="node-role" id="bio-theodore"></div>
                     <span class="node-link">Visit Page →</span>
                 </a>
-                <a class="node-card minor" href="https://jefferson.worobi.com" style="--person-color:#f97316">
+                <a class="node-card minor" href="https://jefferson.worobi.com" data-person="jefferson">
                     <div class="node-circle">J</div>
                     <div class="node-name">Jefferson</div>
                     <div class="node-role" id="bio-jefferson"></div>
                     <span class="node-link">Visit Page →</span>
                 </a>
-                <a class="node-card minor" href="https://charlotte.worobi.com" style="--person-color:#d97706">
+                <a class="node-card minor" href="https://charlotte.worobi.com" data-person="charlotte">
                     <div class="node-circle">C</div>
                     <div class="node-name">Charlotte</div>
                     <div class="node-role" id="bio-charlotte"></div>
