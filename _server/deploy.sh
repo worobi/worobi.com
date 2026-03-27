@@ -30,6 +30,7 @@ ssh "$VPS_USER@$VPS_IP" "
   sudo mkdir -p $WEB_ROOT/theodore.worobi.com
   sudo mkdir -p $WEB_ROOT/jefferson.worobi.com
   sudo mkdir -p $WEB_ROOT/charlotte.worobi.com
+  sudo mkdir -p $WEB_ROOT/notary.worobi.com
   sudo chown -R $VPS_USER:$VPS_USER $WEB_ROOT
 "
 
@@ -40,7 +41,7 @@ rsync -avz --exclude '_server' --exclude '*/index.html' \
   "$VPS_USER@$VPS_IP:$WEB_ROOT/worobi.com/"
 
 # Upload each member subdomain
-for member in brandon monica nevaeh alexander lilian theodore jefferson charlotte; do
+for member in brandon monica nevaeh alexander lilian theodore jefferson charlotte notary; do
   echo "→ Uploading ${member}.worobi.com ..."
   rsync -avz "$PROJECT_DIR/${member}/" \
     "$VPS_USER@$VPS_IP:$WEB_ROOT/${member}.worobi.com/"

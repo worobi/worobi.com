@@ -129,6 +129,69 @@
         }
         .hero-cta:hover { background: #d8d8d8; transform: translateY(-2px); }
 
+        /* ── POWERED BY BANNER ── */
+        .powered-banner {
+            width: 100%; overflow: hidden;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: var(--surface);
+            display: flex; align-items: stretch;
+            height: 46px;
+        }
+        .powered-label {
+            flex-shrink: 0;
+            display: flex; align-items: center;
+            padding: 0 20px 0 28px;
+            font-size: 0.6rem; font-weight: 700;
+            letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--text-muted);
+            border-right: 1px solid var(--border);
+            background: var(--surface);
+            white-space: nowrap;
+            position: relative; z-index: 2;
+        }
+        .powered-track-wrap {
+            flex: 1; overflow: hidden;
+            position: relative; display: flex; align-items: center;
+        }
+        /* Fade edges */
+        .powered-track-wrap::before,
+        .powered-track-wrap::after {
+            content: '';
+            position: absolute; top: 0; bottom: 0;
+            width: 60px; z-index: 2; pointer-events: none;
+        }
+        .powered-track-wrap::before {
+            left: 0;
+            background: linear-gradient(to right, var(--surface), transparent);
+        }
+        .powered-track-wrap::after {
+            right: 0;
+            background: linear-gradient(to left, var(--surface), transparent);
+        }
+        .powered-track {
+            display: flex; align-items: center;
+            white-space: nowrap;
+            animation: powered-scroll 28s linear infinite;
+        }
+        .powered-track:hover { animation-play-state: paused; }
+        @keyframes powered-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+        .powered-item {
+            display: inline-flex; align-items: center;
+            font-size: 0.78rem; font-weight: 500;
+            color: var(--text-mid);
+            letter-spacing: 0.03em;
+            padding: 0 28px;
+        }
+        .powered-sep {
+            color: var(--text-muted);
+            font-size: 0.5rem;
+            flex-shrink: 0;
+        }
+
         /* ── FAMILY TREE ── */
         .tree-outer {
             padding: 80px 24px 80px;
@@ -589,6 +652,29 @@
             </div>
         </div>
     </section>
+
+    <!-- POWERED BY BANNER -->
+    <div class="powered-banner" aria-hidden="true">
+        <span class="powered-label">Powered By</span>
+        <div class="powered-track-wrap">
+            <div class="powered-track">
+                <!-- Items duplicated for seamless loop -->
+                <span class="powered-item">Scout Consultatory</span><span class="powered-sep">✦</span>
+                <span class="powered-item">Moni's Munchies</span><span class="powered-sep">✦</span>
+                <span class="powered-item">High Functioning Chaos</span><span class="powered-sep">✦</span>
+                <span class="powered-item">Caffeine</span><span class="powered-sep">✦</span>
+                <span class="powered-item">Cannabis</span><span class="powered-sep">✦</span>
+                <span class="powered-item">Love</span><span class="powered-sep">✦</span>
+                <!-- Duplicate set -->
+                <span class="powered-item">Scout Consultatory</span><span class="powered-sep">✦</span>
+                <span class="powered-item">Moni's Munchies</span><span class="powered-sep">✦</span>
+                <span class="powered-item">High Functioning Chaos</span><span class="powered-sep">✦</span>
+                <span class="powered-item">Caffeine</span><span class="powered-sep">✦</span>
+                <span class="powered-item">Cannabis</span><span class="powered-sep">✦</span>
+                <span class="powered-item">Love</span><span class="powered-sep">✦</span>
+            </div>
+        </div>
+    </div>
 
     <!-- CONTACT -->
     <section class="contact-section" id="contact">

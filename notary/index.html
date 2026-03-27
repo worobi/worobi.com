@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Worobi — Notary Public | Port Huron, MI</title>
+    <meta name="description" content="Certified Notary Public serving Port Huron, MI and surrounding areas. Mobile notary services, loan signings, and general notarizations. Available 7 days a week.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy:       #0f1f3d;
+            --navy-mid:   #162847;
+            --navy-light: #1e3a5f;
+            --gold:       #c9a05a;
+            --gold-light: #e8c87a;
+            --gold-pale:  #fdf6e7;
+            --text:       #0f172a;
+            --text-mid:   #334155;
+            --text-muted: #64748b;
+            --border:     #e2e8f0;
+            --surface:    #f8fafc;
+            --surface-2:  #f1f5f9;
+            --white:      #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            height: 68px; padding: 0 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(15,31,61,0.97);
+            -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(201,160,90,0.2);
+        }
+        .nav-brand {
+            display: flex; align-items: center; gap: 12px;
+            text-decoration: none;
+        }
+        .nav-seal {
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 1.5px solid var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem; font-weight: 700;
+            color: var(--gold);
+        }
+        .nav-brand-text { display: flex; flex-direction: column; }
+        .nav-brand-name { font-size: 0.9rem; font-weight: 700; color: var(--white); line-height: 1.2; }
+        .nav-brand-sub  { font-size: 0.65rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+        .nav-links { display: flex; align-items: center; gap: 28px; }
+        .nav-link { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.65); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+        .nav-link:hover { color: var(--white); }
+        .nav-cta {
+            background: var(--gold); color: var(--navy);
+            font-size: 0.78rem; font-weight: 700;
+            padding: 9px 20px; border-radius: 100px;
+            text-decoration: none; transition: all 0.2s;
+            letter-spacing: 0.05em;
+        }
+        .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, #1a3355 100%);
+            display: flex; align-items: center;
+            padding: 100px 48px 80px;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,160,90,0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,160,90,0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .hero-grid {
+            max-width: 1120px; margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1fr 420px;
+            gap: 80px; align-items: center;
+            position: relative; z-index: 1;
+        }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 20px;
+        }
+        .hero-eyebrow::before {
+            content: ''; width: 24px; height: 1px; background: var(--gold);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.8rem);
+            font-weight: 900; line-height: 1.05;
+            color: var(--white); margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+        .hero h1 span { color: var(--gold); }
+        .hero-tagline {
+            font-size: 1.05rem; color: rgba(255,255,255,0.6);
+            margin-bottom: 36px; line-height: 1.7; max-width: 480px;
+        }
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+        .btn-gold {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--gold); color: var(--navy);
+            font-size: 0.9rem; font-weight: 700;
+            padding: 14px 28px; border-radius: 100px;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,160,90,0.3); }
+        .btn-ghost {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: transparent; color: rgba(255,255,255,0.8);
+            border: 1.5px solid rgba(255,255,255,0.25);
+            font-size: 0.9rem; font-weight: 600;
+            padding: 14px 28px; border-radius: 100px;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+        .hero-trust {
+            display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 0.78rem; color: rgba(255,255,255,0.5);
+        }
+        .trust-item::before {
+            content: '✓';
+            width: 18px; height: 18px; border-radius: 50%;
+            background: rgba(201,160,90,0.15);
+            border: 1px solid rgba(201,160,90,0.3);
+            color: var(--gold); font-size: 0.65rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Hero card */
+        .hero-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(201,160,90,0.2);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(8px);
+        }
+        .hero-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem; font-weight: 700;
+            color: var(--white); margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(201,160,90,0.2);
+        }
+        .availability-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+        .avail-row {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.82rem;
+        }
+        .avail-day { color: rgba(255,255,255,0.6); }
+        .avail-hours { color: var(--white); font-weight: 600; }
+        .avail-badge {
+            font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.1em; padding: 2px 8px; border-radius: 100px;
+        }
+        .badge-open { background: rgba(22,163,74,0.15); color: #4ade80; border: 1px solid rgba(22,163,74,0.3); }
+        .badge-flex { background: rgba(201,160,90,0.15); color: var(--gold); border: 1px solid rgba(201,160,90,0.3); }
+        .hero-card-note {
+            font-size: 0.75rem; color: rgba(255,255,255,0.4);
+            text-align: center; font-style: italic; line-height: 1.6;
+        }
+        .hero-card-phone {
+            display: block; text-align: center;
+            font-size: 1.3rem; font-weight: 800; color: var(--gold);
+            text-decoration: none; margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+        .hero-card-phone:hover { color: var(--gold-light); }
+
+        /* ── SERVICES ── */
+        .services {
+            padding: 100px 48px;
+            background: var(--white);
+        }
+        .section-inner { max-width: 1120px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 64px; }
+        .section-eyebrow {
+            font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 700; color: var(--text);
+            letter-spacing: -0.01em; margin-bottom: 14px;
+        }
+        .section-sub {
+            font-size: 0.95rem; color: var(--text-muted);
+            max-width: 520px; margin: 0 auto; line-height: 1.75;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px 32px;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(201,160,90,0.4);
+            box-shadow: 0 12px 40px rgba(201,160,90,0.1);
+        }
+        .service-icon {
+            font-size: 2.2rem; margin-bottom: 20px; display: block;
+        }
+        .service-name {
+            font-size: 1.1rem; font-weight: 700;
+            color: var(--text); margin-bottom: 10px;
+        }
+        .service-desc {
+            font-size: 0.875rem; color: var(--text-muted);
+            line-height: 1.75; margin-bottom: 20px; flex: 1;
+        }
+        .service-price {
+            font-size: 0.78rem; font-weight: 700;
+            color: var(--navy-light);
+            background: var(--gold-pale);
+            border: 1px solid rgba(201,160,90,0.3);
+            padding: 4px 12px; border-radius: 100px;
+            display: inline-block;
+        }
+
+        /* ── HOW IT WORKS ── */
+        .how-it-works {
+            padding: 100px 48px;
+            background: var(--navy);
+        }
+        .how-it-works .section-title { color: var(--white); }
+        .how-it-works .section-sub { color: rgba(255,255,255,0.5); }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            position: relative;
+        }
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 28px; left: 60px; right: 60px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(201,160,90,0.3), transparent);
+        }
+        .step {
+            text-align: center;
+            position: relative;
+        }
+        .step-num {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: rgba(201,160,90,0.1);
+            border: 1px solid rgba(201,160,90,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem; font-weight: 700; color: var(--gold);
+            margin: 0 auto 20px;
+            position: relative; z-index: 1;
+        }
+        .step-title {
+            font-size: 0.95rem; font-weight: 700;
+            color: var(--white); margin-bottom: 10px;
+        }
+        .step-desc {
+            font-size: 0.82rem; color: rgba(255,255,255,0.45);
+            line-height: 1.7;
+        }
+
+        /* ── SERVICE AREA ── */
+        .service-area {
+            padding: 100px 48px;
+            background: var(--surface);
+        }
+        .area-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 80px; align-items: center;
+        }
+        .area-content {}
+        .area-lead {
+            font-size: 1rem; color: var(--text-mid);
+            line-height: 1.8; margin-bottom: 32px;
+        }
+        .area-list {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 10px; list-style: none;
+        }
+        .area-list li {
+            font-size: 0.875rem; color: var(--text-mid);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .area-list li::before {
+            content: '📍'; font-size: 0.75rem;
+        }
+        .area-map {
+            background: var(--navy);
+            border-radius: 24px;
+            padding: 52px 40px;
+            text-align: center;
+            border: 1px solid rgba(201,160,90,0.2);
+        }
+        .map-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem; font-weight: 700;
+            color: var(--white); margin-bottom: 8px;
+        }
+        .map-sub { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
+        .map-radius {
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            border: 2px solid rgba(201,160,90,0.3);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            margin: 0 auto 28px;
+            position: relative;
+        }
+        .map-radius::before, .map-radius::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            border: 1px dashed rgba(201,160,90,0.15);
+        }
+        .map-radius::before { inset: 20px; }
+        .map-radius::after  { inset: 40px; }
+        .map-miles {
+            font-size: 2.5rem; font-weight: 900; color: var(--gold);
+            font-family: 'Playfair Display', serif; line-height: 1;
+        }
+        .map-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; }
+        .map-note { font-size: 0.75rem; color: rgba(255,255,255,0.35); font-style: italic; }
+
+        /* ── PRICING ── */
+        .pricing {
+            padding: 100px 48px;
+            background: var(--white);
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 860px; margin: 0 auto;
+        }
+        .price-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+        .price-card.featured {
+            background: var(--navy);
+            border-color: rgba(201,160,90,0.3);
+            position: relative; overflow: hidden;
+        }
+        .price-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute; top: 16px; right: -28px;
+            background: var(--gold); color: var(--navy);
+            font-size: 0.58rem; font-weight: 800;
+            letter-spacing: 0.12em; padding: 4px 40px;
+            transform: rotate(45deg);
+        }
+        .price-tier { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 12px; }
+        .price-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem; font-weight: 900; line-height: 1;
+            margin-bottom: 4px;
+        }
+        .price-card:not(.featured) .price-amount { color: var(--text); }
+        .price-card.featured .price-amount { color: var(--white); }
+        .price-unit { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; }
+        .price-card.featured .price-unit { color: rgba(255,255,255,0.4); }
+        .price-divider { height: 1px; background: var(--border); margin: 20px 0; }
+        .price-card.featured .price-divider { background: rgba(255,255,255,0.1); }
+        .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+        .price-features li { font-size: 0.83rem; display: flex; align-items: flex-start; gap: 8px; text-align: left; }
+        .price-card:not(.featured) .price-features li { color: var(--text-mid); }
+        .price-card.featured .price-features li { color: rgba(255,255,255,0.7); }
+        .price-features li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+        .price-btn {
+            display: block; width: 100%;
+            padding: 12px; border-radius: 100px;
+            font-size: 0.85rem; font-weight: 700;
+            text-decoration: none; transition: all 0.2s; text-align: center;
+        }
+        .price-btn-outline {
+            border: 1.5px solid var(--border); color: var(--text-mid);
+        }
+        .price-btn-outline:hover { border-color: var(--gold); color: var(--navy); }
+        .price-btn-gold { background: var(--gold); color: var(--navy); }
+        .price-btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+        /* ── CREDENTIALS ── */
+        .credentials {
+            padding: 80px 48px;
+            background: var(--gold-pale);
+            border-top: 1px solid rgba(201,160,90,0.2);
+            border-bottom: 1px solid rgba(201,160,90,0.2);
+        }
+        .cred-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 32px; text-align: center;
+            max-width: 900px; margin: 0 auto;
+        }
+        .cred-item {}
+        .cred-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+        .cred-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+        .cred-sub { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* ── CONTACT ── */
+        .contact {
+            padding: 100px 48px;
+            background: var(--navy);
+        }
+        .contact .section-title { color: var(--white); }
+        .contact .section-sub { color: rgba(255,255,255,0.45); }
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 480px;
+            gap: 72px; align-items: start;
+        }
+        .contact-info { display: flex; flex-direction: column; gap: 32px; }
+        .contact-item { display: flex; gap: 16px; }
+        .contact-item-icon {
+            width: 44px; height: 44px; flex-shrink: 0;
+            border-radius: 12px;
+            background: rgba(201,160,90,0.1);
+            border: 1px solid rgba(201,160,90,0.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+        }
+        .contact-item-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 4px; }
+        .contact-item-val { font-size: 0.92rem; color: rgba(255,255,255,0.8); }
+        .contact-item-val a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
+        .contact-item-val a:hover { color: var(--gold); }
+
+        .contact-form {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(201,160,90,0.2);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem; font-weight: 700;
+            color: var(--white); margin-bottom: 28px;
+        }
+        .form-grid { display: flex; flex-direction: column; gap: 16px; }
+        .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); }
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem; color: var(--white);
+            outline: none; transition: border-color 0.2s; width: 100%;
+        }
+        .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(201,160,90,0.5); }
+        .form-select option { background: var(--navy); }
+        .form-select { appearance: none; cursor: pointer; }
+        .form-textarea { resize: vertical; min-height: 110px; }
+        .form-submit {
+            width: 100%;
+            background: var(--gold); color: var(--navy);
+            border: none; border-radius: 100px;
+            padding: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+            letter-spacing: 0.05em; text-transform: uppercase;
+        }
+        .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+        .form-note { font-size: 0.72rem; color: rgba(255,255,255,0.25); text-align: center; margin-top: 10px; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #080f1e;
+            padding: 32px 48px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 16px;
+        }
+        .footer-brand { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+        .footer-brand strong { color: var(--gold); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+        .footer-link:hover { color: var(--gold); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            nav { padding: 0 20px; }
+            .nav-links { display: none; }
+            .hero { padding: 90px 24px 60px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+            .services, .how-it-works, .service-area, .pricing, .credentials, .contact { padding: 72px 24px; }
+            .steps-grid { grid-template-columns: 1fr 1fr; }
+            .steps-grid::before { display: none; }
+            .area-grid { grid-template-columns: 1fr; gap: 48px; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .cred-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row-2 { grid-template-columns: 1fr; }
+            footer { padding: 28px 24px; flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 560px) {
+            .steps-grid { grid-template-columns: 1fr; }
+            .cred-grid { grid-template-columns: 1fr 1fr; }
+            .area-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a class="nav-brand" href="#">
+        <div class="nav-seal">BW</div>
+        <div class="nav-brand-text">
+            <span class="nav-brand-name">Brandon Worobi</span>
+            <span class="nav-brand-sub">Notary Public</span>
+        </div>
+    </a>
+    <div class="nav-links">
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#how-it-works">How It Works</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="nav-link" href="#area">Service Area</a>
+        <a class="nav-link" href="https://brandon.worobi.com">Brandon's Profile ↗</a>
+    </div>
+    <a class="nav-cta" href="#contact">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid">
+        <div>
+            <p class="hero-eyebrow">Notary Public · Port Huron, MI</p>
+            <h1>Trusted <span>Notary</span><br>Services,<br>On Your Time</h1>
+            <p class="hero-tagline">Professional mobile notary serving Port Huron and surrounding communities. I come to you — home, office, hospital, or anywhere you need me.</p>
+            <div class="hero-actions">
+                <a class="btn-gold" href="#contact">📅 Book an Appointment</a>
+                <a class="btn-ghost" href="#services">View Services</a>
+            </div>
+            <div class="hero-trust">
+                <span class="trust-item">State Commissioned</span>
+                <span class="trust-item">Background Checked</span>
+                <span class="trust-item">NNA Certified</span>
+                <span class="trust-item">E&O Insured</span>
+            </div>
+        </div>
+
+        <div>
+            <div class="hero-card">
+                <div class="hero-card-title">📞 Reach Me Directly</div>
+                <a class="hero-card-phone" href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a>
+                <div class="availability-grid">
+                    <div class="avail-row">
+                        <span class="avail-day">Monday – Friday</span>
+                        <span class="avail-hours">8am – 7pm</span>
+                        <span class="avail-badge badge-open">Open</span>
+                    </div>
+                    <div class="avail-row">
+                        <span class="avail-day">Saturday</span>
+                        <span class="avail-hours">9am – 5pm</span>
+                        <span class="avail-badge badge-open">Open</span>
+                    </div>
+                    <div class="avail-row">
+                        <span class="avail-day">Sunday</span>
+                        <span class="avail-hours">By Request</span>
+                        <span class="avail-badge badge-flex">Flexible</span>
+                    </div>
+                    <div class="avail-row">
+                        <span class="avail-day">After Hours</span>
+                        <span class="avail-hours">Emergency Available</span>
+                        <span class="avail-badge badge-flex">Call</span>
+                    </div>
+                </div>
+                <p class="hero-card-note">Same-day appointments often available.<br>Evening & weekend slots fill fast — book early.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-eyebrow">What I Offer</p>
+            <h2 class="section-title">Notary Services</h2>
+            <p class="section-sub">From everyday document signings to complex loan closings, I handle it all with professionalism and discretion.</p>
+        </div>
+        <div class="services-grid">
+
+            <div class="service-card">
+                <span class="service-icon">📄</span>
+                <div class="service-name">General Notarizations</div>
+                <p class="service-desc">Acknowledgments, jurats, oaths, affirmations, and copy certifications for any document requiring a notary seal. Quick turnaround for everyday needs.</p>
+                <span class="service-price">Starting at $10/signature</span>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🏠</span>
+                <div class="service-name">Loan Signings</div>
+                <p class="service-desc">Certified Signing Agent for mortgage closings, refinances, and home equity loans. I work with title companies, escrow officers, and lenders statewide.</p>
+                <span class="service-price">Contact for pricing</span>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🚗</span>
+                <div class="service-name">Mobile Notary</div>
+                <p class="service-desc">I travel to your home, office, hospital, care facility, or any convenient location. No need to leave where you are — I come to you.</p>
+                <span class="service-price">Travel fee applies</span>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🏥</span>
+                <div class="service-name">Hospital & Care Facility</div>
+                <p class="service-desc">Sensitive, patient-focused notarizations for advanced directives, powers of attorney, wills, and other time-sensitive documents at medical facilities.</p>
+                <span class="service-price">Priority scheduling</span>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">⚖️</span>
+                <div class="service-name">Legal Documents</div>
+                <p class="service-desc">Affidavits, depositions, sworn statements, contracts, and other legal paperwork requiring notarization. Handled with accuracy and confidentiality.</p>
+                <span class="service-price">Starting at $10/signature</span>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🌐</span>
+                <div class="service-name">Remote Online Notary (RON)</div>
+                <p class="service-desc">Can't meet in person? Remote online notarization lets us complete your signing securely over video — valid in Michigan and most other states.</p>
+                <span class="service-price">Contact for availability</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how-it-works">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-eyebrow">Simple Process</p>
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-sub">Getting your documents notarized is straightforward. Here's what to expect.</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-title">Book Online or Call</div>
+                <p class="step-desc">Fill out the contact form or call directly. Tell me what you need and where you'd like to meet.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-title">Confirm Your Appointment</div>
+                <p class="step-desc">I'll confirm your time, location, and any documents you should have ready. Same-day often available.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-title">I Come to You</div>
+                <p class="step-desc">Bring a valid government-issued photo ID. I'll arrive on time, review your documents, and complete the signing.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-title">Done & Sealed</div>
+                <p class="step-desc">Your documents are notarized, sealed, and ready. Payment accepted at time of service.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="service-area" id="area">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-eyebrow">Where I Serve</p>
+            <h2 class="section-title">Service Area</h2>
+            <p class="section-sub">Based in Port Huron, MI — serving the Blue Water Area and beyond.</p>
+        </div>
+        <div class="area-grid">
+            <div class="area-content">
+                <p class="area-lead">I serve Port Huron and the surrounding communities within a 50-mile radius. Travel fees apply outside the Port Huron city limits. Need service further out? Just ask — I'm flexible.</p>
+                <ul class="area-list">
+                    <li>Port Huron</li>
+                    <li>Fort Gratiot</li>
+                    <li>Marysville</li>
+                    <li>St. Clair</li>
+                    <li>Marine City</li>
+                    <li>Algonac</li>
+                    <li>Lexington</li>
+                    <li>Sandusky</li>
+                    <li>Yale</li>
+                    <li>Richmond</li>
+                    <li>Capac</li>
+                    <li>And more...</li>
+                </ul>
+            </div>
+            <div class="area-map">
+                <div class="map-title">Port Huron, MI</div>
+                <div class="map-sub">Blue Water Area</div>
+                <div class="map-radius">
+                    <div class="map-miles">50</div>
+                    <div class="map-label">Mile Radius</div>
+                </div>
+                <p class="map-note">Extended travel available upon request.<br>Evening & weekend travel possible.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-eyebrow">Transparent Pricing</p>
+            <h2 class="section-title">Simple, Clear Rates</h2>
+            <p class="section-sub">Michigan state law caps notary fees at $10 per notarial act. Travel and additional services are priced separately.</p>
+        </div>
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <div class="price-tier">Basic</div>
+                <div class="price-amount">$10</div>
+                <div class="price-unit">per notarial act</div>
+                <div class="price-divider"></div>
+                <ul class="price-features">
+                    <li>Single document signing</li>
+                    <li>Acknowledgment or jurat</li>
+                    <li>At your location (in-person)</li>
+                    <li>Notary seal & signature</li>
+                </ul>
+                <a class="price-btn price-btn-outline" href="#contact">Book Now</a>
+            </div>
+
+            <div class="price-card featured">
+                <div class="price-tier">Mobile</div>
+                <div class="price-amount" style="color:var(--gold)">$10+</div>
+                <div class="price-unit">notary fee + travel</div>
+                <div class="price-divider"></div>
+                <ul class="price-features">
+                    <li>I travel to your location</li>
+                    <li>Multiple signers/documents</li>
+                    <li>Home, office, hospital</li>
+                    <li>Evening & weekend available</li>
+                    <li>Travel fee based on distance</li>
+                </ul>
+                <a class="price-btn price-btn-gold" href="#contact">Book Now</a>
+            </div>
+
+            <div class="price-card">
+                <div class="price-tier">Loan Signing</div>
+                <div class="price-amount">Custom</div>
+                <div class="price-unit">contact for quote</div>
+                <div class="price-divider"></div>
+                <ul class="price-features">
+                    <li>Mortgage closings</li>
+                    <li>Refinance packages</li>
+                    <li>Works with title companies</li>
+                    <li>Certified Signing Agent</li>
+                </ul>
+                <a class="price-btn price-btn-outline" href="#contact">Get a Quote</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials">
+    <div class="section-inner">
+        <div class="cred-grid">
+            <div class="cred-item">
+                <span class="cred-icon">🏛️</span>
+                <div class="cred-title">State Commissioned</div>
+                <p class="cred-sub">Commissioned Notary Public by the State of Michigan</p>
+            </div>
+            <div class="cred-item">
+                <span class="cred-icon">🎓</span>
+                <div class="cred-title">NNA Certified</div>
+                <p class="cred-sub">National Notary Association Certified Signing Agent</p>
+            </div>
+            <div class="cred-item">
+                <span class="cred-icon">🛡️</span>
+                <div class="cred-title">Background Checked</div>
+                <p class="cred-sub">Annual background screening for your peace of mind</p>
+            </div>
+            <div class="cred-item">
+                <span class="cred-icon">📋</span>
+                <div class="cred-title">E&O Insured</div>
+                <p class="cred-sub">Errors & Omissions insurance for every signing</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-eyebrow">Get in Touch</p>
+            <h2 class="section-title">Book an Appointment</h2>
+            <p class="section-sub">Ready to get started? Fill out the form or give me a call. I typically respond within a few hours.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <div>
+                        <div class="contact-item-label">Phone / Text</div>
+                        <div class="contact-item-val"><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">✉️</div>
+                    <div>
+                        <div class="contact-item-label">Email</div>
+                        <div class="contact-item-val"><a href="mailto:notary@worobi.com">notary@worobi.com</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <div>
+                        <div class="contact-item-label">Based In</div>
+                        <div class="contact-item-val">Port Huron, MI 48060</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🕐</div>
+                    <div>
+                        <div class="contact-item-label">Hours</div>
+                        <div class="contact-item-val">Mon–Fri 8am–7pm · Sat 9am–5pm<br>Sun & After Hours by Request</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">👤</div>
+                    <div>
+                        <div class="contact-item-label">Also Find Me At</div>
+                        <div class="contact-item-val"><a href="https://brandon.worobi.com">brandon.worobi.com ↗</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <div class="form-title">Request an Appointment</div>
+                <!--
+                    SETUP: Replace YOUR_FORM_ID with your Formspree form ID.
+                    Create a separate form at formspree.io for notary inquiries.
+                -->
+                <form class="form-grid" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label class="form-label">First Name</label>
+                            <input type="text" name="first_name" class="form-input" placeholder="Jane" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" name="last_name" class="form-input" placeholder="Smith" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" name="phone" class="form-input" placeholder="(810) XXX-XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Service Needed</label>
+                        <select name="service" class="form-select" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option>General Notarization</option>
+                            <option>Mobile Notary</option>
+                            <option>Loan Signing</option>
+                            <option>Hospital / Care Facility</option>
+                            <option>Legal Document</option>
+                            <option>Remote Online Notary (RON)</option>
+                            <option>Other / Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Date & Time</label>
+                        <input type="text" name="datetime" class="form-input" placeholder="e.g. Thursday March 28, around 2pm">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Additional Details</label>
+                        <textarea name="message" class="form-textarea" placeholder="Location, document type, number of signatures, any special requirements..."></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="New Notary Appointment Request — notary.worobi.com">
+                    <button type="submit" class="form-submit">Send Request →</button>
+                    <p class="form-note">I'll respond within a few hours to confirm your appointment.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-brand"><strong>Brandon Worobi</strong> · Notary Public · Port Huron, MI</div>
+    <div class="footer-links">
+        <a class="footer-link" href="https://worobi.com">Worobi.com</a>
+        <a class="footer-link" href="https://brandon.worobi.com">Brandon's Profile</a>
+        <a class="footer-link" href="mailto:notary@worobi.com">notary@worobi.com</a>
+    </div>
+</footer>
+
+</body>
+</html>
