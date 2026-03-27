@@ -372,6 +372,94 @@
         .node-card.teen .node-circle { width: 76px; height: 76px; }
         .node-card.teen .node-name { color: var(--text); }
 
+        /* ── TRIBE SECTION ── */
+        .tribe-outer {
+            padding: 0 24px 80px;
+            background: var(--bg);
+        }
+        .tribe-container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .tribe-divider {
+            display: flex; align-items: center; gap: 20px;
+            width: 100%; margin-bottom: 48px;
+        }
+        .tribe-divider::before,
+        .tribe-divider::after {
+            content: ''; flex: 1;
+            height: 1px; background: var(--border);
+        }
+        .tribe-tag {
+            font-size: 0.65rem; font-weight: 700;
+            letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--text-muted); white-space: nowrap;
+            padding: 4px 14px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+        }
+        .tribe-intro {
+            text-align: center;
+            font-size: 0.8rem; color: var(--text-muted);
+            font-style: italic; margin-bottom: 40px;
+            margin-top: -24px;
+            line-height: 1.6;
+        }
+        .tribe-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        /* Individual tribe card */
+        .tribe-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            width: 130px;
+            flex-shrink: 0;
+            cursor: default;
+        }
+        .tribe-card.linked { cursor: pointer; }
+        .tribe-circle {
+            width: 68px; height: 68px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem; font-weight: 800;
+            color: var(--text-muted);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 12px;
+            transition: all 0.25s;
+        }
+        .tribe-name {
+            font-size: 0.88rem; font-weight: 700;
+            color: var(--text-mid); margin-bottom: 3px;
+            letter-spacing: -0.01em;
+            transition: color 0.2s;
+            line-height: 1.3;
+        }
+        .tribe-role {
+            font-size: 0.68rem; color: var(--text-muted);
+            font-style: italic;
+        }
+        /* Gold hover for all tribe cards */
+        .tribe-card:hover .tribe-circle {
+            border-color: #c9a05a;
+            color: #c9a05a;
+            transform: scale(1.05);
+        }
+        .tribe-card:hover .tribe-name { color: #c9a05a; }
+
+        @media (max-width: 700px) {
+            .tribe-row { gap: 14px; }
+            .tribe-card { width: 100px; }
+        }
+
         /* ── CONTACT SECTION ── */
         .contact-section {
             border-top: 1px solid var(--border);
@@ -613,6 +701,40 @@
         </div>
     </section>
 
+    <!-- THE TRIBE / EXTENDED FAMILY -->
+    <!--
+        TO ADD MORE: copy any .tribe-card block and paste it inside .tribe-row.
+        Use class="tribe-card" for non-linked entries (no website).
+        Use class="tribe-card linked" + wrap in <a href="..."> for linked entries.
+        The circle letter should be the first initial of the family/person name.
+        tribe-role options: Grandparents · Family Friends · Chosen Family · OG Support, etc.
+    -->
+    <section class="tribe-outer">
+        <div class="tribe-container">
+
+            <div class="tribe-divider"><span class="tribe-tag">The Tribe</span></div>
+            <p class="tribe-intro">The extended family &amp; chosen circle that make it all possible. ♥</p>
+
+            <div class="tribe-row">
+
+                <div class="tribe-card">
+                    <div class="tribe-circle">B</div>
+                    <div class="tribe-name">The Batzer<br>Family</div>
+                    <div class="tribe-role">Grandparents</div>
+                </div>
+
+                <div class="tribe-card">
+                    <div class="tribe-circle">C</div>
+                    <div class="tribe-name">The Chores<br>Family</div>
+                    <div class="tribe-role">Grandparents</div>
+                </div>
+
+                <!-- ── ADD MORE TRIBE MEMBERS BELOW ── -->
+
+            </div>
+
+        </div>
+    </section>
 
     <!-- FAMILY PAGES -->
     <section class="family-pages">
