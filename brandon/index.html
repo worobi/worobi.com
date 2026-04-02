@@ -262,6 +262,26 @@
         .proj-link:hover { opacity: 0.75; }
         .proj-link.secondary { color: var(--text-muted); }
 
+        /* Screenshot placeholder */
+        .project-screenshot {
+            width: 100%; aspect-ratio: 16/9;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--surface-2) 0%, #e2e8f0 100%);
+            border: 1.5px dashed var(--border);
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 8px; color: var(--text-muted);
+            font-size: 0.72rem; font-weight: 600;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            overflow: hidden; position: relative;
+        }
+        .project-screenshot img {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover; border-radius: 10px;
+        }
+        .project-screenshot svg { opacity: 0.35; }
+
         /* GitHub Stats */
         .github-stats-wrap { margin-top: 8px; }
         .github-stats-label {
@@ -352,7 +372,7 @@
             <h1>Brandon<br>Worobi</h1>
             <p class="hero-title">— "From Chaos to Clarity—One System at a Time." —</p>
             <div class="hero-actions">
-                <a class="btn btn-primary" href="resume.pdf" download>⬇ Resume</a>
+                <a class="btn btn-primary" href="Brandon_Worobi_Resume.docx" download>⬇ Resume</a>
                 <a class="btn btn-outline" href="#">LinkedIn</a>
                 <a class="btn btn-outline" href="#">GitHub</a>
                 <a class="btn btn-outline" href="#">Substack</a>
@@ -442,27 +462,46 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
                     <div class="split-col-title">Skills</div>
                     <div class="skills-grid" style="grid-template-columns: 1fr 1fr;">
                         <div class="skill-group">
-                            <h4>Category 1</h4>
+                            <h4>Operations &amp; Compliance</h4>
                             <div class="tags">
-                                <span class="tag">Skill A</span><span class="tag">Skill B</span><span class="tag">Skill C</span>
+                                <span class="tag">Contract Governance</span>
+                                <span class="tag">SOP Development</span>
+                                <span class="tag">Compliance Tracking</span>
+                                <span class="tag">Workflow Optimization</span>
+                                <span class="tag">Six Sigma</span>
+                                <span class="tag">Vendor Management</span>
                             </div>
                         </div>
                         <div class="skill-group">
-                            <h4>Category 2</h4>
+                            <h4>Technology</h4>
                             <div class="tags">
-                                <span class="tag">Skill D</span><span class="tag">Skill E</span><span class="tag">Skill F</span>
+                                <span class="tag">SharePoint</span>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">IT Systems</span>
+                                <span class="tag">Help Desk</span>
+                                <span class="tag">Network Admin</span>
+                                <span class="tag">CompTIA A+</span>
+                                <span class="tag">Full Stack</span>
                             </div>
                         </div>
                         <div class="skill-group">
-                            <h4>Category 3</h4>
+                            <h4>Data &amp; Automation</h4>
                             <div class="tags">
-                                <span class="tag">Skill G</span><span class="tag">Skill H</span><span class="tag">Skill I</span>
+                                <span class="tag">Data Reporting</span>
+                                <span class="tag">Dashboard Design</span>
+                                <span class="tag">Admin Automation</span>
+                                <span class="tag">AI-Enabled Tools</span>
+                                <span class="tag">IBM Data Analytics</span>
                             </div>
                         </div>
                         <div class="skill-group">
-                            <h4>Category 4</h4>
+                            <h4>Leadership</h4>
                             <div class="tags">
-                                <span class="tag">Skill J</span><span class="tag">Skill K</span>
+                                <span class="tag">Operations Management</span>
+                                <span class="tag">Team Scaling</span>
+                                <span class="tag">Project Management</span>
+                                <span class="tag">Process Improvement</span>
+                                <span class="tag">Risk Assessment</span>
                             </div>
                         </div>
                     </div>
@@ -477,75 +516,123 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
 
             <div class="projects-grid">
 
-                <!-- Project 1 -->
+                <!-- Scout Consultatory -->
                 <div class="project-card">
+                    <div class="project-screenshot">
+                        <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/>
+                        </svg>
+                        Add screenshot
+                        <!-- To add a screenshot: replace this block with <img src="path/to/screenshot.png" alt="Scout Consultatory"> -->
+                    </div>
                     <div class="project-header">
                         <div>
-                            <div class="project-icon">🔧</div>
+                            <div class="project-icon">🔭</div>
                             <div class="project-name">Scout Consultatory</div>
                         </div>
                         <span class="project-status status-active">Active</span>
                     </div>
                     <p class="project-desc">
-                        Describe what this project does, the problem it solves, and why you built it.
-                        Keep it concise — 2–3 sentences is perfect.
+                        Operations and technology consulting for small to mid-sized businesses. Scout Consultatory cuts through the noise — streamlining workflows, modernizing infrastructure, and building practical systems that hold up in the real world.
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">HTML / CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Web Design</span>
+                        <span class="tech-tag">Hosting</span>
                     </div>
                     <div class="project-links">
-                        <a class="proj-link" href="#">⌥ GitHub</a>
-                        <a class="proj-link" href="#">↗ Live Demo</a>
+                        <a class="proj-link" href="https://scoutconsultatory.com" target="_blank" rel="noopener">↗ scoutconsultatory.com</a>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Moni's Munchies -->
                 <div class="project-card">
+                    <div class="project-screenshot">
+                        <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/>
+                        </svg>
+                        Add screenshot
+                        <!-- To add a screenshot: replace this block with <img src="path/to/screenshot.png" alt="Moni's Munchies"> -->
+                    </div>
                     <div class="project-header">
                         <div>
-                            <div class="project-icon">🚀</div>
-                            <div class="project-name">Project Name Two</div>
+                            <div class="project-icon">🧁</div>
+                            <div class="project-name">Moni's Munchies</div>
                         </div>
-                        <span class="project-status status-done">Completed</span>
+                        <span class="project-status status-active">Active</span>
                     </div>
                     <p class="project-desc">
-                        What does this project do? What technologies did you use, and what did you learn?
-                        Replace this with a real project description.
+                        Monica's home bakery — built and run from scratch. The site showcases custom orders, seasonal offerings, and the craft behind every batch. A small business with a big heart, powered by family.
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">HTML / CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">E-Commerce</span>
+                        <span class="tech-tag">Web Design</span>
                     </div>
                     <div class="project-links">
-                        <a class="proj-link" href="#">⌥ GitHub</a>
-                        <a class="proj-link secondary" href="#">— No live demo —</a>
+                        <a class="proj-link" href="https://monismunchies.com" target="_blank" rel="noopener">↗ monismunchies.com</a>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- High Functioning Chaos -->
                 <div class="project-card">
+                    <div class="project-screenshot">
+                        <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/>
+                        </svg>
+                        Add screenshot
+                        <!-- To add a screenshot: replace this block with <img src="path/to/screenshot.png" alt="High Functioning Chaos"> -->
+                    </div>
                     <div class="project-header">
                         <div>
-                            <div class="project-icon">💡</div>
-                            <div class="project-name">Project Name Three</div>
+                            <div class="project-icon">🎙️</div>
+                            <div class="project-name">High Functioning Chaos</div>
                         </div>
-                        <span class="project-status status-wip">In Progress</span>
+                        <span class="project-status status-active">Active</span>
                     </div>
                     <p class="project-desc">
-                        Something you're currently building. Describe the concept, your progress,
-                        and where you plan to take it.
+                        A blog and podcast co-created with wife Monica and daughter Nevaeh — honest, unfiltered conversations about navigating life, neurodiversity, and everything in between. Chaos, when it's functioning, is worth sharing.
                     </p>
                     <div class="project-tech">
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">HTML / CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Podcast Hosting</span>
+                        <span class="tech-tag">Blog / CMS</span>
                     </div>
                     <div class="project-links">
-                        <a class="proj-link" href="#">⌥ GitHub</a>
-                        <a class="proj-link" href="#">↗ Preview</a>
+                        <a class="proj-link" href="https://highfunctioningchaos.living" target="_blank" rel="noopener">↗ highfunctioningchaos.living</a>
+                    </div>
+                </div>
+
+                <!-- Worobi Family Site -->
+                <div class="project-card">
+                    <div class="project-screenshot">
+                        <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4"/>
+                        </svg>
+                        Add screenshot
+                        <!-- To add a screenshot: replace this block with <img src="path/to/screenshot.png" alt="Worobi Family Site"> -->
+                    </div>
+                    <div class="project-header">
+                        <div>
+                            <div class="project-icon">🏡</div>
+                            <div class="project-name">Worobi.com — Family Site</div>
+                        </div>
+                        <span class="project-status status-active">Active</span>
+                    </div>
+                    <p class="project-desc">
+                        A family hub built from scratch — individual pages for each family member, a shared history archive, and a place to keep the things that matter. One domain, many stories.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML / CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Custom Design</span>
+                        <span class="tech-tag">Self-Hosted</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="proj-link" href="https://worobi.com" target="_blank" rel="noopener">↗ worobi.com</a>
                     </div>
                 </div>
 
@@ -578,52 +665,9 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
 
         </section>
 
-        <!-- 05 Blog Posts -->
+        <!-- 05 Contact -->
         <section class="section">
-            <div class="section-head"><span class="section-num">04</span><h2 class="section-title">Blog Posts</h2></div>
-            <div class="blog-grid">
-                <!--
-                    HOW TO ADD A POST:
-                    Copy one .blog-card block, fill in the details, and set href to the post URL.
-                    Platform examples: Medium · LinkedIn · Substack · Dev.to · Personal Blog
-                -->
-
-                <a class="blog-card" href="#" target="_blank" rel="noopener">
-                    <div class="blog-card-top">
-                        <span class="blog-platform">Medium</span>
-                        <span class="blog-date">Jan 2026</span>
-                    </div>
-                    <div class="blog-title">Post Title Goes Here</div>
-                    <p class="blog-excerpt">A short preview of what this post is about — 1–2 sentences to give the reader a reason to click through.</p>
-                    <span class="blog-read">Read Post ↗</span>
-                </a>
-
-                <a class="blog-card" href="#" target="_blank" rel="noopener">
-                    <div class="blog-card-top">
-                        <span class="blog-platform">LinkedIn</span>
-                        <span class="blog-date">Dec 2025</span>
-                    </div>
-                    <div class="blog-title">Another Post Title Here</div>
-                    <p class="blog-excerpt">Describe this post briefly. What was the key insight or takeaway you shared?</p>
-                    <span class="blog-read">Read Post ↗</span>
-                </a>
-
-                <a class="blog-card" href="#" target="_blank" rel="noopener">
-                    <div class="blog-card-top">
-                        <span class="blog-platform">Substack</span>
-                        <span class="blog-date">Nov 2025</span>
-                    </div>
-                    <div class="blog-title">Third Post Title Here</div>
-                    <p class="blog-excerpt">What is this post about? Keep the excerpt punchy so visitors want to read the full thing.</p>
-                    <span class="blog-read">Read Post ↗</span>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- 06 Contact -->
-        <section class="section">
-            <div class="section-head"><span class="section-num">05</span><h2 class="section-title">Contact</h2></div>
+            <div class="section-head"><span class="section-num">04</span><h2 class="section-title">Contact</h2></div>
             <div class="contact-wrap">
                 <p class="contact-intro">Want to get in touch? Fill out the form and I'll get back to you.</p>
                 <!--
