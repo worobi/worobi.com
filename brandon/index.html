@@ -336,12 +336,71 @@
         }
         .github-stats-full { margin-top: 16px; }
         .github-stats-full img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; }
+        .github-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .github-metric {
+            min-height: 112px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .github-metric-value {
+            display: block;
+            font-size: 1.45rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .github-metric-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .github-metric-detail {
+            display: block;
+            font-size: 0.76rem;
+            line-height: 1.45;
+            color: var(--text-mid);
+        }
+        .github-profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 2px 0 18px;
+        }
+        .github-profile-link:hover { text-decoration: underline; }
+        .github-visuals-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin: 8px 0 12px;
+        }
         .github-note {
             font-size: 0.72rem; color: var(--text-muted);
             margin-top: 10px; font-style: italic;
         }
         @media (max-width: 600px) {
             .github-stats-grid { grid-template-columns: 1fr; }
+            .github-summary-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 420px) {
+            .github-summary-grid { grid-template-columns: 1fr; }
         }
 
         /* Blog Posts */
@@ -730,6 +789,30 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
             <!-- GitHub Stats -->
             <div class="github-stats-wrap" id="github-stats">
                 <p class="github-stats-label">GitHub Activity</p>
+                <div class="github-summary-grid" aria-label="GitHub activity summary">
+                    <div class="github-metric">
+                        <span class="github-metric-value" id="github-repos">Active</span>
+                        <span class="github-metric-label">Profile</span>
+                        <span class="github-metric-detail">@worobi on GitHub</span>
+                    </div>
+                    <div class="github-metric">
+                        <span class="github-metric-value" id="github-updated">Live</span>
+                        <span class="github-metric-label">Recent Work</span>
+                        <span class="github-metric-detail" id="github-updated-detail">Site updates, operations tooling, and workflow automation.</span>
+                    </div>
+                    <div class="github-metric">
+                        <span class="github-metric-value" id="github-languages">HTML</span>
+                        <span class="github-metric-label">Primary Stack</span>
+                        <span class="github-metric-detail" id="github-languages-detail">CSS, JavaScript, dashboards, and static web projects.</span>
+                    </div>
+                    <div class="github-metric">
+                        <span class="github-metric-value" id="github-focus">4</span>
+                        <span class="github-metric-label">Featured Builds</span>
+                        <span class="github-metric-detail">Worobi, Scout, HFC, and Moni's Munchies.</span>
+                    </div>
+                </div>
+                <a class="github-profile-link" href="https://github.com/worobi" target="_blank" rel="noopener">View GitHub profile ↗</a>
+                <p class="github-visuals-title">Live GitHub Cards</p>
                 <div class="github-stats-grid">
                     <img id="gh-stats"
                         src="https://github-readme-stats.vercel.app/api?username=worobi&amp;show_icons=true&amp;count_private=true&amp;hide_border=true&amp;bg_color=f8fafc&amp;title_color=7c3aed&amp;icon_color=7c3aed&amp;text_color=334155&amp;ring_color=7c3aed&amp;cache_seconds=1800"
@@ -746,8 +829,45 @@ At the end of the day, Brandon isn’t interested in perfect systems—he builds
                         alt="GitHub Streak Stats"
                         loading="lazy">
                 </div>
-                <p class="github-note">Stats generated from Brandon's public GitHub activity.</p>
+                <p class="github-note">Summary cards are shown immediately; live cards load from public GitHub stats services when available.</p>
             </div>
+            <script>
+                (() => {
+                    const updated = document.getElementById('github-updated');
+                    const updatedDetail = document.getElementById('github-updated-detail');
+                    const repos = document.getElementById('github-repos');
+                    const languages = document.getElementById('github-languages');
+                    const languagesDetail = document.getElementById('github-languages-detail');
+
+                    fetch('https://api.github.com/users/worobi/repos?sort=updated&per_page=12')
+                        .then(response => response.ok ? response.json() : Promise.reject())
+                        .then(repoData => {
+                            const publicRepos = repoData.filter(repo => !repo.fork);
+                            const latest = publicRepos[0];
+                            const languageCounts = publicRepos.reduce((acc, repo) => {
+                                if (repo.language) acc[repo.language] = (acc[repo.language] || 0) + 1;
+                                return acc;
+                            }, {});
+                            const topLanguages = Object.entries(languageCounts)
+                                .sort((a, b) => b[1] - a[1])
+                                .slice(0, 3)
+                                .map(([language]) => language);
+
+                            repos.textContent = `${publicRepos.length}+`;
+                            if (latest) {
+                                updated.textContent = 'Updated';
+                                updatedDetail.textContent = `${latest.name} · ${new Date(latest.updated_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+                            }
+                            if (topLanguages.length > 0) {
+                                languages.textContent = topLanguages[0];
+                                languagesDetail.textContent = topLanguages.join(', ');
+                            }
+                        })
+                        .catch(() => {
+                            // Keep the static fallback cards visible if GitHub API access is unavailable.
+                        });
+                })();
+            </script>
 
         </section>
 
