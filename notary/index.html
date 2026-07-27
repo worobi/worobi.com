@@ -3,10 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worobi Mobile Notary & Document Services | St. Clair County, MI</title>
-    <meta name="description" content="Professional mobile notary serving St. Clair, Sanilac, Macomb, and Lapeer Counties. Power of attorney, estate planning, affidavits, real estate documents, and general notarizations. Evening & weekend appointments available. Ordained Minister since 2013. Call (810) 689-9715.">
+    <title>Mobile Notary in Port Huron, MI | St. Clair County Notary | Worobi</title>
+    <meta name="description" content="Mobile notary in Port Huron, Michigan serving St. Clair, Sanilac, Macomb, and Lapeer Counties. Power of attorney, estate, real estate, hospital, jail, affidavit, and remote online notarizations. Call or text (810) 372-0589.">
+    <link rel="canonical" href="https://notary.worobi.com/">
+    <meta property="og:title" content="Worobi Mobile Notary | Port Huron, MI">
+    <meta property="og:description" content="Mobile notary and document signing service for Port Huron, St. Clair County, and surrounding Michigan communities.">
+    <meta property="og:url" content="https://notary.worobi.com/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Worobi Mobile Notary & Document Services",
+        "url": "https://notary.worobi.com/",
+        "telephone": "+18103720589",
+        "email": "notary@worobi.com",
+        "priceRange": "$10+",
+        "description": "Mobile notary and document signing service based in Port Huron, Michigan, serving St. Clair, Sanilac, Macomb, and Lapeer Counties.",
+        "areaServed": [
+            "Port Huron MI",
+            "St. Clair County MI",
+            "Sanilac County MI",
+            "Macomb County MI",
+            "Lapeer County MI"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Port Huron",
+            "addressRegion": "MI",
+            "postalCode": "48060",
+            "addressCountry": "US"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "19:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "17:00"
+            }
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Mobile Notary Services",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile Notary Service" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Power of Attorney Notarization" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estate Planning Document Notarization" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Loan Signing Services" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hospital Notary" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Remote Online Notary" } }
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Do you travel for notary appointments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Worobi Mobile Notary travels to homes, offices, hospitals, assisted living facilities, jails, and job sites in Port Huron, St. Clair County, and nearby Michigan communities."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What do I need for a notarization?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bring the unsigned document, every signer who needs notarization, and a valid government-issued photo ID. The signer must be alert, willing, and able to understand the document."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a Michigan notary cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Michigan notary fees are listed separately from mobile travel fees. The total depends on the number of notarizations, location, timing, and any added signing services."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer remote online notarization?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Remote online notarization is available through supported platforms for eligible documents and signers who prefer a secure video session."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -526,6 +624,36 @@
         .cred-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
         .cred-sub { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
 
+        /* ── FAQ ── */
+        .faq {
+            padding: 90px 48px;
+            background: var(--surface);
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 26px;
+        }
+        .faq-question {
+            font-size: 0.98rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        .faq-answer {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
         /* ── CONTACT ── */
         .contact {
             padding: 100px 48px;
@@ -615,12 +743,13 @@
             .nav-links { display: none; }
             .hero { padding: 90px 24px 60px; }
             .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-            .services, .how-it-works, .service-area, .pricing, .credentials, .contact { padding: 72px 24px; }
+            .services, .how-it-works, .service-area, .pricing, .credentials, .faq, .contact { padding: 72px 24px; }
             .steps-grid { grid-template-columns: 1fr 1fr; }
             .steps-grid::before { display: none; }
             .area-grid { grid-template-columns: 1fr; gap: 48px; }
             .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
             .cred-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+            .faq-grid { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
             .form-row-2 { grid-template-columns: 1fr; }
             footer { padding: 28px 24px; flex-direction: column; text-align: center; }
@@ -648,6 +777,7 @@
         <a class="nav-link" href="#how-it-works">How It Works</a>
         <a class="nav-link" href="#pricing">Pricing</a>
         <a class="nav-link" href="#area">Service Area</a>
+        <a class="nav-link" href="#faq">FAQ</a>
         <a class="nav-link" href="https://brandon.worobi.com">Brandon's Profile ↗</a>
     </div>
     <a class="nav-cta" href="#contact">Book Now</a>
@@ -657,12 +787,12 @@
 <section class="hero">
     <div class="hero-grid">
         <div>
-            <p class="hero-eyebrow">Mobile Notary & Document Services · St. Clair County, MI</p>
-            <h1><span>Mobile Notary</span><br>That Comes<br>To You</h1>
-            <p class="hero-tagline">Serving St. Clair, Sanilac, Macomb, and Lapeer Counties. I travel to homes, offices, hospitals, jails, assisted living facilities, and job sites — helping individuals, families, and small businesses get important documents handled without added stress.</p>
+            <p class="hero-eyebrow">Port Huron Mobile Notary · St. Clair County, MI</p>
+            <h1><span>Mobile Notary</span><br>In Port Huron<br>That Comes To You</h1>
+            <p class="hero-tagline">Worobi Mobile Notary provides in-person and remote online notarizations across St. Clair, Sanilac, Macomb, and Lapeer Counties. I travel to homes, offices, hospitals, jails, assisted living facilities, and job sites so important documents can be handled without added stress.</p>
             <div class="hero-actions">
                 <a class="btn-gold" href="#contact">📅 Book an Appointment</a>
-                <a class="btn-ghost" href="#services">View Services</a>
+                <a class="btn-ghost" href="tel:+18103720589">Call or Text</a>
             </div>
             <div class="hero-trust">
                 <span class="trust-item">I Come To You</span>
@@ -675,7 +805,7 @@
         <div>
             <div class="hero-card">
                 <div class="hero-card-title">📞 Reach Me Directly</div>
-                <a class="hero-card-phone" href="tel:+18106899715">(810) 689-9715</a>
+                <a class="hero-card-phone" href="tel:+18103720589">(810) 372-0589</a>
                 <div class="availability-grid">
                     <div class="avail-row">
                         <span class="avail-day">Monday – Friday</span>
@@ -709,35 +839,35 @@
     <div class="section-inner">
         <div class="section-header">
             <p class="section-eyebrow">What I Offer</p>
-            <h2 class="section-title">Notary Services</h2>
-            <p class="section-sub">I bring the notary to you. From everyday signings to complex loan closings, I handle it all at your location — with professionalism and discretion.</p>
+            <h2 class="section-title">Mobile Notary Services in Port Huron &amp; St. Clair County</h2>
+            <p class="section-sub">I bring the notary to you. From everyday signatures to real estate documents and time-sensitive hospital signings, I handle appointments at your location with professionalism, discretion, and clear communication.</p>
         </div>
         <div class="services-grid">
 
             <div class="service-card">
                 <span class="service-icon">🚗</span>
-                <div class="service-name">Mobile Notary Service</div>
-                <p class="service-desc">I travel to you — homes, offices, hospitals, jails, assisted living facilities, and job sites throughout St. Clair, Sanilac, Macomb, and Lapeer Counties. No driving required on your end.</p>
+                <div class="service-name">Port Huron Mobile Notary Service</div>
+                <p class="service-desc">I travel to you for notarizations at homes, offices, hospitals, jails, assisted living facilities, and job sites throughout St. Clair, Sanilac, Macomb, and Lapeer Counties.</p>
                 <span class="service-price">Travel fee applies</span>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">✍️</span>
-                <div class="service-name">Power of Attorney Notarization</div>
+                <div class="service-name">Power of Attorney Notary</div>
                 <p class="service-desc">Financial, medical, and durable POA documents notarized at your location. I come to homes, hospitals, and care facilities — wherever you need me most.</p>
                 <span class="service-price">Starting at $10/signature</span>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">📜</span>
-                <div class="service-name">Estate Planning Document Notarization</div>
+                <div class="service-name">Estate Planning Document Notary</div>
                 <p class="service-desc">Wills, trusts, advance directives, and healthcare proxies. Sensitive signings handled with care, discretion, and patience — at your pace, at your place.</p>
                 <span class="service-price">Starting at $10/signature</span>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🏠</span>
-                <div class="service-name">Loan Signing Services</div>
+                <div class="service-name">Real Estate &amp; Loan Signing Services</div>
                 <p class="service-desc">Mortgage closings, refinances, deed signings, and real estate documents. I work with individuals, title companies, and escrow officers to get closings done right.</p>
                 <span class="service-price">Contact for pricing</span>
             </div>
@@ -762,11 +892,12 @@
         <div class="all-services">
             <p class="all-services-label">Complete List of Services</p>
             <div class="all-services-grid">
-                <div class="all-service-item">Mobile Notary Service</div>
-                <div class="all-service-item">Power of Attorney Notarization</div>
-                <div class="all-service-item">Estate Planning Document Notarization</div>
+                <div class="all-service-item">Port Huron Mobile Notary Service</div>
+                <div class="all-service-item">Power of Attorney Notary</div>
+                <div class="all-service-item">Estate Planning Document Notary</div>
                 <div class="all-service-item">Loan Signing Services</div>
                 <div class="all-service-item">Hospital Notary</div>
+                <div class="all-service-item">Jail Notary</div>
                 <div class="all-service-item">Wedding Officiant Service</div>
                 <div class="all-service-item">Affidavit &amp; Oath Notarization</div>
                 <div class="all-service-item">Acknowledgment Statement Notarization</div>
@@ -783,7 +914,7 @@
             <div class="ron-callout-text">
                 <p class="ron-callout-eyebrow">Remote Online Notary · E-Notary Services</p>
                 <h3 class="ron-callout-title">Can't Meet in Person? Find Me Online.</h3>
-                <p class="ron-callout-desc">I'm available on trusted RON platforms for secure remote notarizations completed over video — no travel required. Valid in Michigan and accepted in most other states. Perfect for out-of-area signers or time-sensitive documents.</p>
+                <p class="ron-callout-desc">I'm available on trusted RON platforms for secure remote notarizations completed over video — no travel required. Remote online notarization can be a good fit for out-of-area signers, busy schedules, or time-sensitive documents.</p>
             </div>
             <div class="ron-platforms">
                 <a class="ron-platform" href="https://www.proof.com" target="_blank" rel="noopener">
@@ -838,8 +969,8 @@
     <div class="section-inner">
         <div class="section-header">
             <p class="section-eyebrow">Where I Serve</p>
-            <h2 class="section-title">Service Area</h2>
-            <p class="section-sub">Based in Port Huron — serving St. Clair, Sanilac, Macomb, and Lapeer Counties.</p>
+            <h2 class="section-title">Mobile Notary Service Area</h2>
+            <p class="section-sub">Based in Port Huron and serving St. Clair County, Sanilac County, Macomb County, and Lapeer County.</p>
         </div>
         <div class="area-grid">
             <div class="area-content">
@@ -958,13 +1089,50 @@
     </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-eyebrow">Common Questions</p>
+            <h2 class="section-title">Mobile Notary FAQ</h2>
+            <p class="section-sub">Quick answers for Port Huron and St. Clair County notary appointments.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3 class="faq-question">Do you travel for notary appointments?</h3>
+                <p class="faq-answer">Yes. I travel to homes, offices, hospitals, assisted living facilities, jails, and job sites in Port Huron, St. Clair County, and nearby Michigan communities.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What do I need for a notarization?</h3>
+                <p class="faq-answer">Bring the unsigned document, every signer who needs notarization, and a valid government-issued photo ID. The signer must be alert, willing, and able to understand the document.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How much does a Michigan notary cost?</h3>
+                <p class="faq-answer">Michigan notary fees are listed separately from mobile travel fees. The total depends on the number of notarizations, location, timing, and any added signing services.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Can you notarize hospital or urgent documents?</h3>
+                <p class="faq-answer">Yes, when scheduling allows. Call or text for urgent hospital, care facility, power of attorney, estate, or time-sensitive signing requests.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Do you offer remote online notarization?</h3>
+                <p class="faq-answer">Yes. Remote online notarization is available through supported platforms for eligible documents and signers who prefer a secure video session.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What areas do you serve?</h3>
+                <p class="faq-answer">I am based in Port Huron and serve St. Clair, Sanilac, Macomb, and Lapeer Counties, including Fort Gratiot, Marysville, St. Clair, Marine City, Lexington, and nearby areas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
     <div class="section-inner">
         <div class="section-header">
             <p class="section-eyebrow">Get in Touch</p>
             <h2 class="section-title">Book an Appointment</h2>
-            <p class="section-sub">Ready to get started? Fill out the form or give me a call. I typically respond within a few hours.</p>
+            <p class="section-sub">Ready to get started? Fill out the form or call/text directly. I typically respond within a few hours.</p>
         </div>
         <div class="contact-grid">
             <div class="contact-info">
@@ -972,7 +1140,7 @@
                     <div class="contact-item-icon">📞</div>
                     <div>
                         <div class="contact-item-label">Phone / Text</div>
-                        <div class="contact-item-val"><a href="tel:+18106899715">(810) 689-9715</a></div>
+                        <div class="contact-item-val"><a href="tel:+18103720589">(810) 372-0589</a></div>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1018,11 +1186,8 @@
 
             <div class="contact-form">
                 <div class="form-title">Request an Appointment</div>
-                <!--
-                    SETUP: Replace YOUR_FORM_ID with your Formspree form ID.
-                    Create a separate form at formspree.io for notary inquiries.
-                -->
-                <form class="form-grid" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <!-- Formspree endpoint is configured for notary inquiries. -->
+                <form class="form-grid" action="https://formspree.io/f/xpqkezjr" method="POST">
                     <div class="form-row-2">
                         <div class="form-group">
                             <label class="form-label">First Name</label>
@@ -1081,7 +1246,7 @@
 <footer>
     <div class="footer-brand"><strong>Worobi Mobile Notary & Document Services</strong> · St. Clair County, MI · Commission through 5/31/2032</div>
     <div class="footer-links">
-        <a class="footer-link" href="tel:+18106899715">(810) 689-9715</a>
+        <a class="footer-link" href="tel:+18103720589">(810) 372-0589</a>
         <a class="footer-link" href="mailto:notary@worobi.com">Notary@worobi.com</a>
         <a class="footer-link" href="https://worobi.com">Worobi.com</a>
     </div>
