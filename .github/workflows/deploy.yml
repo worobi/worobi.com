@@ -1,0 +1,57 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Add VPS to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.VPS_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy via rsync
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_IP: ${{ secrets.VPS_IP }}
+        run: |
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          # Main site
+          rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key" \
+            --exclude '.github' \
+            --exclude '_server' \
+            --exclude 'brandon' \
+            --exclude 'monica' \
+            --exclude 'nevaeh' \
+            --exclude 'alexander' \
+            --exclude 'lilian' \
+            --exclude 'theodore' \
+            --exclude 'jefferson' \
+            --exclude 'charlotte' \
+            --exclude 'notary' \
+            ./ $VPS_USER@$VPS_IP:/var/www/worobi.com/
+
+          # Member subdomains
+          for member in brandon monica nevaeh alexander lilian theodore jefferson charlotte notary; do
+            rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key" \
+              ./${member}/ $VPS_USER@$VPS_IP:/var/www/${member}.worobi.com/
+          done
+
+      - name: Reload Nginx
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_IP: ${{ secrets.VPS_IP }}
+        run: |
+          ssh -i ~/.ssh/deploy_key $VPS_USER@$VPS_IP "sudo systemctl reload nginx"
