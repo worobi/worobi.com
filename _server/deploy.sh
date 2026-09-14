@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================
-#  deploy.sh — Upload & deploy Worobi.com family sites to VPS
+#  deploy.sh — Upload & deploy Worobi.com personal sites to VPS
 #
 #  Usage: bash deploy.sh
 #  Run from inside your project folder (where index.html lives)
@@ -23,25 +23,32 @@ echo "🚀 Deploying to $VPS_USER@$VPS_IP ..."
 ssh "$VPS_USER@$VPS_IP" "
   sudo mkdir -p $WEB_ROOT/worobi.com
   sudo mkdir -p $WEB_ROOT/brandon.worobi.com
-  sudo mkdir -p $WEB_ROOT/monica.worobi.com
   sudo mkdir -p $WEB_ROOT/nevaeh.worobi.com
   sudo mkdir -p $WEB_ROOT/alexander.worobi.com
-  sudo mkdir -p $WEB_ROOT/lilian.worobi.com
-  sudo mkdir -p $WEB_ROOT/theodore.worobi.com
   sudo mkdir -p $WEB_ROOT/jefferson.worobi.com
   sudo mkdir -p $WEB_ROOT/charlotte.worobi.com
   sudo mkdir -p $WEB_ROOT/notary.worobi.com
   sudo chown -R $VPS_USER:$VPS_USER $WEB_ROOT
 "
 
-# Upload main site
+# Upload main site (index.html + assets, exclude subdomain folders and _server)
 echo "→ Uploading worobi.com ..."
-rsync -avz --exclude '_server' --exclude '*/index.html' \
-  "$PROJECT_DIR/index.html" \
+rsync -avz --delete \
+  --exclude '_server' \
+  --exclude '.github' \
+  --exclude '.git' \
+  --exclude '.DS_Store' \
+  --exclude 'brandon' \
+  --exclude 'nevaeh' \
+  --exclude 'alexander' \
+  --exclude 'jefferson' \
+  --exclude 'charlotte' \
+  --exclude 'notary' \
+  "$PROJECT_DIR/" \
   "$VPS_USER@$VPS_IP:$WEB_ROOT/worobi.com/"
 
 # Upload each member subdomain
-for member in brandon monica nevaeh alexander lilian theodore jefferson charlotte notary; do
+for member in brandon nevaeh alexander jefferson charlotte notary; do
   echo "→ Uploading ${member}.worobi.com ..."
   rsync -avz "$PROJECT_DIR/${member}/" \
     "$VPS_USER@$VPS_IP:$WEB_ROOT/${member}.worobi.com/"
@@ -56,6 +63,17 @@ ssh "$VPS_USER@$VPS_IP" "
   sudo cp /tmp/worobi.conf /etc/nginx/sites-available/worobi.com
   sudo ln -sf /etc/nginx/sites-available/worobi.com /etc/nginx/sites-enabled/worobi.com
   sudo nginx -t && sudo systemctl reload nginx
+"
+
+# Fix permissions so nginx (www-data) can read all files
+echo "→ Fixing permissions ..."
+ssh "$VPS_USER@$VPS_IP" "
+  sudo chown -R www-data:www-data $WEB_ROOT/worobi.com
+  for site in brandon nevaeh alexander jefferson charlotte notary; do
+    sudo chown -R www-data:www-data $WEB_ROOT/\${site}.worobi.com
+    sudo chmod -R 755 $WEB_ROOT/\${site}.worobi.com
+  done
+  sudo chmod -R 755 $WEB_ROOT/worobi.com
 "
 
 echo ""
