@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worobi</title>
-    <meta name="description" content="Worobi is a personal domain and email home for the Worobi name.">
+    <meta name="description" content="Personal pages for the Worobi name.">
     <meta name="theme-color" content="#180d32">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,25 +22,24 @@
         .eyebrow { color:var(--violet-soft); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; margin-bottom:20px; }
         h1 { max-width:610px; font:400 clamp(3rem,7vw,6.4rem)/.96 "Libre Baskerville",serif; letter-spacing:-.06em; }h1 em { color:var(--violet-soft); font-style:normal; }
         .intro { max-width:545px; margin-top:30px; color:var(--muted); font-size:clamp(.94rem,1.5vw,1.08rem); line-height:1.85; }
-        .domain-note { display:inline-flex; gap:11px; align-items:center; margin-top:31px; color:var(--violet-soft); font-size:.77rem; letter-spacing:.04em; }.domain-note::before { content:""; width:8px; height:8px; border-radius:50%; background:#a76cff; box-shadow:0 0 20px #a76cff; }
         .crest-wrap { position:relative; display:grid; place-items:center; }.crest-wrap::before { content:""; position:absolute; width:82%; aspect-ratio:1; border:1px solid rgba(216,189,255,.26); border-radius:50%; box-shadow:0 0 100px rgba(130,65,225,.25); }.crest-wrap::after { content:""; position:absolute; width:97%; aspect-ratio:1; border:1px dashed rgba(216,189,255,.2); border-radius:50%; }
         .crest { position:relative; z-index:1; width:min(100%,500px); filter:drop-shadow(0 30px 40px rgba(0,0,0,.4)); mix-blend-mode:screen; }
         .directory { padding:50px 0 88px; border-top:1px solid var(--line); }.section-label { display:flex; justify-content:space-between; align-items:baseline; gap:22px; margin-bottom:28px; }h2 { font:400 clamp(1.75rem,3vw,2.5rem) "Libre Baskerville",serif; letter-spacing:-.035em; }.section-label p { color:var(--muted); font-size:.76rem; line-height:1.7; max-width:420px; }
         .pages { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }.page { min-height:168px; padding:22px; display:flex; flex-direction:column; justify-content:space-between; background:var(--card); border:1px solid var(--line); text-decoration:none; transition:transform .2s ease,border-color .2s ease,background .2s ease; }.page:hover,.page:focus-visible { transform:translateY(-5px); border-color:var(--violet); background:rgba(167,108,255,.12); outline:none; }.page-mark { color:var(--violet-soft); font-size:.67rem; letter-spacing:.14em; text-transform:uppercase; }.page-name { font:400 1.5rem "Libre Baskerville",serif; }.page-link { color:var(--muted); font-size:.72rem; }
         footer { display:flex; justify-content:space-between; gap:24px; padding:28px 0 42px; color:var(--muted); border-top:1px solid var(--line); font-size:.7rem; line-height:1.7; }
-        @media (max-width:760px) { .shell { width:min(100% - 32px,600px); }header { padding:20px 0; }.header-note { display:none; }.hero { min-height:0; grid-template-columns:1fr; gap:30px; padding:62px 0 58px; }.hero-copy { text-align:center; }.intro { margin-inline:auto; }.domain-note { justify-content:center; }.crest { width:min(88%,400px); }.section-label { display:block; }.section-label p { margin-top:13px; }.pages { grid-template-columns:1fr 1fr; }.page { min-height:145px; }footer { display:block; }footer p + p { margin-top:8px; } }@media (max-width:420px) { .pages { grid-template-columns:1fr; } }
+        @media (max-width:760px) { .shell { width:min(100% - 32px,600px); }header { padding:20px 0; }.header-note { display:none; }.hero { min-height:0; grid-template-columns:1fr; gap:30px; padding:62px 0 58px; }.hero-copy { text-align:center; }.intro { margin-inline:auto; }.crest { width:min(88%,400px); }.section-label { display:block; }.section-label p { margin-top:13px; }.pages { grid-template-columns:1fr 1fr; }.page { min-height:145px; }footer { display:block; }footer p + p { margin-top:8px; } }@media (max-width:420px) { .pages { grid-template-columns:1fr; } }
     </style>
 </head>
 <body>
     <div class="shell">
-        <header><a class="wordmark" href="#top">Wor<span>o</span>bi</a><span class="header-note">Personal domain &amp; email</span></header>
+        <header><a class="wordmark" href="#top">Wor<span>o</span>bi</a></header>
         <main id="top">
             <section class="hero" aria-labelledby="site-title">
-                <div class="hero-copy"><p class="eyebrow">The Worobi domain</p><h1 id="site-title">A name. A <em>home.</em> A way to stay connected.</h1><p class="intro">Worobi.com is the personal domain and email home for the Worobi name. It keeps a small number of personal pages in one familiar place—simple, private by design, and built to last.</p><p class="domain-note">Email remains the primary purpose of this domain</p></div>
-                <div class="crest-wrap"><img class="crest" src="assets/w-family-crest-purple.png" alt="Worobi crest"></div>
+                <div class="hero-copy"><p class="eyebrow">Worobi</p><h1 id="site-title">A name. A <em>home.</em></h1><p class="intro">A quiet place for the people who keep a page here.</p></div>
+                <div class="crest-wrap"><img class="crest" src="assets/w-family-crest-purple-transparent.png" alt="Worobi crest"></div>
             </section>
             <section class="directory" aria-labelledby="pages-title">
-                <div class="section-label"><h2 id="pages-title">Personal pages</h2><p>For the people who choose to keep a personal page here.</p></div>
+                <div class="section-label"><h2 id="pages-title">Personal pages</h2></div>
                 <nav class="pages" aria-label="Personal pages">
                     <a class="page" href="https://brandon.worobi.com"><span class="page-mark">Personal page</span><span class="page-name">Brandon</span><span class="page-link">Open page →</span></a>
                     <a class="page" href="https://nevaeh.worobi.com"><span class="page-mark">Personal page</span><span class="page-name">Nevaeh</span><span class="page-link">Open page →</span></a>
@@ -50,7 +49,7 @@
                 </nav>
             </section>
         </main>
-        <footer><p>© 2026 Worobi</p><p>Personal domain and email home.</p></footer>
+        <footer><p>© 2026 Worobi</p></footer>
     </div>
 </body>
 </html>
