@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://worobi.com/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://worobi.com/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="https://worobi.com/apple-touch-icon.png">
+    <title>Brandon Worobi | Operations, Compliance & Technology</title>
+    <meta name="description" content="Professional profile for Brandon Worobi, focused on operations, compliance, project delivery, and technology systems.">
+    <link rel="canonical" href="https://brandonworobi.pro/">
+    <meta property="og:title" content="Brandon Worobi | Professional Profile">
+    <meta property="og:description" content="Operations, compliance, project delivery, and technology systems.">
+    <meta property="og:url" content="https://brandonworobi.pro/">
+    <meta property="og:type" content="profile">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Brandon Worobi",
+        "url": "https://brandonworobi.pro/",
+        "jobTitle": "Operations and Technology Specialist",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Port Huron",
+            "addressRegion": "MI",
+            "addressCountry": "US"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/worobi/",
+            "https://github.com/worobi"
+        ]
+    }
+    </script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --ink: #142033;
+            --navy: #101d30;
+            --navy-2: #1a2a42;
+            --blue: #1768c4;
+            --teal: #087f78;
+            --orange: #d76828;
+            --paper: #ffffff;
+            --wash: #f3f6f9;
+            --wash-2: #e8edf3;
+            --line: #d3dbe4;
+            --muted: #58677a;
+            --sans: Manrope, sans-serif;
+            --mono: "IBM Plex Mono", monospace;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            min-width: 320px;
+            color: var(--ink);
+            background: var(--paper);
+            font-family: var(--sans);
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+        a { color: inherit; }
+        img { max-width: 100%; }
+        ::selection { color: #fff; background: var(--blue); }
+
+        .skip-link {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+            padding: 10px 14px;
+            color: #fff;
+            background: var(--blue);
+            font-weight: 800;
+            transform: translateY(-150%);
+        }
+        .skip-link:focus { transform: translateY(0); }
+
+        .wrap { width: min(100% - 64px, 1220px); margin-inline: auto; }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            color: #fff;
+            background: rgba(16, 29, 48, 0.97);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+        }
+        .header-inner {
+            min-height: 70px;
+            display: grid;
+            grid-template-columns: 220px 1fr auto;
+            align-items: center;
+            gap: 28px;
+        }
+        .wordmark {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .header-role {
+            color: #b7c3d1;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+        .nav-links { display: flex; align-items: center; gap: 24px; }
+        .nav-links a {
+            color: #cbd4df;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .nav-links a:hover, .nav-links a:focus-visible { color: #fff; }
+        .nav-links .contact-link {
+            padding: 8px 12px;
+            color: var(--navy);
+            background: #fff;
+            border-radius: 3px;
+        }
+        .nav-links .contact-link:hover { color: #fff; background: var(--blue); }
+
+        .section-code {
+            color: var(--blue);
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .hero-dashboard {
+            color: #fff;
+            background: var(--navy);
+            border-bottom: 6px solid var(--blue);
+        }
+        .hero-grid {
+            min-height: min(680px, calc(100vh - 110px));
+            display: grid;
+            grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
+            gap: clamp(42px, 6vw, 82px);
+            align-items: center;
+            padding: 42px 0 50px;
+        }
+        .live-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #a9b9cc;
+            font-family: var(--mono);
+            font-size: 0.76rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .live-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #65d896;
+            box-shadow: 0 0 0 5px rgba(101, 216, 150, 0.12);
+            animation: status-pulse 2.4s ease-in-out infinite;
+        }
+        @keyframes status-pulse {
+            0%, 100% { box-shadow: 0 0 0 5px rgba(101, 216, 150, 0.12); }
+            50% { box-shadow: 0 0 0 9px rgba(101, 216, 150, 0.03); }
+        }
+        .hero-copy h1 {
+            margin-top: 24px;
+            font-size: clamp(2.8rem, 5vw, 5.2rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+        }
+        .hero-title {
+            max-width: 620px;
+            margin-top: 24px;
+            color: #dce5ef;
+            font-size: clamp(1.35rem, 2.4vw, 2rem);
+            font-weight: 600;
+            line-height: 1.28;
+        }
+        .hero-summary { max-width: 610px; margin-top: 18px; color: #a9b9cc; font-size: 0.98rem; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+        .button {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 10px 14px;
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-decoration: none;
+            transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+        }
+        .button.primary { color: #fff; background: var(--blue); border-color: var(--blue); }
+        .button.primary:hover { background: var(--navy); border-color: var(--navy); }
+        .button.secondary:hover { color: var(--blue); border-color: var(--blue); }
+
+        .live-dashboard {
+            overflow: hidden;
+            color: var(--ink);
+            background: #fff;
+            border: 1px solid #33445d;
+            border-radius: 6px;
+            box-shadow: 0 28px 70px rgba(0, 0, 0, 0.24);
+        }
+        .dashboard-head {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line);
+        }
+        .dashboard-head h2 { font-size: 1rem; }
+        .dashboard-head p, .dashboard-head time { color: var(--muted); font-family: var(--mono); font-size: 0.7rem; }
+        .dashboard-head time { display: block; margin-top: 3px; }
+        .status-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 9px;
+            color: #1f6640;
+            background: #e8f6ee;
+            border: 1px solid #bfe5ce;
+            border-radius: 3px;
+            font-size: 0.72rem;
+            font-weight: 800;
+        }
+        .status-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #31a665; }
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+        .stat-card { min-height: 132px; padding: 20px; border-bottom: 1px solid var(--line); }
+        .stat-card:nth-child(odd) { border-right: 1px solid var(--line); }
+        .stat-value { color: var(--blue); font-family: var(--mono); font-size: 2.2rem; font-weight: 600; line-height: 1; }
+        .stat-card p { max-width: 230px; margin-top: 10px; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+        .dashboard-lower { display: grid; grid-template-columns: 0.9fr 1.1fr; background: var(--wash); }
+        .dashboard-panel { padding: 18px 20px; }
+        .dashboard-panel + .dashboard-panel { border-left: 1px solid var(--line); }
+        .panel-label { color: var(--muted); font-family: var(--mono); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+        .focus-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+        .focus-list span { padding: 5px 8px; background: #fff; border: 1px solid var(--line); border-radius: 3px; font-size: 0.7rem; font-weight: 700; }
+        .track-list { display: grid; gap: 11px; margin-top: 13px; }
+        .track-item { display: grid; grid-template-columns: 8px 1fr auto; gap: 9px; align-items: start; }
+        .track-item::before { content: ""; width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; background: var(--teal); }
+        .track-item strong { display: block; font-size: 0.75rem; }
+        .track-item small { display: block; color: var(--muted); font-size: 0.68rem; }
+        .track-item time { color: var(--blue); font-family: var(--mono); font-size: 0.68rem; font-weight: 600; }
+
+        #main > .content-section { display: none; }
+        .page-directory { background: var(--paper); border-bottom: 1px solid var(--line); }
+        .directory-grid { display: grid; grid-template-columns: 220px repeat(4, 1fr); }
+        .directory-label { padding: 26px 28px 26px 0; border-right: 1px solid var(--line); }
+        .directory-label p { color: var(--blue); font-family: var(--mono); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .directory-link { min-height: 132px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; border-right: 1px solid var(--line); text-decoration: none; }
+        .directory-link:last-child { border-right: 0; }
+        .directory-link span { color: var(--muted); font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; }
+        .directory-link strong { font-size: 1rem; }
+        .directory-link:hover { color: #fff; background: var(--blue); }
+        .directory-link:hover span { color: #dce9f8; }
+
+        .content-section { scroll-margin-top: 70px; border-bottom: 1px solid var(--line); }
+        .section-grid { display: grid; grid-template-columns: 220px minmax(0, 1fr); }
+        .section-heading {
+            padding: 58px 30px 58px 0;
+            border-right: 1px solid var(--line);
+        }
+        .section-heading h2 { margin-top: 10px; font-size: 1.55rem; line-height: 1.18; }
+        .section-heading p { margin-top: 12px; color: var(--muted); font-size: 0.82rem; }
+        .section-body { min-width: 0; padding: 58px 0 64px 54px; }
+
+        .scope-list { border-top: 1px solid var(--line); }
+        .scope-item {
+            display: grid;
+            grid-template-columns: 56px 210px minmax(0, 1fr);
+            gap: 24px;
+            align-items: start;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .scope-number { color: var(--orange); font-family: var(--mono); font-size: 0.75rem; font-weight: 600; }
+        .scope-item h3 { font-size: 1rem; }
+        .scope-item p { color: var(--muted); font-size: 0.9rem; }
+
+        .foundation-list { border-top: 1px solid var(--line); }
+        .foundation-item {
+            display: grid;
+            grid-template-columns: 150px minmax(220px, 0.85fr) minmax(0, 1.15fr);
+            gap: 28px;
+            padding: 22px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .foundation-item time { color: var(--blue); font-family: var(--mono); font-size: 0.75rem; font-weight: 600; }
+        .foundation-item h3 { font-size: 0.98rem; }
+        .foundation-item .org { margin-top: 3px; color: var(--muted); font-size: 0.8rem; }
+        .foundation-item > p { color: var(--muted); font-size: 0.88rem; }
+        .credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+        .credential {
+            padding: 7px 10px;
+            color: var(--navy);
+            background: var(--wash);
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            font-family: var(--mono);
+            font-size: 0.72rem;
+        }
+
+        .case-list { border-top: 1px solid var(--line); }
+        .case-study {
+            display: grid;
+            grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+            min-height: 280px;
+            border-bottom: 1px solid var(--line);
+        }
+        .case-image { overflow: hidden; background: var(--wash-2); border-right: 1px solid var(--line); }
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            display: block;
+            object-fit: cover;
+            transition: transform 240ms ease;
+        }
+        .case-study:hover .case-image img { transform: scale(1.02); }
+        .case-copy { display: flex; flex-direction: column; align-items: flex-start; padding: 30px; }
+        .case-type { color: var(--teal); font-family: var(--mono); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; }
+        .case-copy h3 { margin-top: 10px; font-size: 1.45rem; }
+        .case-copy p { flex: 1; margin-top: 12px; color: var(--muted); font-size: 0.9rem; }
+        .case-copy a { margin-top: 24px; color: var(--blue); font-size: 0.78rem; font-weight: 800; text-decoration: none; }
+        .case-copy a:hover { text-decoration: underline; }
+
+        .contact-panel {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 54px;
+            align-items: end;
+            padding: 36px;
+            color: #fff;
+            background: var(--navy);
+        }
+        .contact-panel h3 { max-width: 650px; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.1; }
+        .contact-panel p { max-width: 650px; margin-top: 15px; color: #bdc8d5; font-size: 0.92rem; }
+        .contact-actions { display: grid; gap: 10px; }
+        .contact-actions .button { color: #fff; border-color: #526279; }
+        .contact-actions .button.primary { color: var(--navy); background: #fff; border-color: #fff; }
+        .contact-actions .button.primary:hover { color: #fff; background: var(--blue); border-color: var(--blue); }
+
+        footer { background: var(--wash); }
+        .footer-inner {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            color: var(--muted);
+            font-size: 0.76rem;
+        }
+        footer a { color: var(--muted); text-decoration: none; }
+        footer a:hover { color: var(--blue); }
+
+        @media (max-width: 1040px) {
+            .header-inner { grid-template-columns: 180px minmax(0, 1fr) auto; }
+            .hero-grid { grid-template-columns: minmax(0, 0.75fr) minmax(470px, 1.25fr); gap: 34px; }
+            .section-grid { grid-template-columns: 180px minmax(0, 1fr); }
+            .section-body { padding-left: 36px; }
+            .scope-item { grid-template-columns: 42px 170px minmax(0, 1fr); gap: 18px; }
+            .directory-grid { grid-template-columns: 180px repeat(4, 1fr); }
+        }
+
+        @media (max-width: 860px) {
+            .wrap { width: min(100% - 40px, 1220px); }
+            .header-inner { grid-template-columns: 1fr auto; }
+            .header-role { display: none; }
+            .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 34px; padding: 50px 0; }
+            .hero-copy { max-width: 700px; }
+            .live-dashboard { max-width: 720px; }
+            .directory-grid { grid-template-columns: repeat(2, 1fr); }
+            .directory-label { grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid var(--line); }
+            .directory-link:nth-of-type(2) { border-right: 0; }
+            .directory-link:nth-of-type(n + 3) { border-top: 1px solid var(--line); }
+            .section-grid { grid-template-columns: 1fr; }
+            .section-heading { padding: 46px 0 26px; border-right: 0; }
+            .section-body { padding: 0 0 54px; }
+            .contact-panel { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .wrap { width: min(100% - 28px, 1220px); }
+            .site-header { position: relative; }
+            .header-inner { min-height: 88px; align-content: center; gap: 10px; padding-block: 12px; }
+            .wordmark { grid-column: 1 / -1; }
+            .nav-links { grid-column: 1 / -1; gap: 16px; overflow-x: auto; }
+            .nav-links a { flex: 0 0 auto; }
+            .nav-links .contact-link { display: none; }
+            .hero-grid { padding: 38px 0 42px; }
+            .hero-copy h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
+            .hero-title { font-size: 1.3rem; }
+            .hero-actions { display: grid; }
+            .dashboard-head { align-items: flex-start; flex-direction: column; }
+            .stat-card { min-height: 140px; padding: 17px 14px; }
+            .stat-value { font-size: 1.85rem; }
+            .dashboard-lower { grid-template-columns: 1fr; }
+            .dashboard-panel + .dashboard-panel { border-top: 1px solid var(--line); border-left: 0; }
+            .directory-grid { grid-template-columns: 1fr; }
+            .directory-link { min-height: 96px; border-right: 0; border-bottom: 1px solid var(--line); }
+            .directory-link:nth-of-type(n + 3) { border-top: 0; }
+            .scope-item { grid-template-columns: 36px 1fr; }
+            .scope-item p { grid-column: 2; }
+            .foundation-item { grid-template-columns: 1fr; gap: 7px; }
+            .case-study { grid-template-columns: 1fr; }
+            .case-image { aspect-ratio: 16 / 9; border-right: 0; border-bottom: 1px solid var(--line); }
+            .case-image img { min-height: 0; }
+            .case-copy { padding: 24px 0 30px; }
+            .contact-panel { padding: 26px 22px; }
+            .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 22px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .live-dot { animation: none; }
+            *, *::before, *::after { transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="wordmark" href="#top">BrandonWorobi.pro</a>
+            <p class="header-role">Operations / Compliance / Technology</p>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="expertise.html">Expertise</a>
+                <a href="background.html">Background</a>
+                <a href="work.html">Work</a>
+                <a href="https://brandon.worobi.com">Personal</a>
+                <a class="contact-link" href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero-dashboard" id="top">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <p class="live-label"><span class="live-dot" aria-hidden="true"></span>Professional dashboard</p>
+                    <h1>Brandon Worobi</h1>
+                    <p class="hero-title">Operations, compliance, project delivery, and technology systems.</p>
+                    <p class="hero-summary">I turn complicated operations into clear systems people can use, own, and improve.</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="Brandon_Worobi_Resume.docx" download>Download resume <span aria-hidden="true">&darr;</span></a>
+                        <a class="button secondary" href="work.html">View selected work <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+
+                <aside class="live-dashboard" aria-label="Live professional statistics">
+                    <header class="dashboard-head">
+                        <div>
+                            <h2>Professional snapshot</h2>
+                            <time id="profile-updated" datetime="2026-09-15">Current profile</time>
+                        </div>
+                        <span class="status-chip">Open to opportunities</span>
+                    </header>
+
+                    <div class="stats-grid">
+                        <article class="stat-card" aria-label="More than 15 years of cross-functional experience">
+                            <strong class="stat-value" data-count="15" data-suffix="+">15+</strong>
+                            <p>Years across operations, IT, logistics, compliance, and leadership</p>
+                        </article>
+                        <article class="stat-card" aria-label="More than 80 agreements standardized">
+                            <strong class="stat-value" data-count="80" data-suffix="+">80+</strong>
+                            <p>Vendor and provider agreements standardized</p>
+                        </article>
+                        <article class="stat-card" aria-label="75 percent revenue growth supported">
+                            <strong class="stat-value" data-count="75" data-suffix="%">75%</strong>
+                            <p>Revenue growth supported through operational restructuring</p>
+                        </article>
+                        <article class="stat-card" aria-label="Two overseas deployments">
+                            <strong class="stat-value" data-count="2" data-suffix="">2</strong>
+                            <p>Overseas deployments with U.S. Army leadership experience</p>
+                        </article>
+                    </div>
+
+                    <div class="dashboard-lower">
+                        <section class="dashboard-panel" aria-label="Current focus areas">
+                            <p class="panel-label">Current focus</p>
+                            <div class="focus-list">
+                                <span>Operations</span>
+                                <span>Compliance</span>
+                                <span>Project delivery</span>
+                                <span>IT systems</span>
+                            </div>
+                        </section>
+                        <section class="dashboard-panel" aria-label="Education in progress">
+                            <p class="panel-label">In progress</p>
+                            <div class="track-list">
+                                <div class="track-item">
+                                    <div><strong>A.S. Computer Information Systems</strong><small>St. Clair County Community College</small></div>
+                                    <time>Mar 2027</time>
+                                </div>
+                                <div class="track-item">
+                                    <div><strong>B.S. Project Management</strong><small>Walsh College</small></div>
+                                    <time>2028</time>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="page-directory" aria-label="Professional site pages">
+            <div class="wrap directory-grid">
+                <div class="directory-label"><p>Explore the profile</p></div>
+                <a class="directory-link" href="expertise.html"><span>01</span><strong>Expertise & capabilities</strong></a>
+                <a class="directory-link" href="background.html"><span>02</span><strong>Background & credentials</strong></a>
+                <a class="directory-link" href="work.html"><span>03</span><strong>Selected project work</strong></a>
+                <a class="directory-link" href="contact.html"><span>04</span><strong>Professional contact</strong></a>
+            </div>
+        </section>
+
+        <section class="content-section" id="scope">
+            <div class="wrap section-grid">
+                <header class="section-heading">
+                    <p class="section-code">01 / Expertise</p>
+                    <h2>Areas of focus</h2>
+                    <p>Practical systems built around the way work actually happens.</p>
+                </header>
+                <div class="section-body">
+                    <div class="scope-list">
+                        <article class="scope-item">
+                            <span class="scope-number">01</span>
+                            <h3>Operations management</h3>
+                            <p>Workflow design, ownership, vendor coordination, SOP development, and process improvement.</p>
+                        </article>
+                        <article class="scope-item">
+                            <span class="scope-number">02</span>
+                            <h3>Compliance systems</h3>
+                            <p>Clear documentation, tracking, accountability, audit support, and Michigan cannabis operations.</p>
+                        </article>
+                        <article class="scope-item">
+                            <span class="scope-number">03</span>
+                            <h3>Technology enablement</h3>
+                            <p>IT systems, SharePoint, Power BI, data reporting, and AI-enabled workflows that support the operation.</p>
+                        </article>
+                        <article class="scope-item">
+                            <span class="scope-number">04</span>
+                            <h3>Project delivery</h3>
+                            <p>Scope definition, stakeholder coordination, implementation planning, and practical follow-through.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="foundation">
+            <div class="wrap section-grid">
+                <header class="section-heading">
+                    <p class="section-code">02 / Foundation</p>
+                    <h2>Education & credentials</h2>
+                    <p>Business, technology, project leadership, and military service.</p>
+                </header>
+                <div class="section-body">
+                    <div class="foundation-list">
+                        <article class="foundation-item">
+                            <time>In progress<br>Mar 2027</time>
+                            <div>
+                                <h3>A.S. Computer Information Systems</h3>
+                                <p class="org">St. Clair County Community College</p>
+                            </div>
+                            <p>Systems, support, and applied IT foundation. GPA: 3.4.</p>
+                        </article>
+                        <article class="foundation-item">
+                            <time>In progress<br>2028</time>
+                            <div>
+                                <h3>B.S. Project Management</h3>
+                                <p class="org">Walsh College</p>
+                            </div>
+                            <p>Project leadership, business operations, and systems-focused management.</p>
+                        </article>
+                        <article class="foundation-item">
+                            <time>2014</time>
+                            <div>
+                                <h3>A.A.S. Business Administration</h3>
+                                <p class="org">Lone Star College</p>
+                            </div>
+                            <p>Business administration foundation. GPA: 3.2.</p>
+                        </article>
+                        <article class="foundation-item">
+                            <time>2003-2007</time>
+                            <div>
+                                <h3>Cavalry Scout / Sergeant (E5)</h3>
+                                <p class="org">U.S. Army</p>
+                            </div>
+                            <p>Two overseas deployments and Army Commendation Medal.</p>
+                        </article>
+                    </div>
+                    <div class="credentials" aria-label="Credentials">
+                        <span class="credential">Six Sigma Yellow Belt</span>
+                        <span class="credential">CompTIA A+</span>
+                        <span class="credential">Full Stack Coding</span>
+                        <span class="credential">IS-100 and IS-700</span>
+                        <span class="credential">CPI</span>
+                        <span class="credential">AHA FA/CPR Trainer</span>
+                        <span class="credential">IBM Data Analytics / In progress</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="work">
+            <div class="wrap section-grid">
+                <header class="section-heading">
+                    <p class="section-code">03 / Work</p>
+                    <h2>Selected projects</h2>
+                    <p>Digital systems and web properties built for real organizations and audiences.</p>
+                </header>
+                <div class="section-body">
+                    <div class="case-list">
+                        <article class="case-study">
+                            <div class="case-image"><img src="scout-screenshot.png" alt="Scout Consultatory website preview"></div>
+                            <div class="case-copy">
+                                <p class="case-type">Operations & technology consulting</p>
+                                <h3>Scout Consultatory</h3>
+                                <p>Consulting presence for small to mid-sized businesses, focused on workflows, infrastructure, practical systems, and implementation support.</p>
+                                <a href="https://scoutconsultatory.com" target="_blank" rel="noopener">View project &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="case-study">
+                            <div class="case-image"><img src="hfc-screenshot.png" alt="High Functioning Chaos website preview"></div>
+                            <div class="case-copy">
+                                <p class="case-type">Content & brand infrastructure</p>
+                                <h3>High Functioning Chaos</h3>
+                                <p>Blog, podcast, content, and brand infrastructure supporting honest writing around family, neurodivergence, and lived experience.</p>
+                                <a href="https://highfunctioningchaos.living" target="_blank" rel="noopener">View project &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="case-study">
+                            <div class="case-image"><img src="worobi-screenshot.png" alt="Worobi family website preview"></div>
+                            <div class="case-copy">
+                                <p class="case-type">Information architecture & self-hosting</p>
+                                <h3>Worobi.com</h3>
+                                <p>Self-hosted family hub with a clear structure for individual pages, history, recipes, remembrance, and shared family content.</p>
+                                <a href="https://worobi.com" target="_blank" rel="noopener">View project &rarr;</a>
+                            </div>
+                        </article>
+                        <article class="case-study">
+                            <div class="case-image"><img src="reigns-tide-screenshot.png" alt="Reign's Tide website preview"></div>
+                            <div class="case-copy">
+                                <p class="case-type">Purpose-led digital experience</p>
+                                <h3>Reign's Tide</h3>
+                                <p>Remembrance site with an organized content system for stories, support details, and family-centered updates.</p>
+                                <a href="https://reignstide.org" target="_blank" rel="noopener">View project &rarr;</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="contact">
+            <div class="wrap section-grid">
+                <header class="section-heading">
+                    <p class="section-code">04 / Contact</p>
+                    <h2>Professional inquiries</h2>
+                    <p>Hiring, consulting, operations, compliance, and project work.</p>
+                </header>
+                <div class="section-body">
+                    <div class="contact-panel">
+                        <div>
+                            <h3>Let&apos;s make the work clearer and easier to run.</h3>
+                            <p>Use this contact lane for professional opportunities, project work, cannabis operations support, compliance workflows, or technology and process improvement.</p>
+                        </div>
+                        <div class="contact-actions">
+                            <a class="button primary" href="mailto:brandon@worobi.com?subject=Professional%20inquiry%20from%20brandonworobi.pro">Email Brandon <span aria-hidden="true">&rarr;</span></a>
+                            <a class="button" href="https://www.linkedin.com/in/worobi/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&rarr;</span></a>
+                            <a class="button" href="https://github.com/worobi" target="_blank" rel="noopener">GitHub <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap footer-inner">
+            <p>Brandon Worobi / Port Huron, Michigan</p>
+            <a href="https://brandon.worobi.com">Personal site: brandon.worobi.com</a>
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            const now = new Date();
+            const updated = document.getElementById('profile-updated');
+            updated.dateTime = now.toISOString().slice(0, 10);
+            updated.textContent = `Current profile / ${now.toLocaleDateString(undefined, {
+                month: 'short', day: 'numeric', year: 'numeric'
+            })}`;
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            document.querySelectorAll('[data-count]').forEach((counter) => {
+                const target = Number(counter.dataset.count);
+                const suffix = counter.dataset.suffix || '';
+                const duration = 900;
+                const start = performance.now();
+
+                const update = (time) => {
+                    const progress = Math.min((time - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = `${Math.round(target * eased)}${suffix}`;
+                    if (progress < 1) requestAnimationFrame(update);
+                };
+
+                requestAnimationFrame(update);
+            });
+        })();
+    </script>
+</body>
+</html>
