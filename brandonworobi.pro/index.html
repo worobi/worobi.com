@@ -70,10 +70,10 @@
         .nav-links .contact-link:hover { color: #fff; background: var(--blue); }
 
         .hero { position: relative; min-height: min(720px, calc(100svh - 120px)); overflow: hidden; color: #fff; background: #24272b; isolation: isolate; }
-        .hero-photo { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; filter: saturate(.9) contrast(1.05); }
-        .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(10,12,15,.18) 0%, rgba(10,12,15,.28) 42%, rgba(10,12,15,.92) 100%), linear-gradient(0deg, rgba(10,12,15,.72) 0%, transparent 48%); }
+        .hero-photo { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; filter: saturate(.92) contrast(1.04); }
+        .hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(10,12,15,.76) 0%, rgba(10,12,15,.2) 58%, rgba(10,12,15,.12) 100%), linear-gradient(0deg, rgba(10,12,15,.9) 0%, rgba(10,12,15,.24) 62%, rgba(10,12,15,.08) 100%); }
         .hero::after { content: ""; position: absolute; right: 0; bottom: 0; z-index: -1; width: 33%; height: 7px; background: var(--yellow); }
-        .hero-inner { min-height: inherit; display: flex; align-items: flex-end; justify-content: flex-end; padding-block: 64px; }
+        .hero-inner { min-height: inherit; display: flex; align-items: flex-end; justify-content: flex-start; padding-block: 64px; }
         .hero-copy { width: min(100%, 610px); }
         .hero-kicker { display: flex; align-items: center; gap: 12px; color: #d6dde5; font-family: var(--mono); font-size: .77rem; font-weight: 600; text-transform: uppercase; }
         .hero-kicker::before { content: ""; width: 34px; height: 3px; background: var(--yellow); }
@@ -196,7 +196,7 @@
             .nav-links a { flex: 0 0 auto; }
             .nav-links .contact-link { display: none; }
             .hero { min-height: calc(100svh - 108px); }
-            .hero-photo { object-position: 45% 25%; }
+            .hero-photo { object-position: center 32%; }
             .hero-inner { padding-block: 42px; }
             .hero h1 { font-size: clamp(3.2rem,17vw,5rem); }
             .hero-lead { font-size: 1.3rem; }
@@ -238,7 +238,7 @@
 
     <main id="main">
         <section class="hero" id="top">
-            <img class="hero-photo" src="headshot.jpg" alt="Brandon Worobi smiling in a pineapple shirt and baseball cap">
+            <img class="hero-photo" src="brandon-hero.jpeg" alt="Brandon Worobi outdoors wearing a black cap and glasses">
             <div class="wrap hero-inner">
                 <div class="hero-copy">
                     <p class="hero-kicker">Operator / builder / Army veteran</p>
