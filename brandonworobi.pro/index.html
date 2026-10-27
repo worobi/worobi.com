@@ -122,8 +122,9 @@
         .work-heading .section-title { max-width: 690px; }
         .text-link { color: var(--blue); font-size: .82rem; font-weight: 800; text-decoration: none; }
         .text-link:hover { text-decoration: underline; }
-        .project-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 48px; }
+        .project-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; margin-top: 48px; }
         .project-card { overflow: hidden; background: #fff; border: 1px solid var(--line); border-radius: 6px; text-decoration: none; transition: transform 180ms ease, box-shadow 180ms ease; }
+        .project-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(320px,.85fr) minmax(0,1.15fr); }
         .project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 42px rgba(23,26,31,.11); }
         .project-image { aspect-ratio: 16/10; overflow: hidden; background: #dfe4e9; }
         .project-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform 250ms ease; }
@@ -183,6 +184,7 @@
             .story-layout { grid-template-columns: 1fr; }
             .project-grid { grid-template-columns: 1fr; }
             .project-card { display: grid; grid-template-columns: minmax(240px,.8fr) minmax(0,1.2fr); }
+            .project-card:last-child { grid-column: auto; grid-template-columns: minmax(240px,.8fr) minmax(0,1.2fr); }
             .project-image { aspect-ratio: auto; }
             .contact-layout { grid-template-columns: 1fr; padding-block: 70px; }
             .contact-actions { display: flex; flex-wrap: wrap; }
@@ -206,6 +208,7 @@
             .proof-item:nth-of-type(odd) { border-left: 0; padding-left: 0; }
             .section { padding-block: 66px; }
             .project-card { display: block; }
+            .project-card:last-child { display: block; }
             .project-image { aspect-ratio: 16/10; }
             .work-heading { align-items: flex-start; flex-direction: column; }
             .directory-grid { grid-template-columns: 1fr; }
@@ -310,21 +313,29 @@
             <div class="wrap">
                 <div class="work-heading">
                     <div>
-                        <p class="eyebrow">Selected work</p>
-                        <h2 class="section-title" id="work-title">Ideas are better when they become something useful.</h2>
+                        <p class="eyebrow">Sites I build & manage</p>
+                        <h2 class="section-title" id="work-title">A working portfolio, not just a highlight reel.</h2>
                     </div>
-                    <a class="text-link" href="work.html">View all project work</a>
+                    <a class="text-link" href="work.html">Explore the complete site network</a>
                 </div>
                 <div class="project-grid">
-                    <a class="project-card" href="work.html">
+                    <a class="project-card" href="https://scoutconsultatory.com" target="_blank" rel="noopener">
                         <div class="project-image"><img src="scout-screenshot.png" alt="Scout Consultatory website preview"></div>
                         <div class="project-copy"><p class="project-type">Operations & technology</p><h3>Scout Consultatory</h3><p>Practical consulting focused on workflows, infrastructure, and implementation support.</p></div>
                     </a>
-                    <a class="project-card" href="work.html">
+                    <a class="project-card" href="https://highfunctioningchaos.living" target="_blank" rel="noopener">
                         <div class="project-image"><img src="hfc-screenshot.png" alt="High Functioning Chaos website preview"></div>
                         <div class="project-copy"><p class="project-type">Content & infrastructure</p><h3>High Functioning Chaos</h3><p>A working content and brand system built around honest writing and lived experience.</p></div>
                     </a>
-                    <a class="project-card" href="work.html">
+                    <a class="project-card" href="https://monismunchies.com" target="_blank" rel="noopener">
+                        <div class="project-image"><img src="mm-screenshot.png" alt="Moni's Munchies website preview"></div>
+                        <div class="project-copy"><p class="project-type">Small business & commerce</p><h3>Moni's Munchies</h3><p>A customer-facing home for baked goods, online orders, events, and cottage-food information.</p></div>
+                    </a>
+                    <a class="project-card" href="https://worobi.com" target="_blank" rel="noopener">
+                        <div class="project-image"><img src="worobi-screenshot.png" alt="Worobi family website preview"></div>
+                        <div class="project-copy"><p class="project-type">Family information architecture</p><h3>Worobi.com</h3><p>A self-hosted family hub connecting individual pages, history, recipes, remembrance, and shared content.</p></div>
+                    </a>
+                    <a class="project-card" href="https://reignstide.org" target="_blank" rel="noopener">
                         <div class="project-image"><img src="reigns-tide-screenshot.png" alt="Reign's Tide website preview"></div>
                         <div class="project-copy"><p class="project-type">Purpose-led digital work</p><h3>Reign's Tide</h3><p>A remembrance site with an organized system for stories, support, and family updates.</p></div>
                     </a>
@@ -337,7 +348,7 @@
                 <div class="directory-label"><p>Explore the full profile</p></div>
                 <a class="directory-link" href="expertise.html"><span>01</span><strong>Expertise & capabilities</strong></a>
                 <a class="directory-link" href="background.html"><span>02</span><strong>Background & credentials</strong></a>
-                <a class="directory-link" href="work.html"><span>03</span><strong>Selected project work</strong></a>
+                <a class="directory-link" href="work.html"><span>03</span><strong>Sites & project work</strong></a>
                 <a class="directory-link" href="contact.html"><span>04</span><strong>Professional contact</strong></a>
             </div>
         </section>
