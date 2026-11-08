@@ -1,1260 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://worobi.com/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://worobi.com/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://worobi.com/favicon-192x192.png">
-    <link rel="apple-touch-icon" href="https://worobi.com/apple-touch-icon.png">
-    <title>Mobile Notary in Port Huron, MI | St. Clair County Notary | Worobi</title>
-    <meta name="description" content="Mobile notary in Port Huron, Michigan serving St. Clair, Sanilac, Macomb, and Lapeer Counties. Power of attorney, estate, real estate, hospital, jail, affidavit, and remote online notarizations. Call or text (810) 242-8884.">
-    <link rel="canonical" href="https://notary.worobi.com/">
-    <meta property="og:title" content="Worobi Mobile Notary | Port Huron, MI">
-    <meta property="og:description" content="Mobile notary and document signing service for Port Huron, St. Clair County, and surrounding Michigan communities.">
-    <meta property="og:url" content="https://notary.worobi.com/">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Worobi Mobile Notary & Document Services",
-        "url": "https://notary.worobi.com/",
-        "telephone": "+18102428884",
-        "email": "notary@worobi.com",
-        "priceRange": "$10+",
-        "description": "Mobile notary and document signing service based in Port Huron, Michigan, serving St. Clair, Sanilac, Macomb, and Lapeer Counties.",
-        "areaServed": [
-            "Port Huron MI",
-            "St. Clair County MI",
-            "Sanilac County MI",
-            "Macomb County MI",
-            "Lapeer County MI"
-        ],
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Port Huron",
-            "addressRegion": "MI",
-            "postalCode": "48060",
-            "addressCountry": "US"
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "08:00",
-                "closes": "19:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Saturday",
-                "opens": "09:00",
-                "closes": "17:00"
-            }
-        ],
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Mobile Notary Services",
-            "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile Notary Service" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Power of Attorney Notarization" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estate Planning Document Notarization" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Loan Signing Services" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hospital Notary" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Remote Online Notary" } }
-            ]
-        }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Do you travel for notary appointments?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Worobi Mobile Notary travels to homes, offices, hospitals, assisted living facilities, jails, and job sites in Port Huron, St. Clair County, and nearby Michigan communities."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What do I need for a notarization?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Bring the unsigned document, every signer who needs notarization, and a valid government-issued photo ID. The signer must be alert, willing, and able to understand the document."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How much does a Michigan notary cost?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Michigan notary fees are listed separately from mobile travel fees. The total depends on the number of notarizations, location, timing, and any added signing services."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do you offer remote online notarization?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. Remote online notarization is available through supported platforms for eligible documents and signers who prefer a secure video session."
-                }
-            }
-        ]
-    }
-    </script>
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-        :root {
-            --navy:       #0f1f3d;
-            --navy-mid:   #162847;
-            --navy-light: #1e3a5f;
-            --gold:       #c9a05a;
-            --gold-light: #e8c87a;
-            --gold-pale:  #fdf6e7;
-            --text:       #0f172a;
-            --text-mid:   #334155;
-            --text-muted: #64748b;
-            --border:     #e2e8f0;
-            --surface:    #f8fafc;
-            --surface-2:  #f1f5f9;
-            --white:      #ffffff;
-        }
-
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.6; overflow-x: hidden; }
-
-        /* ── NAV ── */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            height: 68px; padding: 0 48px;
-            display: flex; align-items: center; justify-content: space-between;
-            background: rgba(15,31,61,0.97);
-            -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(201,160,90,0.2);
-        }
-        .nav-brand {
-            display: flex; align-items: center; gap: 12px;
-            text-decoration: none;
-        }
-        .nav-seal {
-            width: 36px; height: 36px; border-radius: 50%;
-            border: 1.5px solid var(--gold);
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 0.85rem; font-weight: 700;
-            color: var(--gold);
-        }
-        .nav-brand-text { display: flex; flex-direction: column; }
-        .nav-brand-name { font-size: 0.9rem; font-weight: 700; color: var(--white); line-height: 1.2; }
-        .nav-brand-sub  { font-size: 0.65rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
-        .nav-links { display: flex; align-items: center; gap: 28px; }
-        .nav-link { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.65); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
-        .nav-link:hover { color: var(--white); }
-        .nav-cta {
-            background: var(--gold); color: var(--navy);
-            font-size: 0.78rem; font-weight: 700;
-            padding: 9px 20px; border-radius: 100px;
-            text-decoration: none; transition: all 0.2s;
-            letter-spacing: 0.05em;
-        }
-        .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-        /* ── HERO ── */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 60%, #1a3355 100%);
-            display: flex; align-items: center;
-            padding: 100px 48px 80px;
-            position: relative; overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute; inset: 0;
-            background:
-                radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,160,90,0.06) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,160,90,0.04) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .hero-grid {
-            max-width: 1120px; margin: 0 auto; width: 100%;
-            display: grid; grid-template-columns: 1fr 420px;
-            gap: 80px; align-items: center;
-            position: relative; z-index: 1;
-        }
-        .hero-eyebrow {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-size: 0.7rem; font-weight: 600;
-            letter-spacing: 0.25em; text-transform: uppercase;
-            color: var(--gold); margin-bottom: 20px;
-        }
-        .hero-eyebrow::before {
-            content: ''; width: 24px; height: 1px; background: var(--gold);
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.8rem, 5vw, 4.8rem);
-            font-weight: 900; line-height: 1.05;
-            color: var(--white); margin-bottom: 12px;
-            letter-spacing: -0.01em;
-        }
-        .hero h1 span { color: var(--gold); }
-        .hero-tagline {
-            font-size: 1.05rem; color: rgba(255,255,255,0.6);
-            margin-bottom: 36px; line-height: 1.7; max-width: 480px;
-        }
-        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
-        .btn-gold {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--gold); color: var(--navy);
-            font-size: 0.9rem; font-weight: 700;
-            padding: 14px 28px; border-radius: 100px;
-            text-decoration: none; transition: all 0.2s;
-        }
-        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,160,90,0.3); }
-        .btn-ghost {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: transparent; color: rgba(255,255,255,0.8);
-            border: 1.5px solid rgba(255,255,255,0.25);
-            font-size: 0.9rem; font-weight: 600;
-            padding: 14px 28px; border-radius: 100px;
-            text-decoration: none; transition: all 0.2s;
-        }
-        .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-
-        .hero-trust {
-            display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
-        }
-        .trust-item {
-            display: flex; align-items: center; gap: 8px;
-            font-size: 0.78rem; color: rgba(255,255,255,0.5);
-        }
-        .trust-item::before {
-            content: '✓';
-            width: 18px; height: 18px; border-radius: 50%;
-            background: rgba(201,160,90,0.15);
-            border: 1px solid rgba(201,160,90,0.3);
-            color: var(--gold); font-size: 0.65rem; font-weight: 700;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-        }
-
-        /* Hero card */
-        .hero-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(201,160,90,0.2);
-            border-radius: 24px;
-            padding: 40px;
-            backdrop-filter: blur(8px);
-        }
-        .hero-card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem; font-weight: 700;
-            color: var(--white); margin-bottom: 28px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(201,160,90,0.2);
-        }
-        .availability-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
-        .avail-row {
-            display: flex; justify-content: space-between; align-items: center;
-            font-size: 0.82rem;
-        }
-        .avail-day { color: rgba(255,255,255,0.6); }
-        .avail-hours { color: var(--white); font-weight: 600; }
-        .avail-badge {
-            font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.1em; padding: 2px 8px; border-radius: 100px;
-        }
-        .badge-open { background: rgba(22,163,74,0.15); color: #4ade80; border: 1px solid rgba(22,163,74,0.3); }
-        .badge-flex { background: rgba(201,160,90,0.15); color: var(--gold); border: 1px solid rgba(201,160,90,0.3); }
-        .hero-card-note {
-            font-size: 0.75rem; color: rgba(255,255,255,0.4);
-            text-align: center; font-style: italic; line-height: 1.6;
-        }
-        .hero-card-phone {
-            display: block; text-align: center;
-            font-size: 1.3rem; font-weight: 800; color: var(--gold);
-            text-decoration: none; margin-bottom: 10px;
-            transition: color 0.2s;
-        }
-        .hero-card-phone:hover { color: var(--gold-light); }
-
-        /* ── SERVICES ── */
-        .services {
-            padding: 100px 48px;
-            background: var(--white);
-        }
-        .section-inner { max-width: 1120px; margin: 0 auto; }
-        .section-header { text-align: center; margin-bottom: 64px; }
-        .section-eyebrow {
-            font-size: 0.7rem; font-weight: 600;
-            letter-spacing: 0.25em; text-transform: uppercase;
-            color: var(--gold); margin-bottom: 12px;
-        }
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            font-weight: 700; color: var(--text);
-            letter-spacing: -0.01em; margin-bottom: 14px;
-        }
-        .section-sub {
-            font-size: 0.95rem; color: var(--text-muted);
-            max-width: 520px; margin: 0 auto; line-height: 1.75;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
-        }
-        .service-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 36px 32px;
-            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(201,160,90,0.4);
-            box-shadow: 0 12px 40px rgba(201,160,90,0.1);
-        }
-        .service-icon {
-            font-size: 2.2rem; margin-bottom: 20px; display: block;
-        }
-        .service-name {
-            font-size: 1.1rem; font-weight: 700;
-            color: var(--text); margin-bottom: 10px;
-        }
-        .service-desc {
-            font-size: 0.875rem; color: var(--text-muted);
-            line-height: 1.75; margin-bottom: 20px; flex: 1;
-        }
-        .service-price {
-            font-size: 0.78rem; font-weight: 700;
-            color: var(--navy-light);
-            background: var(--gold-pale);
-            border: 1px solid rgba(201,160,90,0.3);
-            padding: 4px 12px; border-radius: 100px;
-            display: inline-block;
-        }
-
-        /* ── ALL SERVICES LIST ── */
-        .all-services {
-            margin-top: 56px;
-            border-top: 1px solid var(--border);
-            padding-top: 48px;
-        }
-        .all-services-label {
-            font-size: 0.68rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.2em;
-            color: var(--text-muted); margin-bottom: 24px;
-            text-align: center;
-        }
-        .all-services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 10px;
-        }
-        .all-service-item {
-            display: flex; align-items: center; gap: 10px;
-            padding: 12px 16px;
-            background: var(--surface-2);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            font-size: 0.83rem; font-weight: 500;
-            color: var(--text-mid);
-            transition: border-color 0.2s, color 0.2s;
-        }
-        .all-service-item:hover {
-            border-color: rgba(201,160,90,0.4);
-            color: var(--text);
-        }
-        .all-service-item::before {
-            content: '✓';
-            font-size: 0.65rem; font-weight: 800;
-            color: var(--gold); flex-shrink: 0;
-        }
-
-        /* ── RON CALLOUT ── */
-        .ron-callout {
-            margin-top: 40px;
-            background: var(--navy);
-            border-radius: 20px;
-            padding: 40px 48px;
-            display: flex; align-items: center;
-            gap: 48px; flex-wrap: wrap;
-            border: 1px solid rgba(201,160,90,0.2);
-        }
-        .ron-callout-text { flex: 1; min-width: 240px; }
-        .ron-callout-eyebrow {
-            font-size: 0.65rem; font-weight: 700;
-            letter-spacing: 0.22em; text-transform: uppercase;
-            color: var(--gold); margin-bottom: 8px;
-        }
-        .ron-callout-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem; font-weight: 700;
-            color: var(--white); margin-bottom: 10px;
-        }
-        .ron-callout-desc {
-            font-size: 0.875rem; color: rgba(255,255,255,0.55);
-            line-height: 1.7;
-        }
-        .ron-platforms {
-            display: flex; flex-direction: column; gap: 10px;
-            flex-shrink: 0;
-        }
-        .ron-platform {
-            display: flex; align-items: center; gap: 12px;
-            padding: 12px 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(201,160,90,0.2);
-            border-radius: 12px;
-            font-size: 0.875rem; font-weight: 600;
-            color: var(--white);
-            text-decoration: none;
-            transition: background 0.2s, border-color 0.2s;
-            min-width: 220px;
-        }
-        .ron-platform:hover {
-            background: rgba(201,160,90,0.1);
-            border-color: rgba(201,160,90,0.5);
-            color: var(--gold-light);
-        }
-        .ron-platform-badge {
-            font-size: 0.58rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.1em;
-            color: var(--gold);
-            background: rgba(201,160,90,0.12);
-            border: 1px solid rgba(201,160,90,0.25);
-            padding: 2px 7px; border-radius: 100px;
-            margin-left: auto; flex-shrink: 0;
-        }
-        @media (max-width: 720px) {
-            .ron-callout { padding: 28px 24px; flex-direction: column; gap: 28px; }
-            .ron-platforms { width: 100%; }
-            .ron-platform { min-width: unset; }
-        }
-
-        /* ── HOW IT WORKS ── */
-        .how-it-works {
-            padding: 100px 48px;
-            background: var(--navy);
-        }
-        .how-it-works .section-title { color: var(--white); }
-        .how-it-works .section-sub { color: rgba(255,255,255,0.5); }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            position: relative;
-        }
-        .steps-grid::before {
-            content: '';
-            position: absolute;
-            top: 28px; left: 60px; right: 60px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(201,160,90,0.3), transparent);
-        }
-        .step {
-            text-align: center;
-            position: relative;
-        }
-        .step-num {
-            width: 56px; height: 56px;
-            border-radius: 50%;
-            background: rgba(201,160,90,0.1);
-            border: 1px solid rgba(201,160,90,0.3);
-            display: flex; align-items: center; justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem; font-weight: 700; color: var(--gold);
-            margin: 0 auto 20px;
-            position: relative; z-index: 1;
-        }
-        .step-title {
-            font-size: 0.95rem; font-weight: 700;
-            color: var(--white); margin-bottom: 10px;
-        }
-        .step-desc {
-            font-size: 0.82rem; color: rgba(255,255,255,0.45);
-            line-height: 1.7;
-        }
-
-        /* ── SERVICE AREA ── */
-        .service-area {
-            padding: 100px 48px;
-            background: var(--surface);
-        }
-        .area-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 80px; align-items: center;
-        }
-        .area-content {}
-        .area-lead {
-            font-size: 1rem; color: var(--text-mid);
-            line-height: 1.8; margin-bottom: 32px;
-        }
-        .area-list {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 10px; list-style: none;
-        }
-        .area-list li {
-            font-size: 0.875rem; color: var(--text-mid);
-            display: flex; align-items: center; gap: 8px;
-        }
-        .area-list li::before {
-            content: '📍'; font-size: 0.75rem;
-        }
-        .area-map {
-            background: var(--navy);
-            border-radius: 24px;
-            padding: 52px 40px;
-            text-align: center;
-            border: 1px solid rgba(201,160,90,0.2);
-        }
-        .map-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem; font-weight: 700;
-            color: var(--white); margin-bottom: 8px;
-        }
-        .map-sub { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
-        .map-radius {
-            width: 180px; height: 180px;
-            border-radius: 50%;
-            border: 2px solid rgba(201,160,90,0.3);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            margin: 0 auto 28px;
-            position: relative;
-        }
-        .map-radius::before, .map-radius::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            border: 1px dashed rgba(201,160,90,0.15);
-        }
-        .map-radius::before { inset: 20px; }
-        .map-radius::after  { inset: 40px; }
-        .map-miles {
-            font-size: 2.5rem; font-weight: 900; color: var(--gold);
-            font-family: 'Playfair Display', serif; line-height: 1;
-        }
-        .map-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; }
-        .map-note { font-size: 0.75rem; color: rgba(255,255,255,0.35); font-style: italic; }
-
-        /* ── PRICING ── */
-        .pricing {
-            padding: 100px 48px;
-            background: var(--white);
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            max-width: 860px; margin: 0 auto;
-        }
-        .price-card {
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 36px 28px;
-            text-align: center;
-            transition: transform 0.25s, box-shadow 0.25s;
-        }
-        .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-        .price-card.featured {
-            background: var(--navy);
-            border-color: rgba(201,160,90,0.3);
-            position: relative; overflow: hidden;
-        }
-        .price-card.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute; top: 16px; right: -28px;
-            background: var(--gold); color: var(--navy);
-            font-size: 0.58rem; font-weight: 800;
-            letter-spacing: 0.12em; padding: 4px 40px;
-            transform: rotate(45deg);
-        }
-        .price-tier { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 12px; }
-        .price-amount {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem; font-weight: 900; line-height: 1;
-            margin-bottom: 4px;
-        }
-        .price-card:not(.featured) .price-amount { color: var(--text); }
-        .price-card.featured .price-amount { color: var(--white); }
-        .price-unit { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 20px; }
-        .price-card.featured .price-unit { color: rgba(255,255,255,0.4); }
-        .price-divider { height: 1px; background: var(--border); margin: 20px 0; }
-        .price-card.featured .price-divider { background: rgba(255,255,255,0.1); }
-        .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-        .price-features li { font-size: 0.83rem; display: flex; align-items: flex-start; gap: 8px; text-align: left; }
-        .price-card:not(.featured) .price-features li { color: var(--text-mid); }
-        .price-card.featured .price-features li { color: rgba(255,255,255,0.7); }
-        .price-features li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
-        .price-btn {
-            display: block; width: 100%;
-            padding: 12px; border-radius: 100px;
-            font-size: 0.85rem; font-weight: 700;
-            text-decoration: none; transition: all 0.2s; text-align: center;
-        }
-        .price-btn-outline {
-            border: 1.5px solid var(--border); color: var(--text-mid);
-        }
-        .price-btn-outline:hover { border-color: var(--gold); color: var(--navy); }
-        .price-btn-gold { background: var(--gold); color: var(--navy); }
-        .price-btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-        /* ── CREDENTIALS ── */
-        .credentials {
-            padding: 80px 48px;
-            background: var(--gold-pale);
-            border-top: 1px solid rgba(201,160,90,0.2);
-            border-bottom: 1px solid rgba(201,160,90,0.2);
-        }
-        .cred-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            gap: 32px; text-align: center;
-            max-width: 900px; margin: 0 auto;
-        }
-        .cred-item {}
-        .cred-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
-        .cred-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-        .cred-sub { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
-
-        /* ── FAQ ── */
-        .faq {
-            padding: 90px 48px;
-            background: var(--surface);
-        }
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            max-width: 920px;
-            margin: 0 auto;
-        }
-        .faq-item {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 26px;
-        }
-        .faq-question {
-            font-size: 0.98rem;
-            font-weight: 800;
-            color: var(--text);
-            margin-bottom: 10px;
-        }
-        .faq-answer {
-            font-size: 0.86rem;
-            color: var(--text-muted);
-            line-height: 1.75;
-        }
-
-        /* ── CONTACT ── */
-        .contact {
-            padding: 100px 48px;
-            background: var(--navy);
-        }
-        .contact .section-title { color: var(--white); }
-        .contact .section-sub { color: rgba(255,255,255,0.45); }
-        .contact-grid {
-            display: grid; grid-template-columns: 1fr 480px;
-            gap: 72px; align-items: start;
-        }
-        .contact-info { display: flex; flex-direction: column; gap: 32px; }
-        .contact-item { display: flex; gap: 16px; }
-        .contact-item-icon {
-            width: 44px; height: 44px; flex-shrink: 0;
-            border-radius: 12px;
-            background: rgba(201,160,90,0.1);
-            border: 1px solid rgba(201,160,90,0.2);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.1rem;
-        }
-        .contact-item-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold); margin-bottom: 4px; }
-        .contact-item-val { font-size: 0.92rem; color: rgba(255,255,255,0.8); }
-        .contact-item-val a { color: rgba(255,255,255,0.8); text-decoration: none; transition: color 0.2s; }
-        .contact-item-val a:hover { color: var(--gold); }
-
-        .contact-form {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(201,160,90,0.2);
-            border-radius: 20px;
-            padding: 40px;
-        }
-        .form-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem; font-weight: 700;
-            color: var(--white); margin-bottom: 28px;
-        }
-        .form-grid { display: flex; flex-direction: column; gap: 16px; }
-        .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .form-group { display: flex; flex-direction: column; gap: 6px; }
-        .form-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.4); }
-        .form-input,
-        .form-select,
-        .form-textarea {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 12px 16px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.875rem; color: var(--white);
-            outline: none; transition: border-color 0.2s; width: 100%;
-        }
-        .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
-        .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(201,160,90,0.5); }
-        .form-select option { background: var(--navy); }
-        .form-select { appearance: none; cursor: pointer; }
-        .form-textarea { resize: vertical; min-height: 110px; }
-        .form-submit {
-            width: 100%;
-            background: var(--gold); color: var(--navy);
-            border: none; border-radius: 100px;
-            padding: 14px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.875rem; font-weight: 700;
-            cursor: pointer; transition: all 0.2s;
-            letter-spacing: 0.05em; text-transform: uppercase;
-        }
-        .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
-        .form-note { font-size: 0.72rem; color: rgba(255,255,255,0.25); text-align: center; margin-top: 10px; }
-
-        /* ── FOOTER ── */
-        footer {
-            background: #080f1e;
-            padding: 32px 48px;
-            display: flex; align-items: center; justify-content: space-between;
-            flex-wrap: wrap; gap: 16px;
-        }
-        .footer-brand { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
-        .footer-brand strong { color: var(--gold); }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-link { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
-        .footer-link:hover { color: var(--gold); }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 900px) {
-            nav { padding: 0 20px; }
-            .nav-links { display: none; }
-            .hero { padding: 90px 24px 60px; }
-            .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-            .services, .how-it-works, .service-area, .pricing, .credentials, .faq, .contact { padding: 72px 24px; }
-            .steps-grid { grid-template-columns: 1fr 1fr; }
-            .steps-grid::before { display: none; }
-            .area-grid { grid-template-columns: 1fr; gap: 48px; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
-            .cred-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
-            .faq-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .form-row-2 { grid-template-columns: 1fr; }
-            footer { padding: 28px 24px; flex-direction: column; text-align: center; }
-        }
-        @media (max-width: 560px) {
-            .steps-grid { grid-template-columns: 1fr; }
-            .cred-grid { grid-template-columns: 1fr 1fr; }
-            .area-list { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Worobi Notary &amp; Document Services | Port Huron, Michigan</title>
+<meta name="description" content="Mobile notary and document services in Port Huron, Michigan. Clear fees, convenient meeting locations, and appointments by arrangement. Call (810) 242-8884.">
+<link rel="canonical" href="https://notary.worobi.com/">
+<link rel="icon" type="image/png" href="assets/worobi-notary-logo.png">
+<link rel="stylesheet" href="assets/site.css">
+<meta property="og:title" content="Worobi Notary &amp; Document Services">
+<meta property="og:description" content="A notary that comes to you. Mobile service in Port Huron and surrounding Michigan counties, with clear pricing before we meet.">
+<meta property="og:url" content="https://notary.worobi.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://notary.worobi.com/assets/worobi-notary-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Worobi Notary & Document Services",
+  "url": "https://notary.worobi.com/",
+  "image": "https://notary.worobi.com/assets/worobi-notary-logo.png",
+  "telephone": "+18102428884",
+  "email": "notary@worobi.com",
+  "description": "Mobile notary and document services based in Port Huron, Michigan. Availability and fees are confirmed before booking.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Port Huron",
+    "addressRegion": "MI",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "St. Clair County MI",
+    "Sanilac County MI",
+    "Lapeer County MI",
+    "Macomb County MI",
+    "Parts of Oakland County MI"
+  ]
+}</script>
 </head>
-<body>
-
-<!-- NAV -->
-<nav>
-    <a class="nav-brand" href="#">
-        <div class="nav-seal">BW</div>
-        <div class="nav-brand-text">
-            <span class="nav-brand-name">Worobi Mobile Notary</span>
-            <span class="nav-brand-sub">& Document Services</span>
-        </div>
-    </a>
-    <div class="nav-links">
-        <a class="nav-link" href="#services">Services</a>
-        <a class="nav-link" href="#how-it-works">How It Works</a>
-        <a class="nav-link" href="#pricing">Pricing</a>
-        <a class="nav-link" href="#area">Service Area</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-        <a class="nav-link" href="https://brandon.worobi.com">Brandon's Profile ↗</a>
-    </div>
-    <a class="nav-cta" href="#contact">Book Now</a>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+<a class="brand" href="#top" aria-label="Worobi Notary and Document Services home">
+<img class="brand-logo" src="assets/worobi-notary-logo.png" width="1536" height="1024" alt="Worobi Notary &amp; Document Services with gold quill and navy location pin">
+</a>
+<nav aria-label="Main">
+<a href="#services">Services</a>
+<a href="#rates">Rates</a>
+<a href="#contact">Appointments</a>
 </nav>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-grid">
-        <div>
-            <p class="hero-eyebrow">Port Huron Mobile Notary · St. Clair County, MI</p>
-            <h1><span>Mobile Notary</span><br>In Port Huron<br>That Comes To You</h1>
-            <p class="hero-tagline">Worobi Mobile Notary provides in-person and remote online notarizations across St. Clair, Sanilac, Macomb, and Lapeer Counties. I travel to homes, offices, hospitals, jails, assisted living facilities, and job sites so important documents can be handled without added stress.</p>
-            <div class="hero-actions">
-                <a class="btn-gold" href="#contact">📅 Book an Appointment</a>
-                <a class="btn-ghost" href="tel:+18102428884">Call or Text</a>
-            </div>
-            <div class="hero-trust">
-                <span class="trust-item">I Come To You</span>
-                <span class="trust-item">Evening & Weekend Availability</span>
-                <span class="trust-item">Ordained Minister Since 2013</span>
-                <span class="trust-item">Insured & Bonded</span>
-            </div>
-        </div>
-
-        <div>
-            <div class="hero-card">
-                <div class="hero-card-title">📞 Reach Me Directly</div>
-                <a class="hero-card-phone" href="tel:+18102428884">(810) 242-8884</a>
-                <div class="availability-grid">
-                    <div class="avail-row">
-                        <span class="avail-day">Monday – Friday</span>
-                        <span class="avail-hours">8am – 7pm</span>
-                        <span class="avail-badge badge-open">Open</span>
-                    </div>
-                    <div class="avail-row">
-                        <span class="avail-day">Saturday</span>
-                        <span class="avail-hours">9am – 5pm</span>
-                        <span class="avail-badge badge-open">Open</span>
-                    </div>
-                    <div class="avail-row">
-                        <span class="avail-day">Sunday</span>
-                        <span class="avail-hours">By Request</span>
-                        <span class="avail-badge badge-flex">Flexible</span>
-                    </div>
-                    <div class="avail-row">
-                        <span class="avail-day">After Hours</span>
-                        <span class="avail-hours">Emergency Available</span>
-                        <span class="avail-badge badge-flex">Call</span>
-                    </div>
-                </div>
-                <p class="hero-card-note">Same-day appointments often available.<br>Evening & weekend slots fill fast — book early.</p>
-            </div>
-        </div>
-    </div>
+</header>
+<main id="main">
+<div class="hero">
+<div>
+<div class="eyebrow">Port Huron, Michigan</div>
+<h1>A notary that<br>
+<em>comes to you.</em>
+</h1>
+<p>Mobile notary service for the documents that matter. Meet at a convenient location, or arrange an office appointment.</p>
+<a class="button" href="#contact">Plan your appointment →</a>
+<p class="small" style="margin-top:18px">By appointment · Travel and total fees agreed in advance</p>
+</div>
+<aside class="note-card">
+<div class="eyebrow">Local. Practical. Personal.</div>
+<h2>Brandon Worobi<br>Michigan Notary Public</h2>
+<div class="line">
+<span>Where</span>Port Huron &amp; surrounding counties</div>
+<div class="line">
+<span>How</span>Mobile visits or office appointments</div>
+<div class="line">
+<span>What to expect</span>Clear pricing before we meet</div>
+</aside>
+</div>
+<section id="services">
+<div class="eyebrow" style="color:#8b672d">Notarization, made straightforward</div>
+<h2>Meet where it works for you.</h2>
+<div class="grid">
+<article class="card">
+<div class="num">01 / MOBILE</div>
+<h3>At your location</h3>
+<p>Arrange an in-person appointment at your home, workplace, or another suitable meeting place.</p>
+</article>
+<article class="card">
+<div class="num">02 / OFFICE</div>
+<h3>By arrangement</h3>
+<p>Prefer an office visit? Confirm a time and meeting location before traveling.</p>
+</article>
+<article class="card">
+<div class="num">03 / FACILITY VISITS</div>
+<h3>Hospitals &amp; jails</h3>
+<p>Visits may be arranged subject to facility permission, access rules, and the signer’s ability to participate.</p>
+</article>
+</div>
 </section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-    <div class="section-inner">
-        <div class="section-header">
-            <p class="section-eyebrow">What I Offer</p>
-            <h2 class="section-title">Mobile Notary Services in Port Huron &amp; St. Clair County</h2>
-            <p class="section-sub">I bring the notary to you. From everyday signatures to real estate documents and time-sensitive hospital signings, I handle appointments at your location with professionalism, discretion, and clear communication.</p>
-        </div>
-        <div class="services-grid">
-
-            <div class="service-card">
-                <span class="service-icon">🚗</span>
-                <div class="service-name">Port Huron Mobile Notary Service</div>
-                <p class="service-desc">I travel to you for notarizations at homes, offices, hospitals, jails, assisted living facilities, and job sites throughout St. Clair, Sanilac, Macomb, and Lapeer Counties.</p>
-                <span class="service-price">Travel fee applies</span>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">✍️</span>
-                <div class="service-name">Power of Attorney Notary</div>
-                <p class="service-desc">Financial, medical, and durable POA documents notarized at your location. I come to homes, hospitals, and care facilities — wherever you need me most.</p>
-                <span class="service-price">Starting at $10/signature</span>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">📜</span>
-                <div class="service-name">Estate Planning Document Notary</div>
-                <p class="service-desc">Wills, trusts, advance directives, and healthcare proxies. Sensitive signings handled with care, discretion, and patience — at your pace, at your place.</p>
-                <span class="service-price">Starting at $10/signature</span>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🏠</span>
-                <div class="service-name">Real Estate &amp; Loan Signing Services</div>
-                <p class="service-desc">Mortgage closings, refinances, deed signings, and real estate documents. I work with individuals, title companies, and escrow officers to get closings done right.</p>
-                <span class="service-price">Contact for pricing</span>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🏥</span>
-                <div class="service-name">Hospital Notary</div>
-                <p class="service-desc">Patient-focused notarizations for time-sensitive documents at hospitals, assisted living facilities, and care centers. Evening and weekend visits available.</p>
-                <span class="service-price">Priority scheduling</span>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">💍</span>
-                <div class="service-name">Wedding Officiant Service</div>
-                <p class="service-desc">Ordained since 2013, I officiate weddings, vow renewals, and civil ceremonies. Local, personal, and professional — your moment deserves someone who cares.</p>
-                <span class="service-price">Contact for availability</span>
-            </div>
-
-        </div>
-
-        <!-- Complete Services List — all service names visible for SEO -->
-        <div class="all-services">
-            <p class="all-services-label">Complete List of Services</p>
-            <div class="all-services-grid">
-                <div class="all-service-item">Port Huron Mobile Notary Service</div>
-                <div class="all-service-item">Power of Attorney Notary</div>
-                <div class="all-service-item">Estate Planning Document Notary</div>
-                <div class="all-service-item">Loan Signing Services</div>
-                <div class="all-service-item">Hospital Notary</div>
-                <div class="all-service-item">Jail Notary</div>
-                <div class="all-service-item">Wedding Officiant Service</div>
-                <div class="all-service-item">Affidavit &amp; Oath Notarization</div>
-                <div class="all-service-item">Acknowledgment Statement Notarization</div>
-                <div class="all-service-item">Contract Notarization</div>
-                <div class="all-service-item">Deed Notarization</div>
-                <div class="all-service-item">Divorce Document Notarization</div>
-                <div class="all-service-item">General Notary Document Preparation</div>
-                <div class="all-service-item">E-Notary Services (RON)</div>
-            </div>
-        </div>
-
-        <!-- RON Platforms Callout -->
-        <div class="ron-callout">
-            <div class="ron-callout-text">
-                <p class="ron-callout-eyebrow">Remote Online Notary · E-Notary Services</p>
-                <h3 class="ron-callout-title">Can't Meet in Person? Find Me Online.</h3>
-                <p class="ron-callout-desc">I'm available on trusted RON platforms for secure remote notarizations completed over video — no travel required. Remote online notarization can be a good fit for out-of-area signers, busy schedules, or time-sensitive documents.</p>
-            </div>
-            <div class="ron-platforms">
-                <a class="ron-platform" href="https://www.proof.com" target="_blank" rel="noopener">
-                    🖥️ Proof <span class="ron-platform-badge">formerly Notarize</span>
-                </a>
-                <a class="ron-platform" href="https://www.bluenotary.us" target="_blank" rel="noopener">
-                    🔵 BlueNotary <span class="ron-platform-badge">RON Platform</span>
-                </a>
-                <a class="ron-platform" href="https://www.onenotary.us" target="_blank" rel="noopener">
-                    ✅ OneNotary <span class="ron-platform-badge">RON Platform</span>
-                </a>
-            </div>
-        </div>
-    </div>
+<section id="additional-services">
+<div class="eyebrow" style="color:#8b672d">Beyond notarization</div>
+<h2>More ways to help.</h2>
+<div class="grid">
+<article class="card">
+<div class="num">WEDDING OFFICIANT</div>
+<h3>Experience for your ceremony</h3>
+<p>I’ve served as a wedding officiant since 2013 and have officiated more than 20 weddings across Michigan and Texas.</p>
+<p>Ask about ceremony availability and the details of your plans. Wedding services are separate from notarial services.</p>
+</article>
+<article class="card">
+<div class="num">PROCESS SERVING</div>
+<h3>Service availability to confirm</h3>
+<p>Process serving is a planned addition. Service area, document types, scheduling, and fees will be confirmed before accepting an assignment.</p>
+</article>
+<article class="card">
+<div class="num">LOAN SIGNING</div>
+<h3>Signing support, by inquiry</h3>
+<p>Loan-signing services are planned, with availability and assignment requirements to be confirmed. No signing-agent certification or insurance coverage is represented here.</p>
+<p class="small">Loan-signing fees and scope would be quoted separately from general mobile notary visits.</p>
+</article>
+</div>
 </section>
-
-<!-- HOW IT WORKS -->
-<section class="how-it-works" id="how-it-works">
-    <div class="section-inner">
-        <div class="section-header">
-            <p class="section-eyebrow">Simple Process</p>
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-sub">Getting your documents notarized is straightforward. Here's what to expect.</p>
-        </div>
-        <div class="steps-grid">
-            <div class="step">
-                <div class="step-num">1</div>
-                <div class="step-title">Book Online or Call</div>
-                <p class="step-desc">Fill out the contact form or call directly. Tell me what you need and where you'd like to meet.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <div class="step-title">Confirm Your Appointment</div>
-                <p class="step-desc">I'll confirm your time, location, and any documents you should have ready. Same-day often available.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-title">I Come to You</div>
-                <p class="step-desc">Bring a valid government-issued photo ID. I'll arrive on time, review your documents, and complete the signing.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-title">Done & Sealed</div>
-                <p class="step-desc">Your documents are notarized, sealed, and ready. Payment accepted at time of service.</p>
-            </div>
-        </div>
-    </div>
+<section id="document-support">
+<div class="eyebrow" style="color:#8b672d">Document support</div>
+<h2>Help with the practical details.</h2>
+<p>Additional services by inquiry. Coordination and other project-based services are quoted individually based on the type and scope of the project. Availability, handling arrangements, and the total fee are confirmed before booking.</p>
+<div class="grid">
+<article class="card">
+<div class="num">PRINTING &amp; SCANNING</div>
+<h3>Paper and digital copies</h3>
+<p>Ask about printing or scanning needs, including page count, size, and required format. Equipment capability and secure transfer arrangements are confirmed before accepting files.</p>
+<p class="small">Do not send sensitive documents through an initial inquiry.</p>
+</article>
+<article class="card">
+<div class="num">DOCUMENT PICKUP &amp; DELIVERY</div>
+<h3>From one place to another</h3>
+<p>Ask about document transport between agreed locations. Timing, authorized recipients, handling, and any delivery confirmation requirements are agreed in advance.</p>
+<p class="small">Document delivery is separate from formal service of legal process.</p>
+</article>
+<article class="card">
+<div class="num">APOSTILLE COORDINATION</div>
+<h3>Help coordinating the steps</h3>
+<p>Ask about assistance coordinating document submission and return for an apostille or authentication. Requirements depend on the document and destination.</p>
+<p class="small">Apostilles are issued by the appropriate government authority, not by the notary. Government fees and processing times are separate; approval and turnaround are not guaranteed. No legal advice is provided.</p>
+</article>
+</div>
 </section>
-
-<!-- SERVICE AREA -->
-<section class="service-area" id="area">
-    <div class="section-inner">
-        <div class="section-header">
-            <p class="section-eyebrow">Where I Serve</p>
-            <h2 class="section-title">Mobile Notary Service Area</h2>
-            <p class="section-sub">Based in Port Huron and serving St. Clair County, Sanilac County, Macomb County, and Lapeer County.</p>
-        </div>
-        <div class="area-grid">
-            <div class="area-content">
-                <p class="area-lead">I travel throughout the Blue Water Area and surrounding counties — to homes, offices, hospitals, jails, assisted living facilities, and job sites. Wherever you are, I'll come to you.</p>
-                <ul class="area-list">
-                    <li>Port Huron</li>
-                    <li>Fort Gratiot</li>
-                    <li>Marysville</li>
-                    <li>St. Clair</li>
-                    <li>Marine City</li>
-                    <li>Algonac</li>
-                    <li>Lexington</li>
-                    <li>Sandusky</li>
-                    <li>Yale</li>
-                    <li>Richmond</li>
-                    <li>Capac</li>
-                    <li>Lapeer</li>
-                    <li>Romeo</li>
-                    <li>And more...</li>
-                </ul>
-            </div>
-            <div class="area-map">
-                <div class="map-title">St. Clair County, MI</div>
-                <div class="map-sub">+ Sanilac · Macomb · Lapeer</div>
-                <div class="map-radius">
-                    <div class="map-miles" style="font-size:1.6rem; line-height:1.2;">4<br>Counties</div>
-                </div>
-                <p class="map-note">Evening & weekend travel available.<br>Extended areas considered — just ask.</p>
-            </div>
-        </div>
-    </div>
+<section id="area">
+<div class="eyebrow" style="color:#8b672d">Service area</div>
+<h2>Based in Port Huron.<br>Serving the surrounding region.</h2>
+<p>St. Clair, Sanilac, Lapeer, Macomb, and parts of Oakland County.</p>
+<p class="small">Share the appointment location so travel availability and the total fee can be confirmed.</p>
 </section>
-
-<!-- PRICING -->
-<section class="pricing" id="pricing">
-    <div class="section-inner">
-        <div class="section-header">
-            <p class="section-eyebrow">Transparent Pricing</p>
-            <h2 class="section-title">Simple, Clear Rates</h2>
-            <p class="section-sub">Michigan state law caps notary fees at $10 per notarial act. Travel and additional services are priced separately.</p>
-        </div>
-        <div class="pricing-grid">
-
-            <div class="price-card">
-                <div class="price-tier">Basic</div>
-                <div class="price-amount">$10</div>
-                <div class="price-unit">per notarial act</div>
-                <div class="price-divider"></div>
-                <ul class="price-features">
-                    <li>Single document signing</li>
-                    <li>Acknowledgment or jurat</li>
-                    <li>At your location (in-person)</li>
-                    <li>Notary seal & signature</li>
-                </ul>
-                <a class="price-btn price-btn-outline" href="#contact">Book Now</a>
-            </div>
-
-            <div class="price-card featured">
-                <div class="price-tier">Mobile</div>
-                <div class="price-amount" style="color:var(--gold)">$10+</div>
-                <div class="price-unit">notary fee + travel</div>
-                <div class="price-divider"></div>
-                <ul class="price-features">
-                    <li>I travel to your location</li>
-                    <li>Multiple signers/documents</li>
-                    <li>Home, office, hospital</li>
-                    <li>Evening & weekend available</li>
-                    <li>Travel fee based on distance</li>
-                </ul>
-                <a class="price-btn price-btn-gold" href="#contact">Book Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="price-tier">Loan Signing</div>
-                <div class="price-amount">Custom</div>
-                <div class="price-unit">contact for quote</div>
-                <div class="price-divider"></div>
-                <ul class="price-features">
-                    <li>Mortgage closings</li>
-                    <li>Refinance packages</li>
-                    <li>Works with title companies</li>
-                    <li>Certified Signing Agent</li>
-                </ul>
-                <a class="price-btn price-btn-outline" href="#contact">Get a Quote</a>
-            </div>
-
-        </div>
-    </div>
+<section id="rates">
+<div class="pricing" id="pricing">
+<div>
+<div class="eyebrow" style="color:#8b672d">General mobile notary pricing</div>
+<h2>One visit.<br>No guesswork.</h2>
+<div class="price">$10</div>
+<p>per notarial act, plus the agreed travel fee.</p>
+</div>
+<div>
+<ul class="price-list">
+<li>
+<span>Travel through 15 miles</span>
+<strong>$25 / visit</strong>
+</li>
+<li>
+<span>Over 15 through 30 miles</span>
+<strong>$45 / visit</strong>
+</li>
+<li>
+<span>Over 30 miles</span>
+<strong>Custom quote</strong>
+</li>
+</ul>
+<p class="small" style="margin-top:15px">Travel distance is measured one way from Port Huron. Travel is charged once per visit. All fees are agreed before departure.</p>
+<div class="callout">
+<strong>Example:</strong> A $45 travel visit with three notarial acts totals $75.</div>
+<div class="callout">
+<strong>Other services: quoted for your project.</strong> Wedding officiating, process serving, loan-signing support, printing/scanning, document pickup and delivery, and apostille coordination are priced separately based on the service type and scope. The quote will identify applicable service, travel, and third-party costs before you agree. Notarial acts, when needed, remain separately itemized.</div>
+</div>
+</div>
 </section>
-
-<!-- CREDENTIALS -->
-<section class="credentials">
-    <div class="section-inner">
-        <div class="cred-grid">
-            <div class="cred-item">
-                <span class="cred-icon">🏛️</span>
-                <div class="cred-title">State Commissioned</div>
-                <p class="cred-sub">Commissioned in St. Clair County, Michigan — valid through May 31, 2032</p>
-            </div>
-            <div class="cred-item">
-                <span class="cred-icon">🛡️</span>
-                <div class="cred-title">Insured & Bonded</div>
-                <p class="cred-sub">Fully insured and bonded for your protection on every signing</p>
-            </div>
-            <div class="cred-item">
-                <span class="cred-icon">✝️</span>
-                <div class="cred-title">Ordained Minister</div>
-                <p class="cred-sub">Ordained since 2013 — available for weddings and civil ceremonies</p>
-            </div>
-            <div class="cred-item">
-                <span class="cred-icon">🤝</span>
-                <div class="cred-title">Local & Reliable</div>
-                <p class="cred-sub">St. Clair County based — professional service for individuals, families, and small businesses</p>
-            </div>
-        </div>
-    </div>
+<section id="how-it-works">
+<div class="eyebrow" style="color:#8b672d">Before your appointment</div>
+<h2>A little preparation helps.</h2>
+<div class="grid">
+<article>
+<h3>Tell me what you need</h3>
+<p class="small">Share the location, preferred time, and number of documents and signers. Avoid sending sensitive document or ID images with an initial inquiry.</p>
+</article>
+<article>
+<h3>Confirm the details</h3>
+<p class="small">We’ll confirm availability, travel, fees, identification needs, and any witness requirements before meeting.</p>
+</article>
+<article>
+<h3>Bring your documents</h3>
+<p class="small">Have your documents and identification ready. Ask about signing requirements before signing in advance.</p>
+</article>
+</div>
+<p class="small" style="margin-top:24px">Notarial services do not include legal advice or selecting legal documents for you.</p>
 </section>
-
-<!-- FAQ -->
-<section class="faq" id="faq">
-    <div class="section-inner">
-        <div class="section-header">
-            <p class="section-eyebrow">Common Questions</p>
-            <h2 class="section-title">Mobile Notary FAQ</h2>
-            <p class="section-sub">Quick answers for Port Huron and St. Clair County notary appointments.</p>
-        </div>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h3 class="faq-question">Do you travel for notary appointments?</h3>
-                <p class="faq-answer">Yes. I travel to homes, offices, hospitals, assisted living facilities, jails, and job sites in Port Huron, St. Clair County, and nearby Michigan communities.</p>
-            </div>
-            <div class="faq-item">
-                <h3 class="faq-question">What do I need for a notarization?</h3>
-                <p class="faq-answer">Bring the unsigned document, every signer who needs notarization, and a valid government-issued photo ID. The signer must be alert, willing, and able to understand the document.</p>
-            </div>
-            <div class="faq-item">
-                <h3 class="faq-question">How much does a Michigan notary cost?</h3>
-                <p class="faq-answer">Michigan notary fees are listed separately from mobile travel fees. The total depends on the number of notarizations, location, timing, and any added signing services.</p>
-            </div>
-            <div class="faq-item">
-                <h3 class="faq-question">Can you notarize hospital or urgent documents?</h3>
-                <p class="faq-answer">Yes, when scheduling allows. Call or text for urgent hospital, care facility, power of attorney, estate, or time-sensitive signing requests.</p>
-            </div>
-            <div class="faq-item">
-                <h3 class="faq-question">Do you offer remote online notarization?</h3>
-                <p class="faq-answer">Yes. Remote online notarization is available through supported platforms for eligible documents and signers who prefer a secure video session.</p>
-            </div>
-            <div class="faq-item">
-                <h3 class="faq-question">What areas do you serve?</h3>
-                <p class="faq-answer">I am based in Port Huron and serve St. Clair, Sanilac, Macomb, and Lapeer Counties, including Fort Gratiot, Marysville, St. Clair, Marine City, Lexington, and nearby areas.</p>
-            </div>
-        </div>
-    </div>
+<section id="contact" class="contact">
+<div>
+<div class="eyebrow" style="color:#8b672d">Let’s arrange a time</div>
+<h2>Need something notarized?</h2>
+<p>Start with the service you need, your location, and preferred appointment time.</p>
+<p class="small">Availability, meeting details, and total fees are confirmed individually. Sending a request does not book an appointment.</p>
+<div class="contact-info">
+<h3>Worobi Notary &amp; Document Services</h3>
+<p>
+<a href="tel:+18102428884">Call (810) 242-8884</a>
+<br>
+<a href="mailto:notary@worobi.com">notary@worobi.com</a>
+</p>
+<p class="small">Port Huron, Michigan · By appointment</p>
+</div>
+</div>
+<div class="contact-box">
+<h3>Request an appointment</h3>
+<p class="small">Required fields are marked with an asterisk (*).</p>
+<form class="form-grid" action="https://formspree.io/f/xpqkezjr" method="POST">
+<div class="form-row-2">
+<div class="form-group">
+<label class="form-label" for="first-name">First name *</label>
+<input id="first-name" type="text" name="first_name" class="form-input" autocomplete="given-name" required>
+</div>
+<div class="form-group">
+<label class="form-label" for="last-name">Last name *</label>
+<input id="last-name" type="text" name="last_name" class="form-input" autocomplete="family-name" required>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label" for="email">Email address *</label>
+<input id="email" type="email" name="email" class="form-input" autocomplete="email" required>
+</div>
+<div class="form-group">
+<label class="form-label" for="phone">Phone number <span class="small">(optional)</span>
+</label>
+<input id="phone" type="tel" name="phone" class="form-input" autocomplete="tel">
+</div>
+<div class="form-group">
+<label class="form-label" for="service">Service needed *</label>
+<select id="service" name="service" class="form-select" required>
+<option value="" disabled selected>Select a service...</option>
+<option>Mobile notary appointment</option>
+<option>Office notary appointment</option>
+<option>Hospital or jail notary inquiry</option>
+<option>Wedding officiant inquiry</option>
+<option>Process serving inquiry (planned service)</option>
+<option>Loan signing inquiry (planned service)</option>
+<option>Printing or scanning inquiry</option>
+<option>Document pickup or delivery inquiry</option>
+<option>Apostille coordination inquiry</option>
+<option>Other / Not sure</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label" for="datetime">Preferred date and time <span class="small">(optional)</span>
+</label>
+<input id="datetime" type="text" name="datetime" class="form-input" placeholder="For example, Tuesday afternoon">
+</div>
+<div class="form-group">
+<label class="form-label" for="message">Additional details <span class="small">(optional)</span>
+</label>
+<textarea id="message" name="message" class="form-textarea" aria-describedby="details-help" placeholder="City or meeting area, number of documents and signers, and general service needs">
+</textarea>
+<small id="details-help">Please do not include sensitive personal information, ID numbers, or the contents of your documents.</small>
+</div>
+<input type="hidden" name="_subject" value="New Notary Appointment Request | notary.worobi.com">
+<p class="form-note" id="form-disclosure">Submitting this form sends the information above to Formspree for your service inquiry. Please read our <a href="privacy.html">Website &amp; Inquiry Privacy Notice</a> and avoid including sensitive personal information.</p>
+<button type="submit" class="button form-submit" aria-describedby="form-disclosure">Send request →</button>
+</form>
+</div>
 </section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <div class="section-inner">
-        <div class="section-header">
-            <p class="section-eyebrow">Get in Touch</p>
-            <h2 class="section-title">Book an Appointment</h2>
-            <p class="section-sub">Ready to get started? Fill out the form or call/text directly. I typically respond within a few hours.</p>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-item-icon">📞</div>
-                    <div>
-                        <div class="contact-item-label">Phone / Text</div>
-                        <div class="contact-item-val"><a href="tel:+18102428884">(810) 242-8884</a></div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">✉️</div>
-                    <div>
-                        <div class="contact-item-label">Email</div>
-                        <div class="contact-item-val"><a href="mailto:notary@worobi.com">notary@worobi.com</a></div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">📍</div>
-                    <div>
-                        <div class="contact-item-label">Based In</div>
-                        <div class="contact-item-val">Port Huron, MI 48060</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">🕐</div>
-                    <div>
-                        <div class="contact-item-label">Hours</div>
-                        <div class="contact-item-val">Mon–Fri 8am–7pm · Sat 9am–5pm<br>Sun & After Hours by Request</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">🖥️</div>
-                    <div>
-                        <div class="contact-item-label">Remote Online Notary (RON)</div>
-                        <div class="contact-item-val">
-                            <a href="https://www.proof.com" target="_blank" rel="noopener">Proof (formerly Notarize)</a> ·
-                            <a href="https://www.bluenotary.us" target="_blank" rel="noopener">BlueNotary</a> ·
-                            <a href="https://www.onenotary.us" target="_blank" rel="noopener">OneNotary</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-item-icon">👤</div>
-                    <div>
-                        <div class="contact-item-label">Also Find Me At</div>
-                        <div class="contact-item-val"><a href="https://brandon.worobi.com">brandon.worobi.com ↗</a></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <div class="form-title">Request an Appointment</div>
-                <!-- Formspree endpoint is configured for notary inquiries. -->
-                <form class="form-grid" action="https://formspree.io/f/xpqkezjr" method="POST">
-                    <div class="form-row-2">
-                        <div class="form-group">
-                            <label class="form-label">First Name</label>
-                            <input type="text" name="first_name" class="form-input" placeholder="Jane" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" name="last_name" class="form-input" placeholder="Smith" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Phone Number</label>
-                        <input type="tel" name="phone" class="form-input" placeholder="(810) XXX-XXXX">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" name="email" class="form-input" placeholder="you@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Service Needed</label>
-                        <select name="service" class="form-select" required>
-                            <option value="" disabled selected>Select a service...</option>
-                            <option>Mobile Notary Service</option>
-                            <option>Power of Attorney Notarization</option>
-                            <option>Estate Planning Document Notarization</option>
-                            <option>Loan Signing Services</option>
-                            <option>Hospital Notary</option>
-                            <option>Wedding Officiant Service</option>
-                            <option>Affidavit &amp; Oath Notarization</option>
-                            <option>Acknowledgment Statement Notarization</option>
-                            <option>Contract Notarization</option>
-                            <option>Deed Notarization</option>
-                            <option>Divorce Document Notarization</option>
-                            <option>General Notary Document Preparation</option>
-                            <option>E-Notary Services</option>
-                            <option>Other / Not Sure</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Preferred Date & Time</label>
-                        <input type="text" name="datetime" class="form-input" placeholder="e.g. Thursday March 28, around 2pm">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Additional Details</label>
-                        <textarea name="message" class="form-textarea" placeholder="Location, document type, number of signatures, any special requirements..."></textarea>
-                    </div>
-                    <input type="hidden" name="_subject" value="New Notary Appointment Request — notary.worobi.com">
-                    <button type="submit" class="form-submit">Send Request →</button>
-                    <p class="form-note">I'll respond within a few hours to confirm your appointment.</p>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
+</main>
 <footer>
-    <div class="footer-brand"><strong>Worobi Mobile Notary & Document Services</strong> · St. Clair County, MI · Commission through 5/31/2032</div>
-    <div class="footer-links">
-        <a class="footer-link" href="tel:+18102428884">(810) 242-8884</a>
-        <a class="footer-link" href="mailto:notary@worobi.com">Notary@worobi.com</a>
-        <a class="footer-link" href="https://worobi.com">Worobi.com</a>
-    </div>
+<strong>Worobi Notary &amp; Document Services</strong> · Port Huron, Michigan<br>Notarial services do not include legal advice.
+<div class="footer-links">
+<a href="privacy.html">Website &amp; Inquiry Privacy Notice</a>
+<a href="tel:+18102428884">(810) 242-8884</a>
+<a href="mailto:notary@worobi.com">notary@worobi.com</a>
+<a href="https://worobi.com">Worobi.com</a>
+</div>
 </footer>
-
 </body>
 </html>
