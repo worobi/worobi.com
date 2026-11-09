@@ -1,0 +1,6 @@
+/* Help desk uses the existing Worobi navy, gold, and paper palette. */
+[hidden] { display: none !important; }
+.support-contact { border-bottom: 0; }
+.support-contact .contact-box { border-top: 3px solid var(--gold); }
+.support-contact .form-submit:disabled { opacity: .65; cursor: wait; }
+@media(max-width:720px) { .support-hero h1 { font-size: 43px; } }

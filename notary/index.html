@@ -216,25 +216,25 @@
 <div class="contact-box">
 <h3>Request an appointment</h3>
 <p class="small">Required fields are marked with an asterisk (*).</p>
-<form class="form-grid" action="https://formspree.io/f/xpqkezjr" method="POST">
+<form id="appointmentForm" class="form-grid" action="/api/requests" method="post" data-request-type="sales">
 <div class="form-row-2">
 <div class="form-group">
 <label class="form-label" for="first-name">First name *</label>
-<input id="first-name" type="text" name="first_name" class="form-input" autocomplete="given-name" required>
+<input id="first-name" type="text" name="first_name" maxlength="49" class="form-input" autocomplete="given-name" required>
 </div>
 <div class="form-group">
 <label class="form-label" for="last-name">Last name *</label>
-<input id="last-name" type="text" name="last_name" class="form-input" autocomplete="family-name" required>
+<input id="last-name" type="text" name="last_name" maxlength="50" class="form-input" autocomplete="family-name" required>
 </div>
 </div>
 <div class="form-group">
 <label class="form-label" for="email">Email address *</label>
-<input id="email" type="email" name="email" class="form-input" autocomplete="email" required>
+<input id="email" type="email" name="email" maxlength="254" class="form-input" autocomplete="email" required>
 </div>
 <div class="form-group">
 <label class="form-label" for="phone">Phone number <span class="small">(optional)</span>
 </label>
-<input id="phone" type="tel" name="phone" class="form-input" autocomplete="tel">
+<input id="phone" type="tel" name="phone" maxlength="50" class="form-input" autocomplete="tel">
 </div>
 <div class="form-group">
 <label class="form-label" for="service">Service needed *</label>
@@ -255,18 +255,19 @@
 <div class="form-group">
 <label class="form-label" for="datetime">Preferred date and time <span class="small">(optional)</span>
 </label>
-<input id="datetime" type="text" name="datetime" class="form-input" placeholder="For example, Tuesday afternoon">
+<input id="datetime" type="text" name="datetime" maxlength="160" class="form-input" placeholder="For example, Tuesday afternoon">
 </div>
 <div class="form-group">
 <label class="form-label" for="message">Additional details <span class="small">(optional)</span>
 </label>
-<textarea id="message" name="message" class="form-textarea" aria-describedby="details-help" placeholder="City or meeting area, number of documents and signers, and general service needs">
+<textarea id="message" name="message" maxlength="2000" class="form-textarea" aria-describedby="details-help" placeholder="City or meeting area, number of documents and signers, and general service needs">
 </textarea>
-<small id="details-help">Please do not include sensitive personal information, ID numbers, or the contents of your documents.</small>
+<small id="details-help">Please do not include passwords, Social Security or government ID numbers, sensitive personal information, or the contents of your documents. No document uploads or attachments are accepted.</small>
 </div>
-<input type="hidden" name="_subject" value="New Notary Appointment Request | notary.worobi.com">
-<p class="form-note" id="form-disclosure">Submitting this form sends the information above to Formspree for your service inquiry. Please read our <a href="privacy.html">Website &amp; Inquiry Privacy Notice</a> and avoid including sensitive personal information.</p>
-<button type="submit" class="button form-submit" aria-describedby="form-disclosure">Send request →</button>
+<p class="form-note" id="form-disclosure">Submitting this form sends the information above to Worobi Notary through this website and its email service for your service inquiry. Please read our <a href="privacy.html">Website &amp; Inquiry Privacy Notice</a> and avoid including sensitive personal information.</p>
+<button type="submit" class="button form-submit" aria-describedby="form-disclosure" disabled>Send request →</button>
+<div id="appointmentStatus" class="form-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden></div>
+<noscript><p>Enable JavaScript to use this form, or email <a href="mailto:notary@worobi.com">notary@worobi.com</a>.</p></noscript>
 </form>
 </div>
 </section>
@@ -274,11 +275,14 @@
 <footer>
 <strong>Worobi Notary &amp; Document Services</strong> · Port Huron, Michigan<br>Notarial services do not include legal advice.
 <div class="footer-links">
+<a href="support.html">Help desk</a>
+<a href="mailto:sos@worobi.com">SOS@worobi.com</a>
 <a href="privacy.html">Website &amp; Inquiry Privacy Notice</a>
 <a href="tel:+18102428884">(810) 242-8884</a>
 <a href="mailto:notary@worobi.com">notary@worobi.com</a>
 <a href="https://worobi.com">Worobi.com</a>
 </div>
 </footer>
+<script src="assets/forms.js?v=helpdesk20261109"></script>
 </body>
 </html>

@@ -9,3 +9,10 @@ nav a{padding:10px 0;min-height:44px}section{scroll-margin-top:20px}
 .form-label{font-size:14px;font-weight:650}.form-input,.form-select,.form-textarea{font:inherit;font-size:16px;color:var(--ink);width:100%;min-width:0;padding:12px;border:1px solid #a2a9b1;border-radius:3px;background:#fff}.form-textarea{min-height:140px;resize:vertical}.form-submit{border:0;cursor:pointer;width:100%;font:inherit;font-size:16px;font-weight:750;margin:0;min-height:48px}.form-submit:hover,.button:hover{background:#e8c87a}.form-note{font-size:13px;color:var(--muted);margin:0}.form-group small{font-size:13px;color:var(--muted)}.contact{grid-template-columns:.85fr 1.15fr;align-items:start}.contact-box{min-width:0}.contact-info{margin-top:28px}.contact-info a{display:inline-block;margin-bottom:12px;text-underline-offset:3px}.footer-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:10px}footer a{padding:6px 0}.privacy-content{max-width:780px;background:white;border:1px solid #e2e2dc;padding:40px;margin:0 auto 40px}.privacy-content h1{font-size:44px;letter-spacing:-1px}.privacy-content h2{font-size:26px;margin-top:30px}.privacy-content .updated{font-size:14px;color:var(--muted)}
 @media(max-width:720px){.contact{grid-template-columns:1fr;gap:26px}.form-row-2{grid-template-columns:1fr}.contact-box{padding:22px}header{padding-bottom:12px}nav{gap:22px}.privacy-content{border-left:0;border-right:0;padding:28px 24px}.privacy-content h1{font-size:36px}.footer-links{gap:4px 20px}}
 @media(max-width:380px){.hero h1{font-size:41px}.price-list li{font-size:14px}.price-list strong{white-space:nowrap}}
+
+/* Form delivery states. */
+[hidden]{display:none!important}
+.form-submit:disabled{opacity:.65;cursor:wait}
+.form-status{padding:14px 16px;border:1px solid;border-radius:3px;font-size:14px;overflow-wrap:anywhere}
+.form-status--success{background:#e9f6ef;color:#145b38;border-color:#3e8860}
+.form-status--error{background:#fceeed;color:#8a2525;border-color:#b55858}

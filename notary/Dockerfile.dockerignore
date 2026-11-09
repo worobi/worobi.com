@@ -1,0 +1,11 @@
+**
+!notary/
+!notary/package.json
+!notary/package-lock.json
+!notary/server/
+!notary/server/**
+!notary/index.html
+!notary/privacy.html
+!notary/support.html
+!notary/assets/
+!notary/assets/**

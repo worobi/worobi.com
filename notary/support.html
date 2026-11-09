@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Help desk | Worobi Notary</title>
+<meta name="description" content="Get help with an existing Worobi Notary appointment, service, or website issue. Contact SOS@worobi.com.">
+<link rel="canonical" href="https://notary.worobi.com/support.html">
+<link rel="icon" type="image/png" href="assets/worobi-notary-logo.png">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/support.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+<a class="brand" href="./#top" aria-label="Worobi Notary and Document Services home">
+<img class="brand-logo" src="assets/worobi-notary-logo.png" width="1536" height="1024" alt="Worobi Notary &amp; Document Services with gold quill and navy location pin">
+</a>
+<nav aria-label="Main">
+<a href="./#services">Services</a>
+<a href="./#rates">Rates</a>
+<a href="./#contact">Appointments</a>
+</nav>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="hero support-hero">
+    <div>
+      <div class="eyebrow">Worobi help desk</div>
+      <h1>A little help.<br><em>A clear next step.</em></h1>
+      <p>Questions about an existing appointment, a service, or something on this website? Start here.</p>
+      <a class="button" href="mailto:sos@worobi.com">Email SOS@worobi.com →</a>
+    </div>
+    <aside class="note-card">
+      <div class="eyebrow">Keep it simple</div>
+      <h2>Tell us what happened.</h2>
+      <div class="line"><span>Include</span>A short summary and the appointment or service involved.</div>
+      <div class="line"><span>Leave out</span>Passwords, document contents, Social Security or government ID numbers, payment details, and private medical information.</div>
+    </aside>
+  </div>
+  <section class="contact support-contact" aria-labelledby="support-heading">
+    <div>
+      <div class="eyebrow" style="color:#8b672d">Support for existing services</div>
+      <h2 id="support-heading">What can we help with?</h2>
+      <p>Tell us what happened and how to reach you. Your request goes to the Worobi support inbox.</p>
+      <p class="small" id="support-mode">Keep document contents and sensitive personal information out of your message.</p>
+      <div class="contact-info">
+        <h3>Need a different next step?</h3>
+        <p><a href="./#contact">Request a new appointment →</a><br><a href="tel:+18102428884">Call (810) 242-8884</a></p>
+        <p class="small">Sending a support message does not confirm or change an appointment. Please wait for a reply.</p>
+      </div>
+    </div>
+    <div class="contact-box">
+      <h3>Send a support request</h3>
+      <p class="small">Required fields are marked with an asterisk (*).</p>
+      <form id="notarySupportForm" class="form-grid" action="/api/requests" method="post" data-request-type="support" aria-describedby="support-mode">
+        <div class="form-group">
+          <label class="form-label" for="support-name">Your name *</label>
+          <input id="support-name" name="name" type="text" class="form-input" minlength="2" maxlength="100" autocomplete="name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="support-email">Email address *</label>
+          <input id="support-email" name="email" type="email" class="form-input" maxlength="254" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="support-summary">Issue summary *</label>
+          <input id="support-summary" name="summary" type="text" class="form-input" minlength="5" maxlength="160" placeholder="For example, a question about your appointment" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="support-details">Details *</label>
+          <textarea id="support-details" name="details" class="form-textarea" rows="6" minlength="10" maxlength="1800" aria-describedby="support-details-help" required></textarea>
+          <small id="support-details-help">10–1,800 characters. Share only general context. Do not include passwords, Social Security or government ID numbers, sensitive information, or document contents. No document uploads or attachments are accepted.</small>
+        </div>
+        <p class="form-note">Submitting sends your name, email, issue summary, and details to Worobi Notary through this website and its email service. Read our <a href="privacy.html">Website &amp; Inquiry Privacy Notice</a>.</p>
+        <button id="prepareSupport" type="submit" class="button form-submit" disabled>Send support request →</button>
+        <noscript><p>Enable JavaScript to send a request here, or email <a href="mailto:sos@worobi.com">SOS@worobi.com</a> directly.</p></noscript>
+        <div id="supportStatus" class="form-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+<strong>Worobi Notary &amp; Document Services</strong> · Port Huron, Michigan<br>Notarial services do not include legal advice.
+<div class="footer-links">
+<a href="support.html">Help desk</a>
+<a href="mailto:sos@worobi.com">SOS@worobi.com</a>
+<a href="privacy.html">Website &amp; Inquiry Privacy Notice</a>
+<a href="tel:+18102428884">(810) 242-8884</a>
+<a href="mailto:notary@worobi.com">notary@worobi.com</a>
+<a href="https://worobi.com">Worobi.com</a>
+</div>
+</footer>
+<script src="assets/forms.js?v=helpdesk20261109"></script>
+</body>
+</html>

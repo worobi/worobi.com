@@ -1,0 +1,20 @@
+{
+  "name": "worobi-notary",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Isolated Worobi Notary website and form routing",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "nodemailer": "^6.9.8",
+    "validator": "^13.11.0"
+  }
+}
